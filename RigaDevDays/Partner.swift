@@ -1,0 +1,29 @@
+//
+//  Partner.swift
+//  RigaDevDays
+//
+//  Created by Dmitry Beloborodov on 12/02/2017.
+//  Copyright © 2017 RigaDevDays. All rights reserved.
+//
+
+import Foundation
+
+import Firebase
+
+class Partner: DataObject {
+
+    var logoUrl: String?
+    var name: String?
+    var url: String?
+
+    override init(snapshot: FIRDataSnapshot) {
+
+        let snapshotValue = snapshot.value as! [String: AnyObject]
+
+        logoUrl = snapshotValue["logoUrl"] as? String
+        name = snapshotValue["name"] as? String
+        url = snapshotValue["url"] as? String
+
+        super.init(snapshot: snapshot)
+    }
+}
