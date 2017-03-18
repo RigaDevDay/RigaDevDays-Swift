@@ -22,6 +22,8 @@ class DataManager {
     let rootRef: FIRDatabaseReference!
     var handle: FIRAuthStateDidChangeListenerHandle?
     let remoteConfig: FIRRemoteConfig!
+    let storage: FIRStorage!
+    let storageRef: FIRStorageReference!
 
     var days: [Day] = []
     var sessions: [Session] = []
@@ -48,6 +50,8 @@ class DataManager {
         //This prevents others from using the default '()' initializer
         rootRef = FIRDatabase.database().reference()
         remoteConfig = FIRRemoteConfig.remoteConfig()
+        storage = FIRStorage.storage()
+        storageRef = storage.reference()
 
         activeRemoteConfiguration()
     }

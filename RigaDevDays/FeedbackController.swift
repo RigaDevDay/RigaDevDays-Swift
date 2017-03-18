@@ -61,10 +61,16 @@ class FeedbackController: UITableViewController {
 
         sessionName.text = session.title
 
-        if let photoURL = session.speakers.first?.photoURL, let url = URL(string: DataManager.sharedInstance.customImageURLPrefix + photoURL) {
-            speakerImage?.kf.indicatorType = .activity
-            speakerImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
-        }
+        session.speakers.first?.speakerPhotoReference.downloadURL(completion: { (url, error) in
+            if url != nil {
+                self.speakerImage?.kf.indicatorType = .activity
+                self.speakerImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
+            }
+
+            if error != nil {
+                print(error?.localizedDescription as Any)
+            }
+        })
 
         var allSessionSpeakers = "by "
         for speaker in session.speakers {
@@ -83,10 +89,8 @@ class FeedbackController: UITableViewController {
 
         for button in [qcButton1, qcButton2, qcButton3, qcButton4, qcButton5] {
             if (button?.tag)! <= rating {
-//                button?.setTitle("★", for: .normal)
                 button?.setImage(#imageLiteral(resourceName: "bigstar_full"), for: .normal)
             } else {
-//                button?.setTitle("☆", for: .normal)
                 button?.setImage(#imageLiteral(resourceName: "bigstar"), for: .normal)
             }
         }
@@ -97,10 +101,8 @@ class FeedbackController: UITableViewController {
 
         for button in [spButton1, spButton2, spButton3, spButton4, spButton5] {
             if (button?.tag)! <= rating {
-//                button?.setTitle("★", for: .normal)
                 button?.setImage(#imageLiteral(resourceName: "bigstar_full"), for: .normal)
             } else {
-//                button?.setTitle("☆", for: .normal)
                 button?.setImage(#imageLiteral(resourceName: "bigstar"), for: .normal)
             }
         }

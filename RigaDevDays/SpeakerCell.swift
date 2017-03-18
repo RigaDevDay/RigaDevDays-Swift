@@ -33,10 +33,17 @@ class SpeakerCell: UITableViewCell {
             speakerTags?.attributedText = TagColorManager.sharedInstance.getTags(for: speaker!)
             speakerTagsWithDots?.attributedText = TagColorManager.sharedInstance.getTags(for: speaker!, withDots: true)
 
-            if let url = URL(string: DataManager.sharedInstance.customImageURLPrefix + (speaker?.photoURL)!) {
-                speakerIcon?.kf.indicatorType = .activity
-                speakerIcon?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
-            }
+            speaker?.speakerPhotoReference.downloadURL(completion: { (url, error) in
+                if url != nil {
+                    self.speakerIcon?.kf.indicatorType = .activity
+                    self.speakerIcon?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
+                }
+
+                if error != nil {
+                    print(error?.localizedDescription as Any)
+                }
+            })
+
             speakerBio?.setHTMLFromString(htmlText: (speaker?.bio)!)
             speakerTitle?.text = speaker?.title
         }

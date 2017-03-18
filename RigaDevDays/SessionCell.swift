@@ -51,16 +51,23 @@ class SessionCell: UITableViewCell {
             colorCodeView?.backgroundColor = session?.color
             sessionDescription?.setHTMLFromString(htmlText: (session?.description)!)
 
-            if let photoURL = session?.speakers.first?.photoURL, let url = URL(string: DataManager.sharedInstance.customImageURLPrefix + photoURL) {
-                imageBackground?.isHidden = false
-                speakerImageHeightConstraint?.constant = speakerImage.frame.size.width
-                speakerImage?.kf.indicatorType = .activity
-                speakerImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
-            } else {
-                speakerImageHeightConstraint?.constant = 0
-                imageBackground?.isHidden = true
-            }
+            session?.speakers.first?.speakerPhotoReference.downloadURL(completion: { (url, error) in
+                if url != nil {
+                    self.imageBackground?.isHidden = false
+                    self.speakerImageHeightConstraint?.constant = self.speakerImage.frame.size.width
+                    self.speakerImage?.kf.indicatorType = .activity
+                    self.speakerImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
+                } else {
+                    self.speakerImageHeightConstraint?.constant = 0
+                    self.imageBackground?.isHidden = true
+                }
 
+                if error != nil {
+                    print(error?.localizedDescription as Any)
+                }
+            })
+
+            // TODO: fix image source 
             if let sessionImageURL = session?.image, let url = URL(string: DataManager.sharedInstance.customImageURLPrefix + sessionImageURL) {
                 sessionImage?.kf.indicatorType = .activity
                 sessionImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])

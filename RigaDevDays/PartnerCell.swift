@@ -15,6 +15,8 @@ class PartnerCell: UICollectionViewCell {
 
     var partner: Partner? {
         didSet {
+
+            // TODO: fix image source
             if let url = URL(string: DataManager.sharedInstance.customImageURLPrefix + (partner?.logoUrl?.replacingOccurrences(of: "../", with: "/"))!) {
                 partnerImageView.kf.indicatorType = .activity
                 partnerImageView.kf.setImage(with: url, options: [.transition(.fade(0.2))])

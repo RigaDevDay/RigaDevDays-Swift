@@ -25,9 +25,12 @@ class Speaker: DataObject {
     var tags: [String] = []
 
     var speakerURL: String {
-        get {
-            return "http://rigadevdays.lv/speakers/\(speakerID)"
-        }
+        return "http://rigadevdays.lv/speakers/\(speakerID)"
+    }
+
+    var speakerPhotoReference: FIRStorageReference {
+        let imageName = URL(fileURLWithPath: photoURL!).lastPathComponent
+        return DataManager.sharedInstance.storageRef.child("people").child(imageName)
     }
 
     override init(snapshot: FIRDataSnapshot) {

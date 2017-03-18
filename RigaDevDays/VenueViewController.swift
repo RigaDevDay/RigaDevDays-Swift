@@ -58,6 +58,7 @@ class VenueViewController: UITableViewController {
             venueMap.addAnnotation(point)
         }
 
+        // TODO: fix image source
         if let url = URL(string: venue.imageUrl!) {
             venueImage?.kf.indicatorType = .activity
             venueImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
