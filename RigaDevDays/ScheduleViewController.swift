@@ -60,7 +60,7 @@ class ScheduleViewController: UIViewController {
         selectedDayFilter.removeAllSegments()
         for index in 0..<DataManager.sharedInstance.days.count {
             let day = DataManager.sharedInstance.days[index]
-            let title = day.dateMobileApp
+            let title = day.localizedDate
             selectedDayFilter.insertSegment(withTitle: title, at: index, animated: false)
         }
         selectedDayFilter.insertSegment(withTitle: "Favourites", at: DataManager.sharedInstance.days.count, animated: false)
