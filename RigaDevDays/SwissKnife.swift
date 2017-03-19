@@ -22,12 +22,22 @@ enum CustomError: Error {
 }
 
 extension Notification.Name {
-    static let initialDataReceivedNotification = Notification.Name("initialDataReceivedNotification")
-    static let userDidSignInNotification = Notification.Name("UserDidSignIn")
-    static let userDidSignOutNotification = Notification.Name("UserDidSignOut")
-    static let favouritesUpdatedNotification = Notification.Name("FavouritesUpdated")
-    static let feebdacksUpdatedNotification = Notification.Name("FeedbacksUpdated")
-    static let shareItemsNotification = Notification.Name("ShareItems")
+    static let AllDataReceived = Notification.Name("rdd.all.data.received")
+    static let UserDidSignIn = Notification.Name("rdd.user.did.sign.in")
+    static let UserDidSignOut = Notification.Name("rdd.user.did.sign.out")
+
+    static let ShareItem = Notification.Name("rdd.user.share.item")
+
+    static let FavouritesUpdated = Notification.Name("rdd.favourites.ppdated")
+    static let FeedbacksUpdated = Notification.Name("rdd.feedbacks.updated")
+    static let SpeakersUpdated = Notification.Name("rdd.speakers.updated")
+    static let SessionsUpdated = Notification.Name("rdd.sessions.updated")
+    static let ScheduleUpdated = Notification.Name("rdd.schedule.updated")
+    static let TagsUpdated = Notification.Name("rdd.tags.updated")
+    static let PartnerUpdated = Notification.Name("rdd.partners.updated")
+    static let TeamUpdated = Notification.Name("rdd.team.updated")
+    static let VenuesUpdated = Notification.Name("rdd.venues.updated")
+    static let ResourcesUpdated = Notification.Name("rdd.resources.updated")
 }
 
 extension UIColor {
@@ -186,7 +196,7 @@ class SwissKnife {
         //This prevents others from using the default '()' initializer
     }
 
-    func update(_ event: inout EKEvent, on day: Day?, with session: Session) {
+    func update(_ event: inout EKEvent, on day: Day, with session: Session) {
         event.title = session.title!
         event.startDate = session.duration(on: day).startDate
         event.endDate = session.duration(on: day).endDate
@@ -205,7 +215,7 @@ class SwissKnife {
         event.location = session.track?.title
     }
 
-    func getEventDialogFor(_ session: Session, on day: Day?, completion: @escaping (EKEventEditViewController?) -> Swift.Void) {
+    func getEventDialogFor(_ session: Session, on day: Day, completion: @escaping (EKEventEditViewController?) -> Swift.Void) {
 
         let eventStore: EKEventStore = EKEventStore()
 
@@ -228,7 +238,7 @@ class SwissKnife {
         }
     }
 
-    func addToCalendar(session: Session, on day: Day?) {
+    func addToCalendar(session: Session, on day: Day) {
 
         let eventStore: EKEventStore = EKEventStore()
 
@@ -252,7 +262,7 @@ class SwissKnife {
         }
     }
 
-    func calendarEvent(for session: Session, on day: Day?) -> EKEvent? {
+    func calendarEvent(for session: Session, on day: Day) -> EKEvent? {
 
         var event: EKEvent? = nil
 

@@ -16,6 +16,12 @@ class PartnersViewController: UIViewController  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .PartnerUpdated, object: nil)
+    }
+
+    func dataChanged() {
+        partnersCollectionView.reloadData()
     }
 }
 

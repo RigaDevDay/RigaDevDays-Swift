@@ -83,7 +83,6 @@ class SessionCell: UITableViewCell {
             }
 
             guard sessionSpeakers != nil && (session?.speakers.count)! > 0 else {
-                //TODO:
                 return
             }
 
@@ -126,5 +125,4 @@ class SessionCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
 }

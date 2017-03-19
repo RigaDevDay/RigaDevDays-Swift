@@ -36,7 +36,7 @@ class DataManager {
 
     var speakersReceived = false
     var sessionsReceived = false
-    var schedueReceived = false
+    var scheduleReceived = false
     var tagsReceived = false
     var partnerGroupsReceived = false
     var teamReceived = false
@@ -84,7 +84,7 @@ class DataManager {
 
         if speakersReceived
             && sessionsReceived
-            && schedueReceived
+            && scheduleReceived
             && tagsReceived
             && teamReceived
             && venuesReceived
@@ -97,7 +97,7 @@ class DataManager {
                 }
             }
 
-            NotificationCenter.default.post(name: .initialDataReceivedNotification, object: nil)
+            NotificationCenter.default.post(name: .AllDataReceived, object: nil)
             allDataReceivedNotificationSent = true
         }
     }
@@ -113,6 +113,10 @@ class DataManager {
             self.speakers = newItems
             self.speakersReceived = true
             self.notifyInitialDataReceived()
+
+            if self.allDataReceivedNotificationSent {
+                NotificationCenter.default.post(name: .SpeakersUpdated, object: nil)
+            }
         })
 
         rootRef.child("sessions").observe(.value, with: { snapshot in
@@ -124,6 +128,9 @@ class DataManager {
             self.sessions = newItems
             self.sessionsReceived = true
             self.notifyInitialDataReceived()
+            if self.allDataReceivedNotificationSent {
+                NotificationCenter.default.post(name: .SessionsUpdated, object: nil)
+            }
         })
 
         rootRef.child("schedule").observe(.value, with: { snapshot in
@@ -133,8 +140,11 @@ class DataManager {
                 newItems.append(currentDay)
             }
             self.days = newItems
-            self.schedueReceived = true
+            self.scheduleReceived = true
             self.notifyInitialDataReceived()
+            if self.allDataReceivedNotificationSent {
+                NotificationCenter.default.post(name: .ScheduleUpdated, object: nil)
+            }
         })
 
         rootRef.child("tags").observe(.value, with: { snapshot in
@@ -146,6 +156,9 @@ class DataManager {
             self.tags = newItems
             self.tagsReceived = true
             self.notifyInitialDataReceived()
+            if self.allDataReceivedNotificationSent {
+                NotificationCenter.default.post(name: .TagsUpdated, object: nil)
+            }
         })
 
         rootRef.child("partners").observe(.value, with: { snapshot in
@@ -157,6 +170,9 @@ class DataManager {
             self.partnerGroups = newItems
             self.partnerGroupsReceived = true
             self.notifyInitialDataReceived()
+            if self.allDataReceivedNotificationSent {
+                NotificationCenter.default.post(name: .PartnerUpdated, object: nil)
+            }
         })
 
         rootRef.child("team").observe(.value, with: { snapshot in
@@ -168,6 +184,9 @@ class DataManager {
             self.team = newItems
             self.teamReceived = true
             self.notifyInitialDataReceived()
+            if self.allDataReceivedNotificationSent {
+                NotificationCenter.default.post(name: .TeamUpdated, object: nil)
+            }
         })
 
         rootRef.child("venues").observe(.value, with: { snapshot in
@@ -179,6 +198,9 @@ class DataManager {
             self.venues = newItems
             self.venuesReceived = true
             self.notifyInitialDataReceived()
+            if self.allDataReceivedNotificationSent {
+                NotificationCenter.default.post(name: .VenuesUpdated, object: nil)
+            }
         })
 
         rootRef.child("resources").observe(.value, with: { snapshot in
@@ -189,17 +211,20 @@ class DataManager {
             self.resources = newItems
             self.resourcesReceived = true
             self.notifyInitialDataReceived()
+            if self.allDataReceivedNotificationSent {
+                NotificationCenter.default.post(name: .ResourcesUpdated, object: nil)
+            }
         })
     }
 
     func startMonitoringUser() {
         handle = FIRAuth.auth()?.addStateDidChangeListener() { (auth, user) in
             if (user != nil) {
-                NotificationCenter.default.post(name: .userDidSignInNotification, object: nil)
+                NotificationCenter.default.post(name: .UserDidSignIn, object: nil)
                 DataManager.sharedInstance.startObservingUserData()
             }
             else {
-                NotificationCenter.default.post(name: .userDidSignOutNotification, object: nil)
+                NotificationCenter.default.post(name: .UserDidSignOut, object: nil)
                 self.favourites = []
                 self.feedbacks = []
             }
@@ -217,7 +242,7 @@ class DataManager {
                 }
             }
             self.favourites = newItems
-            NotificationCenter.default.post(name: .favouritesUpdatedNotification, object: nil)
+            NotificationCenter.default.post(name: .FavouritesUpdated, object: nil)
         })
 
         rootRef.child(Endpoint.feedbacks.rawValue).child(userID!).observe(.value, with: { snapshot in
@@ -228,7 +253,7 @@ class DataManager {
                 newItems.append(currentFeedback)
             }
             self.feedbacks = newItems
-            NotificationCenter.default.post(name: .feebdacksUpdatedNotification, object: nil)
+            NotificationCenter.default.post(name: .FeedbacksUpdated, object: nil)
         })
     }
 

@@ -26,9 +26,12 @@ class SpeakerViewController: UIViewController {
         speakerTableView.estimatedRowHeight = speakerTableView.rowHeight
         speakerTableView.rowHeight = UITableViewAutomaticDimension
 
-        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .favouritesUpdatedNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .userDidSignInNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .userDidSignOutNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .FavouritesUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .UserDidSignIn, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .UserDidSignOut, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .SpeakersUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .TagsUpdated, object: nil)
 
         if traitCollection.forceTouchCapability == .available {
             registerForPreviewing(with: self, sourceView: speakerTableView)
@@ -62,7 +65,7 @@ class SpeakerViewController: UIViewController {
     func shareSpeaker() {
         if let text = speaker?.name, let url = URL.init(string: (speaker?.speakerURL)!) {
             let dataToShare = ["dataToShare": [ text, url ] ]
-            NotificationCenter.default.post(name: .shareItemsNotification, object: nil, userInfo: dataToShare)
+            NotificationCenter.default.post(name: .ShareItem, object: nil, userInfo: dataToShare)
         }
     }
 
@@ -124,6 +127,7 @@ extension SpeakerViewController: UITableViewDataSource {
                 return cell
             default:
                 let cell: ActionCell = tableView.dequeueReusableCell(withIdentifier: "ActionCell", for: indexPath) as! ActionCell
+                cell.actionTitle.text = "Show more"
                 return cell
             }
 
@@ -154,8 +158,6 @@ extension SpeakerViewController: UITableViewDataSource {
             return false
         }
     }
-
-
 }
 
 extension SpeakerViewController: UITableViewDelegate {
@@ -181,7 +183,6 @@ extension SpeakerViewController: UITableViewDelegate {
             }
         default:
             // do nothing here
-
             break
         }
 
@@ -235,7 +236,7 @@ extension SpeakerViewController: UIViewControllerPreviewingDelegate {
 
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         if let _ = viewControllerToCommit as? SessionViewController {
-
+            // some logic to update controller differently
         }
         show(viewControllerToCommit, sender: self)
     }

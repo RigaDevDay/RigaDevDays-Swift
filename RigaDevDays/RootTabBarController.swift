@@ -22,7 +22,7 @@ class RootTabBarController: UITabBarController {
             GIDSignIn.sharedInstance().signIn()
         }
 
-        NotificationCenter.default.addObserver(self, selector: #selector(shareItems), name: .shareItemsNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(shareItems), name: .ShareItem, object: nil)
     }
 
     func shareItems(notification: Notification) {
@@ -36,5 +36,5 @@ class RootTabBarController: UITabBarController {
 }
 
 extension RootTabBarController: GIDSignInUIDelegate {
-    //TODO:
+    // do nothing here
 }

@@ -96,6 +96,6 @@ extension AppDelegate: GIDSignInDelegate {
         //TODO: need to check when it happens
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: UserDefaultsKeys.loggedInOnce.rawValue)
-        NotificationCenter.default.post(name: .userDidSignOutNotification, object: nil)
+        NotificationCenter.default.post(name: .UserDidSignOut, object: nil)
     }
 }
