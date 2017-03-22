@@ -37,10 +37,13 @@ class SessionViewController: UIViewController {
 
         updateNavigationButtons()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(updateNavigationButtons), name: .userDidSignInNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateNavigationButtons), name: .userDidSignOutNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(favouritesChanged), name: .favouritesUpdatedNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .feebdacksUpdatedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateNavigationButtons), name: .UserDidSignIn, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateNavigationButtons), name: .UserDidSignOut, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(favouritesChanged), name: .FavouritesUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .FeedbacksUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .SpeakersUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .SessionsUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .TagsUpdated, object: nil)
     }
 
     func updateNavigationButtons() {
@@ -55,13 +58,13 @@ class SessionViewController: UIViewController {
     func shareSession() {
         if let text = session?.title, let url = URL.init(string: (session?.sessionURL)!) {
             let dataToShare = ["dataToShare": [ text, url ] ]
-            NotificationCenter.default.post(name: .shareItemsNotification, object: nil, userInfo: dataToShare)
+            NotificationCenter.default.post(name: .ShareItem, object: nil, userInfo: dataToShare)
         }
     }
 
     func toggleFavourite() {
         session?.toggleFavourite(completionBlock: { (error, reference) in
-            //            self.updateNavigationButtons()
+            // do nothing here
         })
     }
 
@@ -164,14 +167,16 @@ extension SessionViewController: UITableViewDataSource {
             return cell
         case 1:
             let cell: ActionCell = tableView.dequeueReusableCell(withIdentifier: "ReadMoreActionCell", for: indexPath) as! ActionCell
+            cell.actionTitle.text = "Show more"
             return cell
         case Section.actions.rawValue:
 
             switch indexPath.row {
             case 0:
                 let cell: ActionCell = tableView.dequeueReusableCell(withIdentifier: "ActionCell", for: indexPath) as! ActionCell
+                let properDay = (self.day != nil) ? self.day : session?.day
 
-                if SwissKnife.sharedInstance.calendarEvent(for: self.session!, on: self.day) != nil {
+                if SwissKnife.sharedInstance.calendarEvent(for: self.session!, on: properDay!) != nil {
                     cell.actionTitle.text = "Remove from Calendar"
                 } else {
                     cell.actionTitle.text = "Add to Calendar"
@@ -275,11 +280,11 @@ extension SessionViewController: UITableViewDelegate {
         case Section.actions.rawValue:
             switch indexPath.row {
             case 0:
-                if SwissKnife.sharedInstance.calendarEvent(for: self.session!, on: self.day!) != nil {
-                    SwissKnife.sharedInstance.removeFromCalendar(session: self.session!, on: self.day!)
+                let properDay = (self.day != nil) ? self.day : session?.day
+                if SwissKnife.sharedInstance.calendarEvent(for: self.session!, on: properDay!) != nil {
+                    SwissKnife.sharedInstance.removeFromCalendar(session: self.session!, on: properDay!)
                 } else {
-                    //                    SwissKnife.sharedInstance.addToCalendar(session: self.session!)
-                    SwissKnife.sharedInstance.getEventDialogFor(self.session!, on: self.day!, completion: { [weak self] (controller) in
+                    SwissKnife.sharedInstance.getEventDialogFor(self.session!, on: properDay!, completion: { [weak self] (controller) in
                         if let addEventController = controller {
                             addEventController.editViewDelegate = self
                             DispatchQueue.main.asyncAfter(deadline: .now(), execute: {

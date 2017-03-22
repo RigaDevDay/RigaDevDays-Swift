@@ -21,6 +21,10 @@ class MoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .PartnerUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .VenuesUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .ResourcesUpdated, object: nil)
+        
         moreTableView.estimatedRowHeight = moreTableView.rowHeight
         moreTableView.rowHeight = UITableViewAutomaticDimension
 
@@ -34,6 +38,10 @@ class MoreViewController: UIViewController {
         if traitCollection.forceTouchCapability == .available {
             registerForPreviewing(with: self, sourceView: moreTableView)
         }
+    }
+
+    func dataChanged() {
+        moreTableView.reloadData()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

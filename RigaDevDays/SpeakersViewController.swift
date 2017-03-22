@@ -19,9 +19,16 @@ class SpeakersViewController: UIViewController  {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .SpeakersUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .TagsUpdated, object: nil)
+
         if traitCollection.forceTouchCapability == .available {
             registerForPreviewing(with: self, sourceView: speakersTableView)
         }
+    }
+
+    func dataChanged() {
+        speakersTableView.reloadData()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -72,7 +79,7 @@ extension SpeakersViewController: UIViewControllerPreviewingDelegate {
 
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         if let SpeakerViewController = viewControllerToCommit as? SpeakerViewController {
-           let _ = SpeakerViewController.speaker?.name
+            let _ = SpeakerViewController.speaker?.name
         }
         show(viewControllerToCommit, sender: self)
     }

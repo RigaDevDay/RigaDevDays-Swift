@@ -32,6 +32,10 @@ class Day: DataObject {
         }
     }
 
+    var localizedDate: String? {
+        return dateMobileApp ?? dateReadable
+    }
+
     override init(snapshot: FIRDataSnapshot) {
 
         let snapshotValue = snapshot.value as! [String: AnyObject]
@@ -53,7 +57,7 @@ class Day: DataObject {
             tmpTimeslots.append(currentTimeslot)
         }
         timeslots = tmpTimeslots
-
+        
         super.init(snapshot: snapshot)
     }
 }

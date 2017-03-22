@@ -24,9 +24,12 @@ class FavouritesViewController: UITableViewController {
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
 
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .favouritesUpdatedNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .userDidSignInNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .userDidSignOutNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .FavouritesUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .UserDidSignIn, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .UserDidSignOut, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .SessionsUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .TagsUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .SpeakersUpdated, object: nil)
 
         reloadData()
     }

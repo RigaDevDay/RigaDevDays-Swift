@@ -27,10 +27,14 @@ class ScheduleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(updateWithNewData), name: .initialDataReceivedNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .favouritesUpdatedNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .userDidSignInNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .userDidSignOutNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateWithNewData), name: .AllDataReceived, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .FavouritesUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .UserDidSignIn, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .UserDidSignOut, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .SpeakersUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .SessionsUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateWithNewData), name: .ScheduleUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .FavouritesUpdated, object: nil)
 
         let lssb: UIStoryboard = UIStoryboard.init(name: "LaunchScreen", bundle: Bundle.main)
         if let splashCover: UIView = (lssb.instantiateInitialViewController()?.view) {
@@ -60,7 +64,7 @@ class ScheduleViewController: UIViewController {
         selectedDayFilter.removeAllSegments()
         for index in 0..<DataManager.sharedInstance.days.count {
             let day = DataManager.sharedInstance.days[index]
-            let title = day.dateMobileApp
+            let title = day.localizedDate
             selectedDayFilter.insertSegment(withTitle: title, at: index, animated: false)
         }
         selectedDayFilter.insertSegment(withTitle: "Favourites", at: DataManager.sharedInstance.days.count, animated: false)
@@ -80,8 +84,6 @@ class ScheduleViewController: UIViewController {
         }) { (finisehd) in
             self.coverView?.removeFromSuperview()
         }
-
-        // TODO: start listening changes notifications
     }
 
     func diplaySelectedSchedule() {

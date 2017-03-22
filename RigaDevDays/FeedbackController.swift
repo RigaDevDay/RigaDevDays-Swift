@@ -83,10 +83,8 @@ class FeedbackController: UITableViewController {
 
         for button in [qcButton1, qcButton2, qcButton3, qcButton4, qcButton5] {
             if (button?.tag)! <= rating {
-//                button?.setTitle("★", for: .normal)
                 button?.setImage(#imageLiteral(resourceName: "bigstar_full"), for: .normal)
             } else {
-//                button?.setTitle("☆", for: .normal)
                 button?.setImage(#imageLiteral(resourceName: "bigstar"), for: .normal)
             }
         }
@@ -97,10 +95,8 @@ class FeedbackController: UITableViewController {
 
         for button in [spButton1, spButton2, spButton3, spButton4, spButton5] {
             if (button?.tag)! <= rating {
-//                button?.setTitle("★", for: .normal)
                 button?.setImage(#imageLiteral(resourceName: "bigstar_full"), for: .normal)
             } else {
-//                button?.setTitle("☆", for: .normal)
                 button?.setImage(#imageLiteral(resourceName: "bigstar"), for: .normal)
             }
         }

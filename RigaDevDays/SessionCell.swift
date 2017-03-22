@@ -40,7 +40,7 @@ class SessionCell: UITableViewCell {
                 let room = session?.track?.title,
                 let startTime = session?.timeslot?.startTime,
                 let endTime = session?.timeslot?.endTime,
-                let date = properDay.dateMobileApp /*session?.day?.dateMobileApp */{
+                let date = properDay.localizedDate {
                 sessionRoom?.text = "\(room) - \(startTime) - \(endTime)"
                 sessionLocationAndTime?.text = "\(room) - \(startTime) - \(endTime) / \(date)"
             } else {
@@ -83,7 +83,6 @@ class SessionCell: UITableViewCell {
             }
 
             guard sessionSpeakers != nil && (session?.speakers.count)! > 0 else {
-                //TODO:
                 return
             }
 
@@ -122,9 +121,8 @@ class SessionCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         // code common to all your cells goes here
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
 }

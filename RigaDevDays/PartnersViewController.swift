@@ -16,6 +16,12 @@ class PartnersViewController: UIViewController  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .PartnerUpdated, object: nil)
+    }
+
+    func dataChanged() {
+        partnersCollectionView.reloadData()
     }
 }
 
@@ -59,14 +65,8 @@ extension PartnersViewController: UICollectionViewDelegate {
 
 extension PartnersViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
         var cellHeight = 100.0
-        switch indexPath.section {
-        case 0:
-            cellHeight = Double(collectionView.frame.size.width - 40.0) / 3.0
-        default:
-            cellHeight = Double(collectionView.frame.size.width - 30.0) / 2.0
-        }
+        cellHeight = Double(collectionView.frame.size.width - 30.0) / 2.0
         return CGSize(width: cellHeight, height: cellHeight / 5 * 2 )
     }
 }
