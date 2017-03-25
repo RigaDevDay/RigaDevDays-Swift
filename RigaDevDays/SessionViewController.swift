@@ -328,7 +328,7 @@ extension SessionViewController: UITableViewDelegate {
                 .child(sessionID)
                 .removeValue(completionBlock: { (error, reference) in
                     if (error != nil) {
-                        print("failed to remove \(error)")
+                        print("failed to remove \(String(describing: error))")
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                         tableView.reloadData()

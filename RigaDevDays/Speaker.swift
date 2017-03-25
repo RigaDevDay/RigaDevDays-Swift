@@ -26,7 +26,7 @@ class Speaker: DataObject {
 
     var speakerURL: String {
         get {
-            return "http://rigadevdays.lv/speakers/\(speakerID)"
+            return "https://rigadevdays.lv/speakers/\(String(describing: speakerID))"
         }
     }
 

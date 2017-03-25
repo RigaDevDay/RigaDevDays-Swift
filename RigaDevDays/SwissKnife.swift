@@ -231,8 +231,8 @@ class SwissKnife {
             }
             else{
                 print("granted \(granted)")
-                print("error \(error)")
-                print("failed to save event with error : \(error) or access not granted")
+                print("error \(String(describing: error))")
+                print("failed to save event with error : \(String(describing: error)) or access not granted")
                 completion(nil)
             }
         }
@@ -256,8 +256,8 @@ class SwissKnife {
             }
             else{
                 print("granted \(granted)")
-                print("error \(error)")
-                print("failed to save event with error : \(error) or access not granted")
+                print("error \(String(describing: error))")
+                print("failed to save event with error : \(String(describing: error)) or access not granted")
             }
         }
     }

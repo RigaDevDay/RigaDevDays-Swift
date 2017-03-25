@@ -55,7 +55,7 @@ class Session: DataObject {
                 let sessionIndex = sessionID else {
                     return ""
             }
-            return "http://rigadevdays.lv/schedule/day\(dayIndex+1)?sessionId=\(sessionIndex)"
+            return "https://rigadevdays.lv/schedule/day\(dayIndex+1)?sessionId=\(sessionIndex)"
         }
     }
 

@@ -128,7 +128,7 @@ class FeedbackController: UITableViewController {
             .updateChildValues([sessionID: feedback], withCompletionBlock: { (error, reference) in
 
                 if error != nil {
-                    print("failed to save feedback \(error)")
+                    print("failed to save feedback \(String(describing: error))")
                 }
 
                 self.dismiss(animated: true) {
