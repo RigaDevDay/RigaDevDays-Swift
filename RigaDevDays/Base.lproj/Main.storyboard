@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -130,7 +130,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2845" y="-802"/>
+            <point key="canvasLocation" x="3009" y="-802"/>
         </scene>
         <!--Speaker View Controller-->
         <scene sceneID="S2r-3D-7IB">
@@ -382,7 +382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fON-K9-g1q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3598" y="58"/>
+            <point key="canvasLocation" x="3845" y="58"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="wEB-ly-LIB">
@@ -459,7 +459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIu-ib-28p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2845" y="-1661"/>
+            <point key="canvasLocation" x="2996" y="-1661"/>
         </scene>
         <!--Session View Controller-->
         <scene sceneID="rj1-O0-qi7">
@@ -1326,7 +1326,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Ym-7v-Zx5" id="CRl-WD-gt2">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXb-BE-MYM">
@@ -1538,7 +1538,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add some favourites from bottom menu in Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hw5-Gj-Djg">
-                            <rect key="frame" x="20" y="55" width="295" height="41"/>
+                            <rect key="frame" x="20" y="55.000000000000007" width="295" height="40.666666666666679"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -1667,7 +1667,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVM-kV-VVY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2845" y="58"/>
+            <point key="canvasLocation" x="2974" y="58"/>
         </scene>
         <!--Speakers-->
         <scene sceneID="4h0-tS-8rd">
@@ -1675,7 +1675,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="76X-ZQ-jX1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Speakers" image="tabbar-speakers" selectedImage="tabbar-speakers-selected" id="fgk-7a-YvP"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JaT-YI-6tF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="JaT-YI-6tF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1699,7 +1699,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="58E-bR-yXp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Schedule" image="tabbar-schedule" selectedImage="tabbar-schedule-selected" id="ZWX-Fk-Uma"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SMA-Ti-xV3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SMA-Ti-xV3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1723,7 +1723,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SuJ-BJ-0lP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Sponsors" image="tabbar-sponsors" selectedImage="tabbar-sponsors-selected" id="hyK-uj-tl8"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="giy-ac-0Ei">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="giy-ac-0Ei">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -1996,7 +1996,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4p3-hl-mov" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2845" y="940"/>
+            <point key="canvasLocation" x="3042" y="940"/>
         </scene>
         <!--More-->
         <scene sceneID="yxM-Zl-sBs">
@@ -2248,7 +2248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qAa-M3-j1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2845" y="1903"/>
+            <point key="canvasLocation" x="3010" y="1903"/>
         </scene>
         <!--Venue View Controller-->
         <scene sceneID="ITN-Jj-sg2">
@@ -2304,16 +2304,16 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfm-zT-f5A">
-                                                    <rect key="frame" x="20" y="452.33333333333326" width="374" height="57.666666666666686"/>
+                                                    <rect key="frame" x="20" y="499" width="374" height="11"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Za8-f1-Yqh">
-                                                    <rect key="frame" x="20" y="304" width="374" height="140.33333333333331"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Za8-f1-Yqh">
+                                                    <rect key="frame" x="20" y="304" width="374" height="187"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="Za8-f1-Yqh" secondAttribute="height" multiplier="8:3" id="6po-a4-7Mt"/>
+                                                        <constraint firstAttribute="width" secondItem="Za8-f1-Yqh" secondAttribute="height" multiplier="8:4" id="6po-a4-7Mt"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -2396,7 +2396,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0f-Aq-lcT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3524" y="1903"/>
+            <point key="canvasLocation" x="3836" y="1903"/>
         </scene>
         <!--Search-->
         <scene sceneID="aoL-j1-hw7">
@@ -2404,7 +2404,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="swr-8Y-9So" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" image="tabbar-search" selectedImage="tabbar-search-selected" id="XM6-xt-3qq"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mD9-MZ-rbf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mD9-MZ-rbf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2428,7 +2428,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CkU-J7-6CX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="More" image="tabbar-more" selectedImage="tabbar-more-selected" id="aDT-03-ZBD"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fFA-0e-0yI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fFA-0e-0yI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2451,7 +2451,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="68S-pM-6O1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="61U-We-qs3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="61U-We-qs3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
