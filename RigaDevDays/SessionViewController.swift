@@ -15,8 +15,14 @@ class SessionViewController: UIViewController {
 
     let footerHeight: CGFloat = 20.0
 
-    fileprivate enum Section: Int {
-        case actions = 2
+    fileprivate enum TableSections: Int {
+        case MainInfo
+        case ShowMore
+        case WatchVideo
+        case AddToCalendar
+        case UserActions
+        case Feedback
+        case Map
     }
 
     @IBOutlet weak var sessionDetailsTableView: UITableView!
@@ -115,18 +121,21 @@ class SessionViewController: UIViewController {
 extension SessionViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return 7 // -> amount of Section enum
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0:
+        case TableSections.MainInfo.rawValue:
             return 1
-        case 1:
+        case TableSections.ShowMore.rawValue:
             return 0
-        case Section.actions.rawValue:
-            //actions
-            var actionsCount = 1 // add to calendar
+        case TableSections.WatchVideo.rawValue:
+            return (session?.videos.count)! > 0 ? 1 : 0
+        case TableSections.AddToCalendar.rawValue:
+            return 1
+        case TableSections.UserActions.rawValue:
+            var actionsCount = 0
 
             if FIRAuth.auth()?.currentUser?.uid != nil {
                 actionsCount += 1 // add to favourites
@@ -137,26 +146,24 @@ extension SessionViewController: UITableViewDataSource {
                     actionsCount += 1 // leave feedback
                 }
             }
-
             return actionsCount
-        case 3:
+        case TableSections.Feedback.rawValue:
             return (DataManager.sharedInstance.getFeeback(by: (session?.sessionID)!) != nil) ? 1 : 0
-        case 4:
-            return 1 // map
+        case TableSections.Map.rawValue:
+            return 1
         default:
             return 0
         }
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 4 { return "Floor plan" }
+        if section == TableSections.Map.rawValue { return "Floor plan" }
         else {return nil }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         switch indexPath.section {
-        case 0:
+        case TableSections.MainInfo.rawValue:
             var cellIdentifier = "SessionCell"
             if session?.image != nil {
                 cellIdentifier = "SessionCellWithImage"
@@ -165,24 +172,27 @@ extension SessionViewController: UITableViewDataSource {
             cell.day = self.day
             cell.session = self.session
             return cell
-        case 1:
+        case TableSections.ShowMore.rawValue:
             let cell: ActionCell = tableView.dequeueReusableCell(withIdentifier: "ReadMoreActionCell", for: indexPath) as! ActionCell
             cell.actionTitle.text = "Show more"
             return cell
-        case Section.actions.rawValue:
+        case TableSections.WatchVideo.rawValue:
+            let cell: ActionCell = tableView.dequeueReusableCell(withIdentifier: "ActionCell", for: indexPath) as! ActionCell
+            cell.actionTitle.text = "Watch Video"
+            return cell
+        case TableSections.AddToCalendar.rawValue:
+            let cell: ActionCell = tableView.dequeueReusableCell(withIdentifier: "ActionCell", for: indexPath) as! ActionCell
+            let properDay = (self.day != nil) ? self.day : session?.day
 
+            if SwissKnife.sharedInstance.calendarEvent(for: self.session!, on: properDay!) != nil {
+                cell.actionTitle.text = "Remove from Calendar"
+            } else {
+                cell.actionTitle.text = "Add to Calendar"
+            }
+            return cell
+        case TableSections.UserActions.rawValue:
             switch indexPath.row {
             case 0:
-                let cell: ActionCell = tableView.dequeueReusableCell(withIdentifier: "ActionCell", for: indexPath) as! ActionCell
-                let properDay = (self.day != nil) ? self.day : session?.day
-
-                if SwissKnife.sharedInstance.calendarEvent(for: self.session!, on: properDay!) != nil {
-                    cell.actionTitle.text = "Remove from Calendar"
-                } else {
-                    cell.actionTitle.text = "Add to Calendar"
-                }
-                return cell
-            case 1:
                 let cell: ActionCell = tableView.dequeueReusableCell(withIdentifier: "ActionCell", for: indexPath) as! ActionCell
                 if (session?.isFavourite)! {
                     cell.actionTitle.text = "Remove from Favourites"
@@ -190,7 +200,7 @@ extension SessionViewController: UITableViewDataSource {
                     cell.actionTitle.text = "Add to Favourites"
                 }
                 return cell
-            case 2:
+            case 1:
                 let cell: ActionCell = tableView.dequeueReusableCell(withIdentifier: "ActionCell", for: indexPath) as! ActionCell
                 cell.actionTitle.text = "Leave Feedback"
                 return cell
@@ -199,18 +209,19 @@ extension SessionViewController: UITableViewDataSource {
                 return cell
             }
 
-        case 3:
+        case TableSections.Feedback.rawValue:
             let cell: FeedbackCell = tableView.dequeueReusableCell(withIdentifier: "FeedbackCell", for: indexPath) as! FeedbackCell
             cell.feedback = DataManager.sharedInstance.getFeeback(by: (session?.sessionID)!)
             return cell
 
-        case 4:
+        case TableSections.Map.rawValue:
             let cell: ActionCell = tableView.dequeueReusableCell(withIdentifier: "ActionCell_Map", for: indexPath) as! ActionCell
             if let imageName = session?.track?.title,
                 let image = UIImage.init(named: imageName) {
                 cell.actionImage.image = image
             }
             return cell
+
         default:
             let cell: ActionCell = tableView.dequeueReusableCell(withIdentifier: "ActionCell", for: indexPath) as! ActionCell
             return cell
@@ -218,8 +229,7 @@ extension SessionViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-
-        if indexPath.section == 3
+        if indexPath.section == TableSections.Feedback.rawValue
             && DataManager.sharedInstance.remoteConfig["allow_delete_feedback"].boolValue {
             return true
         } else {
@@ -246,14 +256,13 @@ extension SessionViewController: UITableViewDelegate {
        let feedbackAvailable = (DataManager.sharedInstance.getFeeback(by: (session?.sessionID)!) != nil)
 
         switch section {
-        case 2:
+        case TableSections.UserActions.rawValue:
             return feedbackAvailable ? 0.0 : footerHeight
-        case 3:
+        case TableSections.Feedback.rawValue:
             return feedbackAvailable ? footerHeight : 0.0
         default:
             return 0
         }
-
     }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -261,46 +270,49 @@ extension SessionViewController: UITableViewDelegate {
         let footerView = UIView.init()
         footerView.backgroundColor = UIColor.clear
         switch section {
-        case 2:
+        case TableSections.UserActions.rawValue:
             return feedbackAvailable ? nil : footerView
-        case 3:
+        case TableSections.Feedback.rawValue:
             return feedbackAvailable ? footerView : nil
         default:
             return nil
         }
-
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         switch indexPath.section {
-        case 1:
+        case TableSections.MainInfo.rawValue:
             showFullSessionDescription = true
             tableView.reloadData()
-        case Section.actions.rawValue:
+        case TableSections.WatchVideo.rawValue:
+            if let youtubeID = session?.videos.first?.youtubeID,
+                let url = URL.init(string: "https://www.youtube.com/watch?v=\(youtubeID)") {
+                UIApplication.shared.openURL(url)
+            }
+        case TableSections.AddToCalendar.rawValue:
+            let properDay = (self.day != nil) ? self.day : session?.day
+            if SwissKnife.sharedInstance.calendarEvent(for: self.session!, on: properDay!) != nil {
+                SwissKnife.sharedInstance.removeFromCalendar(session: self.session!, on: properDay!)
+            } else {
+                SwissKnife.sharedInstance.getEventDialogFor(self.session!, on: properDay!, completion: { [weak self] (controller) in
+                    if let addEventController = controller {
+                        addEventController.editViewDelegate = self
+                        DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
+                            self?.present(addEventController, animated: true, completion: nil)
+                        })
+                    }
+                })
+            }
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                tableView.reloadData()
+            })
+
+        case TableSections.UserActions.rawValue:
             switch indexPath.row {
             case 0:
-                let properDay = (self.day != nil) ? self.day : session?.day
-                if SwissKnife.sharedInstance.calendarEvent(for: self.session!, on: properDay!) != nil {
-                    SwissKnife.sharedInstance.removeFromCalendar(session: self.session!, on: properDay!)
-                } else {
-                    SwissKnife.sharedInstance.getEventDialogFor(self.session!, on: properDay!, completion: { [weak self] (controller) in
-                        if let addEventController = controller {
-                            addEventController.editViewDelegate = self
-                            DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
-                                self?.present(addEventController, animated: true, completion: nil)
-                            })
-                        }
-                    })
-                }
-
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                    tableView.reloadData()
-                })
-
-            case 1:
                 self.toggleFavourite()
-            case 2:
+            case 1:
                 performSegue(withIdentifier: "leaveFeedback", sender: self)
             default:
                 break
@@ -311,7 +323,6 @@ extension SessionViewController: UITableViewDelegate {
 
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
 
     func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
 

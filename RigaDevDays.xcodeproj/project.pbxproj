@@ -13,6 +13,7 @@
 		BC3507E91E6B09070086A6EB /* c.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC3507E81E6B09070086A6EB /* c.plist */; };
 		BC3507EE1E6B22970086A6EB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3507ED1E6B22970086A6EB /* SearchViewController.swift */; };
 		BC3611141E5F194B0069BD6C /* SocialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3611131E5F194B0069BD6C /* SocialCell.swift */; };
+		BC5D1D891E91464D00F75607 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5D1D881E91464D00F75607 /* Video.swift */; };
 		BC62E4FE1E5B2B340038FA3B /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC62E4FD1E5B2B340038FA3B /* DayViewController.swift */; };
 		BC6583051E59BBEE00DE8D15 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC6583041E59BBEE00DE8D15 /* GoogleService-Info.plist */; };
 		BC70B9741E3E06A500F700F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9731E3E06A500F700F7 /* AppDelegate.swift */; };
@@ -80,6 +81,7 @@
 		BC3507E81E6B09070086A6EB /* c.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = c.plist; sourceTree = "<group>"; };
 		BC3507ED1E6B22970086A6EB /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BC3611131E5F194B0069BD6C /* SocialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialCell.swift; sourceTree = "<group>"; };
+		BC5D1D881E91464D00F75607 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		BC62E4FD1E5B2B340038FA3B /* DayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		BC6583041E59BBEE00DE8D15 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BC70B9701E3E06A500F700F7 /* RigaDevDays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RigaDevDays.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -266,6 +268,7 @@
 				BCCE54EF1E65EDCD002CA1E3 /* FeedbackController.swift */,
 				BC3507E41E6AD6E20086A6EB /* Feedback.swift */,
 				BC3507E61E6AF85A0086A6EB /* FeedbackCell.swift */,
+				BC5D1D881E91464D00F75607 /* Video.swift */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 			files = (
 				BCCE54F01E65EDCD002CA1E3 /* FeedbackController.swift in Sources */,
 				BC70B9BA1E3E092400F700F7 /* SpeakersViewController.swift in Sources */,
+				BC5D1D891E91464D00F75607 /* Video.swift in Sources */,
 				BC3507E51E6AD6E20086A6EB /* Feedback.swift in Sources */,
 				BC134F1F1E4D043D00D69D0F /* RootTabBarController.swift in Sources */,
 				BC70B9BC1E3E092400F700F7 /* Timeslot.swift in Sources */,

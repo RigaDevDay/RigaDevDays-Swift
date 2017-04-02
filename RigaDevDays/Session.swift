@@ -16,6 +16,7 @@ class Session: DataObject {
     let description: String?
     let image: String?
     var speakersIDs: [Int] = []
+    var videosIDs: [Int] = []
     var tags: [String] = []
     weak var track: Track?
     weak var timeslot: Timeslot?
@@ -30,6 +31,16 @@ class Session: DataObject {
             }
             return temp
         }
+    }
+
+    var videos: [Video] {
+        var temp: [Video] = []
+        for vID in self.videosIDs {
+            if let v = DataManager.sharedInstance.getVideo(by: vID) {
+                temp.append(v)
+            }
+        }
+        return temp
     }
 
     var assignedDay: Day?
@@ -108,6 +119,7 @@ class Session: DataObject {
         image = snapshotValue["image"] as? String
         sessionID = snapshotValue["id"] as? Int
         speakersIDs = snapshotValue["speakers"] as? [Int] ?? []
+        videosIDs = snapshotValue["videos"] as? [Int] ?? []
 
         for tag in snapshot.childSnapshot(forPath: "tags").children {
             if let currentTag = (tag as! FIRDataSnapshot).value as? String {

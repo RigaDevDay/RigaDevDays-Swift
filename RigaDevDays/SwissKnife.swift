@@ -38,6 +38,7 @@ extension Notification.Name {
     static let TeamUpdated = Notification.Name("rdd.team.updated")
     static let VenuesUpdated = Notification.Name("rdd.venues.updated")
     static let ResourcesUpdated = Notification.Name("rdd.resources.updated")
+    static let VideosUpdated = Notification.Name("rdd.videos.updated")
 }
 
 extension UIColor {

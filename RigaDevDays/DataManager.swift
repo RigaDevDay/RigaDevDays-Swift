@@ -33,6 +33,7 @@ class DataManager {
     var team: [Team] = []
     var venues: [Venue] = []
     var resources: [String: String] = [:]
+    var videos: [Video] = []
 
     var speakersReceived = false
     var sessionsReceived = false
@@ -42,6 +43,7 @@ class DataManager {
     var teamReceived = false
     var venuesReceived = false
     var resourcesReceived = false
+    var videosReceived = false
     var allDataReceivedNotificationSent = false
 
     fileprivate init() {
@@ -163,6 +165,13 @@ class DataManager {
             self.notifyInitialDataReceived()
             if self.allDataReceivedNotificationSent { NotificationCenter.default.post(name: .ResourcesUpdated, object: nil) }
         })
+
+        rootRef.child("videos").observe(.value, with: { snapshot in
+            self.videos = snapshot.children.map{ Video(snapshot: $0 as! FIRDataSnapshot) }
+            self.videosReceived = true
+            self.notifyInitialDataReceived()
+            if self.allDataReceivedNotificationSent { NotificationCenter.default.post(name: .VideosUpdated, object: nil) }
+        })
     }
 
     func startMonitoringUser() {
@@ -246,4 +255,9 @@ class DataManager {
             return include
         }
     }
+
+    func getVideo(by videoID: Int) -> Video? {
+        return self.videos.filter{ $0.videoID == videoID }.first ?? nil
+    }
+
 }
