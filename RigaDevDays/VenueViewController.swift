@@ -37,6 +37,9 @@ class VenueViewController: UITableViewController {
         venueMap?.layer.cornerRadius = 10.0
         venueMap?.layer.masksToBounds = true
 
+        venueImage?.layer.cornerRadius = 10.0
+        venueImage?.layer.masksToBounds = true
+
         presentVenue(venue!)
     }
 
