@@ -37,6 +37,9 @@ class VenueViewController: UITableViewController {
         venueMap?.layer.cornerRadius = 10.0
         venueMap?.layer.masksToBounds = true
 
+        venueImage?.layer.cornerRadius = 10.0
+        venueImage?.layer.masksToBounds = true
+
         presentVenue(venue!)
     }
 
@@ -58,7 +61,7 @@ class VenueViewController: UITableViewController {
             venueMap.addAnnotation(point)
         }
 
-        if let url = URL(string: venue.imageUrl!) {
+        if let url = URL(string: DataManager.sharedInstance.customImageURLPrefix + venue.imageUrl!) {
             venueImage?.kf.indicatorType = .activity
             venueImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
         }

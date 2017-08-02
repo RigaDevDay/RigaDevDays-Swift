@@ -38,6 +38,7 @@ extension Notification.Name {
     static let TeamUpdated = Notification.Name("rdd.team.updated")
     static let VenuesUpdated = Notification.Name("rdd.venues.updated")
     static let ResourcesUpdated = Notification.Name("rdd.resources.updated")
+    static let VideosUpdated = Notification.Name("rdd.videos.updated")
 }
 
 extension UIColor {
@@ -231,8 +232,8 @@ class SwissKnife {
             }
             else{
                 print("granted \(granted)")
-                print("error \(error)")
-                print("failed to save event with error : \(error) or access not granted")
+                print("error \(String(describing: error))")
+                print("failed to save event with error : \(String(describing: error)) or access not granted")
                 completion(nil)
             }
         }
@@ -256,8 +257,8 @@ class SwissKnife {
             }
             else{
                 print("granted \(granted)")
-                print("error \(error)")
-                print("failed to save event with error : \(error) or access not granted")
+                print("error \(String(describing: error))")
+                print("failed to save event with error : \(String(describing: error)) or access not granted")
             }
         }
     }

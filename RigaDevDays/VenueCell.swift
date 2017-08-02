@@ -16,18 +16,26 @@ class VenueCell: UITableViewCell {
     @IBOutlet weak var venueTitle: UILabel!
     @IBOutlet weak var venueAddress: UILabel!
     @IBOutlet weak var separatorLineHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var venueImage: UIImageView!
 
     var venue: Venue? {
         didSet {
             venueName?.text = venue?.name
             venueTitle?.text = venue?.title
             venueAddress?.text = venue?.address
+
+            if let url = URL(string: DataManager.sharedInstance.customImageURLPrefix + (venue?.imageUrl!)!) {
+                venueImage?.kf.indicatorType = .activity
+                venueImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
+            }
         }
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        venueImage?.layer.cornerRadius = 10.0
+        venueImage?.layer.masksToBounds = true
         separatorLineHeightConstraint?.constant = 0.5
     }
 
