@@ -135,7 +135,7 @@ class FavouritesViewController: UITableViewController {
                     // do nothing
                 })
             }
-            toggleFavourite.backgroundColor = .rddDefaultColor
+            toggleFavourite.backgroundColor = Config.sharedInstance.themePrimaryColor
         }
         return [toggleFavourite]
     }

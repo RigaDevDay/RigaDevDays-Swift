@@ -17,8 +17,6 @@ enum Endpoint: String {
 class DataManager {
     static let sharedInstance = DataManager()
 
-    let customImageURLPrefix = "https://rigadevdays.lv"
-
     let rootRef: FIRDatabaseReference!
     var handle: FIRAuthStateDidChangeListenerHandle?
     let remoteConfig: FIRRemoteConfig!

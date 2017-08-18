@@ -51,7 +51,7 @@ class SessionCell: UITableViewCell {
             colorCodeView?.backgroundColor = session?.color
             sessionDescription?.setHTMLFromString(htmlText: (session?.description)!)
 
-            if let photoURL = session?.speakers.first?.photoURL, let url = URL(string: DataManager.sharedInstance.customImageURLPrefix + photoURL) {
+            if let photoURL = session?.speakers.first?.photoURL, let url = URL(string: Config.sharedInstance.customImageURLPrefix + photoURL) {
                 imageBackground?.isHidden = false
                 speakerImageHeightConstraint?.constant = speakerImage.frame.size.width
                 speakerImage?.kf.indicatorType = .activity
@@ -61,7 +61,7 @@ class SessionCell: UITableViewCell {
                 imageBackground?.isHidden = true
             }
 
-            if let sessionImageURL = session?.image, let url = URL(string: DataManager.sharedInstance.customImageURLPrefix + sessionImageURL) {
+            if let sessionImageURL = session?.image, let url = URL(string: Config.sharedInstance.customImageURLPrefix + sessionImageURL) {
                 sessionImage?.kf.indicatorType = .activity
                 sessionImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
             }

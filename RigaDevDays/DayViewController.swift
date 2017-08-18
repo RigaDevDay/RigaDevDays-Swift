@@ -98,7 +98,7 @@ class DayViewController: UITableViewController {
                         tableView.reloadRows(at: [editActionsForRowAt], with: .automatic)
                     })
                 }
-                toggleFavourite.backgroundColor = .rddDefaultColor
+                toggleFavourite.backgroundColor = Config.sharedInstance.themePrimaryColor
             }
             
             return [toggleFavourite]

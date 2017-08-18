@@ -26,7 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DataManager.sharedInstance.startObservingPublicData()
         DataManager.sharedInstance.startMonitoringUser()
 
-        window?.tintColor = UIColor.rddDefaultColor
+        // global UI configuration
+        window?.tintColor = Config.sharedInstance.themePrimaryColor
+        UINavigationBar.appearance().barTintColor = Config.sharedInstance.themePrimaryColor
+        UISegmentedControl.appearance().tintColor = Config.sharedInstance.themesecondaryColor
 
         return true
     }

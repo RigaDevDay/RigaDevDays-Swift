@@ -42,13 +42,6 @@ extension Notification.Name {
 }
 
 extension UIColor {
-    public class var rddDefaultColor: UIColor {
-        return #colorLiteral(red: 0, green: 0.6509803922, blue: 0.9254901961, alpha: 1) // 00a6ec
-    }
-
-    public class var rddDarkBlue: UIColor {
-        return #colorLiteral(red: 0.09019607843, green: 0.2274509804, blue: 0.337254902, alpha: 1) // 173a56
-    }
 
     static public func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
