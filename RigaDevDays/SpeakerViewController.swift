@@ -213,7 +213,7 @@ extension SpeakerViewController: UITableViewDelegate {
                     tableView.reloadRows(at: [editActionsForRowAt], with: .automatic)
                 })
             }
-            toggleFavourite.backgroundColor = .rddDefaultColor
+            toggleFavourite.backgroundColor = Config.sharedInstance.themePrimaryColor
         }
 
         return [toggleFavourite]
