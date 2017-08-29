@@ -61,7 +61,7 @@ class FeedbackController: UITableViewController {
 
         sessionName.text = session.title
 
-        if let photoURL = session.speakers.first?.photoURL, let url = URL(string: Config.sharedInstance.customImageURLPrefix + photoURL) {
+        if let photoURL = session.speakers.first?.photoURL, let url = URL(string: Config.sharedInstance.baseURLPrefix + photoURL) {
             speakerImage?.kf.indicatorType = .activity
             speakerImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
         }

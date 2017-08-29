@@ -26,7 +26,8 @@ class Speaker: DataObject {
 
     var speakerURL: String {
         get {
-            return "https://rigadevdays.lv/speakers/\(String(describing: speakerID))"
+
+            return "\(Config.sharedInstance.baseURLPrefix)/speakers/\(String(describing: speakerID))"
         }
     }
 

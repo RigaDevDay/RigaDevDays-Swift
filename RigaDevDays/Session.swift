@@ -66,7 +66,7 @@ class Session: DataObject {
                 let sessionIndex = sessionID else {
                     return ""
             }
-            return "https://rigadevdays.lv/schedule/day\(dayIndex+1)?sessionId=\(sessionIndex)"
+            return "\(Config.sharedInstance.baseURLPrefix)/schedule/day\(dayIndex+1)?sessionId=\(sessionIndex)"
         }
     }
 

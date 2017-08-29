@@ -11,7 +11,7 @@ import UIKit
 
 class Config {
 
-    let customImageURLPrefix = "https://rigadevdays.lv"
+    let baseURLPrefix = "https://rigadevdays.lv"
 
     let themePrimaryColor = #colorLiteral(red: 0, green: 0.6509803922, blue: 0.9254901961, alpha: 1) // 00a6ec
     let themesecondaryColor = #colorLiteral(red: 0.09019607843, green: 0.2274509804, blue: 0.337254902, alpha: 1) // 173a56
