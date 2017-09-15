@@ -174,7 +174,7 @@ extension SearchViewController: UITableViewDataSource {
 
         switch indexPath.section {
         case 1:
-            if (FIRAuth.auth()?.currentUser?.uid) != nil {
+            if (Auth.auth().currentUser?.uid) != nil {
                 return true
             } else {
                 return false

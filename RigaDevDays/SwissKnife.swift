@@ -77,7 +77,8 @@ extension UILabel {
 
         let attrStr = try! NSAttributedString(
             data: modifiedFont.data(using: .unicode, allowLossyConversion: true)!,
-            options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue],
+            options: [.documentType: NSAttributedString.DocumentType.html,
+                      .characterEncoding: String.Encoding.utf8.rawValue],
             documentAttributes: nil)
 
         self.attributedText = attrStr
@@ -88,7 +89,7 @@ extension UIViewController {
 
     func displaySessionButton(_ visible: Bool) {
         var sessionButton: UIBarButtonItem
-        if FIRAuth.auth()?.currentUser != nil {
+        if Auth.auth().currentUser != nil {
             sessionButton = UIBarButtonItem.init(title: "Sign Out", style: .plain, target: self, action: #selector(signOutButtonPressed))
         } else {
             sessionButton = UIBarButtonItem.init(title: "Sign In", style: .plain, target: self, action: #selector(signInButtonPressed))
@@ -100,15 +101,15 @@ extension UIViewController {
         }
     }
 
-    func signInButtonPressed() {
+    @objc func signInButtonPressed() {
         GIDSignIn.sharedInstance().signIn()
     }
 
-    func signOutButtonPressed() {
+    @objc func signOutButtonPressed() {
 
-        let firebaseAuth = FIRAuth.auth()
+        let firebaseAuth = Auth.auth()
         do {
-            try firebaseAuth?.signOut()
+            try firebaseAuth.signOut()
 
             GIDSignIn.sharedInstance().signOut()
 
@@ -144,7 +145,7 @@ class TagColorManager {
                     let resultColor = UIColor.hexStringToUIColor(hex: tagColor)
                     let singleTagWithColor = withDots ? NSMutableAttributedString(string: "● \(tagTitle)") : NSMutableAttributedString(string: tagTitle)
                     let offset = withDots ? 2 : 0
-                    singleTagWithColor.setAttributes([NSForegroundColorAttributeName : resultColor], range: NSRange(location:0, length:tagTitle.characters.count + offset))
+                    singleTagWithColor.setAttributes([NSAttributedStringKey.foregroundColor : resultColor], range: NSRange(location:0, length:tagTitle.characters.count + offset))
                     allTags.append(singleTagWithColor)
                     allTags.append(NSMutableAttributedString(string: " "))
 
@@ -168,7 +169,7 @@ class TagColorManager {
                     if let tagColor = DataManager.sharedInstance.getTag(by: tagTitle)?.colorCode {
                         let resultColor = UIColor.hexStringToUIColor(hex: tagColor)
                         let singleTagWithColor = NSMutableAttributedString(string: "● \(tagTitle)")
-                        singleTagWithColor.setAttributes([NSForegroundColorAttributeName : resultColor], range: NSRange(location:0, length:tagTitle.characters.count + 2))
+                        singleTagWithColor.setAttributes([NSAttributedStringKey.foregroundColor : resultColor], range: NSRange(location:0, length:tagTitle.characters.count + 2))
                         allTags.append(singleTagWithColor)
                         allTags.append(NSMutableAttributedString(string: "  "))
                     }
@@ -201,7 +202,8 @@ class SwissKnife {
 
         let attrStr = try! NSAttributedString(
             data: (session.description?.data(using: .unicode, allowLossyConversion: true)!)!,
-            options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue],
+            options: [.documentType: NSAttributedString.DocumentType.html,
+                      .characterEncoding: String.Encoding.utf8.rawValue],
             documentAttributes: nil)
         notes.append("\n\n" + attrStr.string)
         notes.append("\n\n" + session.sessionURL)

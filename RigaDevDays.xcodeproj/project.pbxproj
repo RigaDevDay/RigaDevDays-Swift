@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A76426AA54EAF531F7323051 /* Pods_DevFest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739AAD9B1AC331960BB8EF08 /* Pods_DevFest.framework */; };
 		BC134F1F1E4D043D00D69D0F /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC134F1E1E4D043D00D69D0F /* RootTabBarController.swift */; };
 		BC3507E51E6AD6E20086A6EB /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3507E41E6AD6E20086A6EB /* Feedback.swift */; };
 		BC3507E71E6AF85A0086A6EB /* FeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3507E61E6AF85A0086A6EB /* FeedbackCell.swift */; };
@@ -90,11 +91,9 @@
 		BCE775921F45F96500158EED /* PartnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD3063E1E5246C500C71F69 /* PartnersViewController.swift */; };
 		BCE775931F45F96500158EED /* DataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9A41E3E092400F700F7 /* DataObject.swift */; };
 		BCE775941F45F96500158EED /* SpeakerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9AB1E3E092400F700F7 /* SpeakerCell.swift */; };
-		BCE775961F45F96500158EED /* Pods_RigaDevDays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C02340EF12A256BC9E469B5 /* Pods_RigaDevDays.framework */; };
 		BCE775981F45F96500158EED /* c.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC3507E81E6B09070086A6EB /* c.plist */; };
 		BCE7759A1F45F96500158EED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC6583041E59BBEE00DE8D15 /* GoogleService-Info.plist */; };
 		BCE7759C1F45F96500158EED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC70B9791E3E06A500F700F7 /* Main.storyboard */; };
-		BCE775A91F45F9AE00158EED /* DevFest-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCE775A81F45F9AE00158EED /* DevFest-Info.plist */; };
 		BCE775AB1F45FE4000158EED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCE775AA1F45FE4000158EED /* GoogleService-Info.plist */; };
 		BCE775AD1F45FEAA00158EED /* DevFest.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE775AC1F45FEAA00158EED /* DevFest.xcassets */; };
 		BCE775AF1F45FEE800158EED /* RigaDevDays.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE775AE1F45FEE800158EED /* RigaDevDays.xcassets */; };
@@ -133,6 +132,9 @@
 		1B5BC00BE474F7CC9CF4B439 /* Pods-RigaDevDays.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RigaDevDays.release.xcconfig"; path = "Pods/Target Support Files/Pods-RigaDevDays/Pods-RigaDevDays.release.xcconfig"; sourceTree = "<group>"; };
 		2C9F1E6D6A072A5794A839E3 /* Pods-RigaDevDays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RigaDevDays.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RigaDevDays/Pods-RigaDevDays.debug.xcconfig"; sourceTree = "<group>"; };
 		5C02340EF12A256BC9E469B5 /* Pods_RigaDevDays.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RigaDevDays.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ECEFC257BF8327593E5990D /* Pods-DevFest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevFest.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevFest/Pods-DevFest.release.xcconfig"; sourceTree = "<group>"; };
+		70E6CB3826B10D052B2D0BEC /* Pods-DevFest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevFest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevFest/Pods-DevFest.debug.xcconfig"; sourceTree = "<group>"; };
+		739AAD9B1AC331960BB8EF08 /* Pods_DevFest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevFest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC134F1E1E4D043D00D69D0F /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		BC3507E41E6AD6E20086A6EB /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 		BC3507E61E6AF85A0086A6EB /* FeedbackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackCell.swift; sourceTree = "<group>"; };
@@ -232,7 +234,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCE775961F45F96500158EED /* Pods_RigaDevDays.framework in Frameworks */,
+				A76426AA54EAF531F7323051 /* Pods_DevFest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +246,8 @@
 			children = (
 				2C9F1E6D6A072A5794A839E3 /* Pods-RigaDevDays.debug.xcconfig */,
 				1B5BC00BE474F7CC9CF4B439 /* Pods-RigaDevDays.release.xcconfig */,
+				70E6CB3826B10D052B2D0BEC /* Pods-DevFest.debug.xcconfig */,
+				5ECEFC257BF8327593E5990D /* Pods-DevFest.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -427,6 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				5C02340EF12A256BC9E469B5 /* Pods_RigaDevDays.framework */,
+				739AAD9B1AC331960BB8EF08 /* Pods_DevFest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -537,12 +542,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = RigaDevDays;
 				TargetAttributes = {
 					BC70B96F1E3E06A500F700F7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 2TYL4297NU;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -552,11 +558,13 @@
 					};
 					BC70B9851E3E06A600F700F7 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = BC70B96F1E3E06A500F700F7;
 					};
 					BC70B9901E3E06A600F700F7 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = BC70B96F1E3E06A500F700F7;
 					};
@@ -567,6 +575,7 @@
 					};
 					BCE7756D1F45F96500158EED = {
 						DevelopmentTeam = 2TYL4297NU;
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -632,7 +641,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCE775B21F45FF3800158EED /* LaunchScreen.storyboard in Resources */,
-				BCE775A91F45F9AE00158EED /* DevFest-Info.plist in Resources */,
 				BCE775981F45F96500158EED /* c.plist in Resources */,
 				BCE7759A1F45F96500158EED /* GoogleService-Info.plist in Resources */,
 				BCE7759C1F45F96500158EED /* Main.storyboard in Resources */,
@@ -674,6 +682,9 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -681,6 +692,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -713,7 +727,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RigaDevDays-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-DevFest-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -726,11 +740,14 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RigaDevDays/Pods-RigaDevDays-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-DevFest/Pods-DevFest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -738,10 +755,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RigaDevDays/Pods-RigaDevDays-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DevFest/Pods-DevFest-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BCE7759E1F45F96500158EED /* [CP] Copy Pods Resources */ = {
@@ -750,7 +770,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RigaDevDays/Pods-RigaDevDays-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-DevFest/Pods-DevFest-resources.sh",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -759,7 +779,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RigaDevDays/Pods-RigaDevDays-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DevFest/Pods-DevFest-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BCE7759F1F45F96500158EED /* Set build number */ = {
@@ -962,7 +982,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -970,7 +992,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1012,7 +1038,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1020,7 +1048,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1057,7 +1089,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.dmi3j.rdd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1073,7 +1105,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.dmi3j.rdd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1087,7 +1119,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.dmi3j.RigaDevDaysTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RigaDevDays.app/RigaDevDays";
 			};
 			name = Debug;
@@ -1101,7 +1133,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.dmi3j.RigaDevDaysTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RigaDevDays.app/RigaDevDays";
 			};
 			name = Release;
@@ -1114,7 +1146,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.dmi3j.RigaDevDaysUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = RigaDevDays;
 			};
 			name = Debug;
@@ -1127,7 +1159,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.dmi3j.RigaDevDaysUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = RigaDevDays;
 			};
 			name = Release;
@@ -1186,7 +1218,7 @@
 		};
 		BCE775A11F45F96500158EED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C9F1E6D6A072A5794A839E3 /* Pods-RigaDevDays.debug.xcconfig */;
+			baseConfigurationReference = 70E6CB3826B10D052B2D0BEC /* Pods-DevFest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RigaDevDays/RigaDevDays.entitlements;
@@ -1195,14 +1227,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.dmi3j.devfest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		BCE775A21F45F96500158EED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B5BC00BE474F7CC9CF4B439 /* Pods-RigaDevDays.release.xcconfig */;
+			baseConfigurationReference = 5ECEFC257BF8327593E5990D /* Pods-DevFest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RigaDevDays/RigaDevDays.entitlements;
@@ -1211,7 +1243,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.dmi3j.devfest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

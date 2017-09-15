@@ -112,7 +112,7 @@ class FeedbackController: UITableViewController {
 
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
 
-        guard let userID = FIRAuth.auth()?.currentUser?.uid,
+        guard let userID = Auth.auth().currentUser?.uid,
             let sessionID = session?.sessionID?.description
             else {
                 return

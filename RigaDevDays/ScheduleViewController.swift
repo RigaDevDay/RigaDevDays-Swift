@@ -60,7 +60,7 @@ class ScheduleViewController: UIViewController {
         }
     }
 
-    func updateWithNewData() {
+    @objc func updateWithNewData() {
         selectedDayFilter.removeAllSegments()
         for index in 0..<DataManager.sharedInstance.days.count {
             let day = DataManager.sharedInstance.days[index]
@@ -93,7 +93,7 @@ class ScheduleViewController: UIViewController {
         }
     }
 
-    func dataChanged() {
+    @objc func dataChanged() {
         diplaySelectedSchedule()
 
         if DataManager.sharedInstance.days.count > 0

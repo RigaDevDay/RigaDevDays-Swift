@@ -40,7 +40,7 @@ class MoreViewController: UIViewController {
         }
     }
 
-    func dataChanged() {
+    @objc func dataChanged() {
         moreTableView.reloadData()
     }
 

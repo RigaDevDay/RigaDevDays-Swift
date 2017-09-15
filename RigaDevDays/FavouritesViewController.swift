@@ -54,12 +54,12 @@ class FavouritesViewController: UITableViewController {
         GIDSignIn.sharedInstance().signIn()
     }
 
-    func reloadData() {
+    @objc func reloadData() {
 
         signInView.removeFromSuperview()
         emptyView.removeFromSuperview()
 
-        if FIRAuth.auth()?.currentUser != nil {
+        if Auth.auth().currentUser != nil {
             reloadFavourites()
         } else {
             tableView.addSubview(signInView)

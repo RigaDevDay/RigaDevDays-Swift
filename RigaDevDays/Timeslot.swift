@@ -31,7 +31,7 @@ class Timeslot: DataObject {
         }
     }
 
-    init(snapshot: FIRDataSnapshot, dayTracks: [Track]) {
+    init(snapshot: DataSnapshot, dayTracks: [Track]) {
 
         let snapshotValue = snapshot.value as! [String: AnyObject]
 
@@ -40,7 +40,7 @@ class Timeslot: DataObject {
         tracks = dayTracks
 
         for timeslotSnapshot in snapshot.childSnapshot(forPath: "sessions").children {
-            let tmpsessionIDs = (timeslotSnapshot as! FIRDataSnapshot).value as! [Int]
+            let tmpsessionIDs = (timeslotSnapshot as! DataSnapshot).value as! [Int]
             if let firstItem = tmpsessionIDs.first {
                 sessionIDs.append(firstItem)
             }

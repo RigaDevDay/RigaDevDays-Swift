@@ -26,7 +26,7 @@ class SpeakersViewController: UIViewController  {
         }
     }
 
-    func dataChanged() {
+    @objc func dataChanged() {
         speakersTableView.reloadData()
     }
 

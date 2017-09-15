@@ -17,9 +17,9 @@ enum Endpoint: String {
 class DataManager {
     static let sharedInstance = DataManager()
 
-    let rootRef: FIRDatabaseReference!
-    var handle: FIRAuthStateDidChangeListenerHandle?
-    let remoteConfig: FIRRemoteConfig!
+    let rootRef: DatabaseReference!
+    var handle: AuthStateDidChangeListenerHandle?
+    let remoteConfig: RemoteConfig!
 
     var days: [Day] = []
     var sessions: [Session] = []
@@ -46,8 +46,8 @@ class DataManager {
 
     fileprivate init() {
         //This prevents others from using the default '()' initializer
-        rootRef = FIRDatabase.database().reference()
-        remoteConfig = FIRRemoteConfig.remoteConfig()
+        rootRef = Database.database().reference()
+        remoteConfig = RemoteConfig.remoteConfig()
 
         activeRemoteConfiguration()
     }
@@ -59,9 +59,9 @@ class DataManager {
             developerMode = true
         #endif
 
-        let remoteConfigSettings = FIRRemoteConfigSettings(developerModeEnabled: developerMode)
+        let remoteConfigSettings = RemoteConfigSettings(developerModeEnabled: developerMode)
         remoteConfig.configSettings = remoteConfigSettings!
-        remoteConfig.setDefaultsFromPlistFileName("c")
+        remoteConfig.setDefaults(fromPlist: "c")
 
         var expirationDuration = 3600 // 1 hour
         #if DEBUG
@@ -105,49 +105,49 @@ class DataManager {
     func startObservingPublicData() {
 
         rootRef.child("speakers").observe(.value, with: { snapshot in
-            self.speakers = snapshot.children.map{ Speaker(snapshot: $0 as! FIRDataSnapshot) }
+            self.speakers = snapshot.children.map{ Speaker(snapshot: $0 as! DataSnapshot) }
             self.speakersReceived = true
             self.notifyInitialDataReceived()
             if self.allDataReceivedNotificationSent { NotificationCenter.default.post(name: .SpeakersUpdated, object: nil) }
         })
 
         rootRef.child("sessions").observe(.value, with: { snapshot in
-            self.sessions = snapshot.children.map{ Session(snapshot: $0 as! FIRDataSnapshot) }
+            self.sessions = snapshot.children.map{ Session(snapshot: $0 as! DataSnapshot) }
             self.sessionsReceived = true
             self.notifyInitialDataReceived()
             if self.allDataReceivedNotificationSent { NotificationCenter.default.post(name: .SessionsUpdated, object: nil) }
         })
 
         rootRef.child("schedule").observe(.value, with: { snapshot in
-            self.days = snapshot.children.map{ Day(snapshot: $0 as! FIRDataSnapshot) }
+            self.days = snapshot.children.map{ Day(snapshot: $0 as! DataSnapshot) }
             self.scheduleReceived = true
             self.notifyInitialDataReceived()
             if self.allDataReceivedNotificationSent { NotificationCenter.default.post(name: .ScheduleUpdated, object: nil) }
         })
 
         rootRef.child("tags").observe(.value, with: { snapshot in
-            self.tags = snapshot.children.map{ Tag(snapshot: $0 as! FIRDataSnapshot) }
+            self.tags = snapshot.children.map{ Tag(snapshot: $0 as! DataSnapshot) }
             self.tagsReceived = true
             self.notifyInitialDataReceived()
             if self.allDataReceivedNotificationSent { NotificationCenter.default.post(name: .TagsUpdated, object: nil) }
         })
 
         rootRef.child("partners").observe(.value, with: { snapshot in
-            self.partnerGroups = snapshot.children.map{ PartnerGroup(snapshot: $0 as! FIRDataSnapshot) }
+            self.partnerGroups = snapshot.children.map{ PartnerGroup(snapshot: $0 as! DataSnapshot) }
             self.partnerGroupsReceived = true
             self.notifyInitialDataReceived()
             if self.allDataReceivedNotificationSent { NotificationCenter.default.post(name: .PartnerUpdated, object: nil) }
         })
 
         rootRef.child("team").observe(.value, with: { snapshot in
-            self.team = snapshot.children.map{ Team(snapshot: $0 as! FIRDataSnapshot) }
+            self.team = snapshot.children.map{ Team(snapshot: $0 as! DataSnapshot) }
             self.teamReceived = true
             self.notifyInitialDataReceived()
             if self.allDataReceivedNotificationSent { NotificationCenter.default.post(name: .TeamUpdated, object: nil) }
         })
 
         rootRef.child("venues").observe(.value, with: { snapshot in
-            self.venues = snapshot.children.map{ Venue(snapshot: $0 as! FIRDataSnapshot) }
+            self.venues = snapshot.children.map{ Venue(snapshot: $0 as! DataSnapshot) }
             self.venuesReceived = true
             self.notifyInitialDataReceived()
             if self.allDataReceivedNotificationSent { NotificationCenter.default.post(name: .VenuesUpdated, object: nil) }
@@ -156,7 +156,7 @@ class DataManager {
         rootRef.child("resources").observe(.value, with: { snapshot in
             var newItems: [String: String] = [:]
             for resourceSnapshot in snapshot.children {
-                newItems[(resourceSnapshot as! FIRDataSnapshot).key] = (resourceSnapshot as! FIRDataSnapshot).value as! String?
+                newItems[(resourceSnapshot as! DataSnapshot).key] = (resourceSnapshot as! DataSnapshot).value as! String?
             }
             self.resources = newItems
             self.resourcesReceived = true
@@ -165,7 +165,7 @@ class DataManager {
         })
 
         rootRef.child("videos").observe(.value, with: { snapshot in
-            self.videos = snapshot.children.map{ Video(snapshot: $0 as! FIRDataSnapshot) }
+            self.videos = snapshot.children.map{ Video(snapshot: $0 as! DataSnapshot) }
             self.videosReceived = true
             self.notifyInitialDataReceived()
             if self.allDataReceivedNotificationSent { NotificationCenter.default.post(name: .VideosUpdated, object: nil) }
@@ -173,7 +173,7 @@ class DataManager {
     }
 
     func startMonitoringUser() {
-        handle = FIRAuth.auth()?.addStateDidChangeListener() { (auth, user) in
+        handle = Auth.auth().addStateDidChangeListener() { (auth, user) in
             if (user != nil) {
                 NotificationCenter.default.post(name: .UserDidSignIn, object: nil)
                 DataManager.sharedInstance.startObservingUserData()
@@ -188,17 +188,17 @@ class DataManager {
 
     func startObservingUserData() {
 
-        let userID = FIRAuth.auth()?.currentUser?.uid
+        let userID = Auth.auth().currentUser?.uid
         rootRef.child(Endpoint.favourites.rawValue).child(userID!).observe(.value, with: { snapshot in
-            self.favourites = snapshot.children.map{ Int(($0 as! FIRDataSnapshot).key)! }
+            self.favourites = snapshot.children.map{ Int(($0 as! DataSnapshot).key)! }
             NotificationCenter.default.post(name: .FavouritesUpdated, object: nil)
         })
 
         rootRef.child(Endpoint.feedbacks.rawValue).child(userID!).observe(.value, with: { snapshot in
             var newItems: [Feedback] = []
             for feedbackSnapshot in snapshot.children {
-                let currentFeedback = Feedback(snapshot: feedbackSnapshot as! FIRDataSnapshot)
-                currentFeedback.sessionID = Int((feedbackSnapshot as! FIRDataSnapshot).key)
+                let currentFeedback = Feedback(snapshot: feedbackSnapshot as! DataSnapshot)
+                currentFeedback.sessionID = Int((feedbackSnapshot as! DataSnapshot).key)
                 newItems.append(currentFeedback)
             }
             self.feedbacks = newItems

@@ -31,12 +31,12 @@ class Speaker: DataObject {
         }
     }
 
-    override init(snapshot: FIRDataSnapshot) {
+    override init(snapshot: DataSnapshot) {
 
         let snapshotValue = snapshot.value as! [String: AnyObject]
 
         for badgeSnapshot in snapshot.childSnapshot(forPath: "badges").children {
-            let currentBadge = Badge(snapshot: badgeSnapshot as! FIRDataSnapshot)
+            let currentBadge = Badge(snapshot: badgeSnapshot as! DataSnapshot)
             badges.append(currentBadge)
         }
         bio = snapshotValue["bio"] as? String
@@ -49,12 +49,12 @@ class Speaker: DataObject {
         shortBio = snapshotValue["shortBio"] as? String
 
         for socialSnapshot in snapshot.childSnapshot(forPath: "socials").children {
-            let currentSocial = Social(snapshot: socialSnapshot as! FIRDataSnapshot)
+            let currentSocial = Social(snapshot: socialSnapshot as! DataSnapshot)
             socials.append(currentSocial)
         }
 
         for tag in snapshot.childSnapshot(forPath: "tags").children {
-            if let currentTag = (tag as! FIRDataSnapshot).value as? String {
+            if let currentTag = (tag as! DataSnapshot).value as? String {
                 tags.append(currentTag)
             }
         }

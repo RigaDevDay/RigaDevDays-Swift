@@ -13,7 +13,7 @@ class Track: DataObject {
 
     let title: String?
 
-    override init(snapshot: FIRDataSnapshot) {
+    override init(snapshot: DataSnapshot) {
 
         let snapshotValue = snapshot.value as! [String: AnyObject]
 

@@ -14,7 +14,7 @@ class Team: DataObject {
     let title: String?
     var members: [Speaker] = []
 
-    override init(snapshot: FIRDataSnapshot) {
+    override init(snapshot: DataSnapshot) {
 
         let snapshotValue = snapshot.value as! [String: AnyObject]
 
@@ -22,7 +22,7 @@ class Team: DataObject {
 
         var tmpMembers: [Speaker] = []
         for memberSnapshot in snapshot.childSnapshot(forPath: "members").children {
-            let currentMember = Speaker(snapshot: memberSnapshot as! FIRDataSnapshot)
+            let currentMember = Speaker(snapshot: memberSnapshot as! DataSnapshot)
             tmpMembers.append(currentMember)
         }
         members = tmpMembers
