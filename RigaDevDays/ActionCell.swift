@@ -20,6 +20,7 @@ class ActionCell: UITableViewCell {
         super.awakeFromNib()
 
         separatorLineHeightConstraint?.constant = 0.5
+        actionTitle?.textColor = Config.sharedInstance.themePrimaryColor
     }
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {

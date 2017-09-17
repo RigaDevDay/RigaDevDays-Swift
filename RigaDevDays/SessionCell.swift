@@ -114,6 +114,9 @@ class SessionCell: UITableViewCell {
 
         separatorLineHeightConstraint?.constant = 0.5
 
+        favouriteSignLabel?.textColor = Config.sharedInstance.themePrimaryColor
+        sessionSpeakerName?.textColor = Config.sharedInstance.themePrimaryColor
+
         sessionSpeakers?.text = nil
     }
 

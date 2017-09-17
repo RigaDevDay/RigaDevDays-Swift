@@ -121,7 +121,7 @@ class SessionViewController: UIViewController {
 extension SessionViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 7 // -> amount of Section enum
+        return Config.sharedInstance.numberOfSectionsInSessionScreen // -> amount of Section enum
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
