@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 import EventKitUI
+import GoogleSignIn
 
 class SessionViewController: UIViewController {
 
@@ -137,7 +138,7 @@ extension SessionViewController: UITableViewDataSource {
         case TableSections.UserActions.rawValue:
             var actionsCount = 0
 
-            if Auth.auth().currentUser?.uid != nil {
+//            if Auth.auth().currentUser?.uid != nil {
                 actionsCount += 1 // add to favourites
                 if (session?.speakers.count)! > 0
                     && DataManager.sharedInstance.getFeeback(by: (session?.sessionID)!) == nil
@@ -145,7 +146,7 @@ extension SessionViewController: UITableViewDataSource {
                 {
                     actionsCount += 1 // leave feedback
                 }
-            }
+//            }
             return actionsCount
         case TableSections.Feedback.rawValue:
             return (DataManager.sharedInstance.getFeeback(by: (session?.sessionID)!) != nil) ? 1 : 0
@@ -311,9 +312,18 @@ extension SessionViewController: UITableViewDelegate {
         case TableSections.UserActions.rawValue:
             switch indexPath.row {
             case 0:
-                self.toggleFavourite()
+
+                if Auth.auth().currentUser?.uid != nil {
+                    self.toggleFavourite()
+                } else {
+                    GIDSignIn.sharedInstance().signIn()
+                }
             case 1:
+                if Auth.auth().currentUser?.uid != nil {
                 performSegue(withIdentifier: "leaveFeedback", sender: self)
+                } else {
+                    GIDSignIn.sharedInstance().signIn()
+                }
             default:
                 break
             }

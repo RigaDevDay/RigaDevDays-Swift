@@ -1926,7 +1926,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dx-we-fkn">
                                                     <rect key="frame" x="20" y="60" width="335" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                    <color key="textColor" red="0.090196078430000007" green="0.2274509804" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1937,9 +1937,6 @@
                                                 <constraint firstAttribute="bottom" secondItem="9dx-we-fkn" secondAttribute="bottom" constant="20" symbolic="YES" id="bLH-Fi-rDN"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="actionTitle" destination="9dx-we-fkn" id="UJk-Uf-CIr"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActionCell_SearchSample" id="ngP-A7-Fae" customClass="ActionCell" customModule="DevFest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="328" width="375" height="100"/>
@@ -2495,7 +2492,7 @@
         <image name="tabbar-sponsors-selected" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ucB-2L-dgn"/>
-        <segue reference="cho-Xb-FKy"/>
+        <segue reference="W9j-9R-BGY"/>
+        <segue reference="sUn-w4-7Uh"/>
     </inferredMetricsTieBreakers>
 </document>

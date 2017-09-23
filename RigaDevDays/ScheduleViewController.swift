@@ -117,16 +117,22 @@ class ScheduleViewController: UIViewController {
         if segue.identifier == "embeddedFavourites" {
             self.embeddedFavouritesViewController = segue.destination as? FavouritesViewController
 
-            var topOffset = UIApplication.shared.statusBarFrame.height
-            if let navBar = self.navigationController?.navigationBar {
-                topOffset += navBar.frame.height
+            let adjustForTabbarInsets: UIEdgeInsets
+            if #available(iOS 11.0, *) {
+                adjustForTabbarInsets = UIEdgeInsetsMake(self.filterPlaceholderView.frame.height, 0, 0, 0);
+            } else {
+                var topOffset = UIApplication.shared.statusBarFrame.height
+                if let navBar = self.navigationController?.navigationBar {
+                    topOffset += navBar.frame.height
+                }
+                topOffset += self.filterPlaceholderView.frame.height
+                var bottomOffset: CGFloat = 0.0
+                if let tabBar = self.tabBarController?.tabBar {
+                    bottomOffset += tabBar.frame.height
+                }
+                adjustForTabbarInsets = UIEdgeInsetsMake(topOffset, 0, bottomOffset, 0);
             }
-            topOffset += self.filterPlaceholderView.frame.height
-            var bottomOffset: CGFloat = 0.0
-            if let tabBar = self.tabBarController?.tabBar {
-                bottomOffset += tabBar.frame.height
-            }
-            let adjustForTabbarInsets: UIEdgeInsets = UIEdgeInsetsMake(topOffset, 0, bottomOffset, 0);
+
             //Where tableview is the IBOutlet for your storyboard tableview.
             self.embeddedFavouritesViewController?.tableView.contentInset = adjustForTabbarInsets;
             self.embeddedFavouritesViewController?.tableView.scrollIndicatorInsets = adjustForTabbarInsets;
