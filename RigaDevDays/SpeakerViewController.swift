@@ -48,7 +48,7 @@ class SpeakerViewController: UIViewController {
         }
     }
 
-    func dataChanged() {
+    @objc func dataChanged() {
         speakerTableView.reloadData()
     }
 
@@ -62,7 +62,7 @@ class SpeakerViewController: UIViewController {
         navigationItem.rightBarButtonItems = rightBarButtonItems
     }
 
-    func shareSpeaker() {
+    @objc func shareSpeaker() {
         if let text = speaker?.name, let url = URL.init(string: (speaker?.speakerURL)!) {
             let dataToShare = ["dataToShare": [ text, url ] ]
             NotificationCenter.default.post(name: .ShareItem, object: nil, userInfo: dataToShare)
@@ -149,7 +149,7 @@ extension SpeakerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
 
         if indexPath.section == 1 {
-            if (FIRAuth.auth()?.currentUser?.uid) != nil {
+            if (Auth.auth().currentUser?.uid) != nil {
                 return true
             } else {
                 return false

@@ -36,7 +36,7 @@ class Day: DataObject {
         return dateMobileApp ?? dateReadable
     }
 
-    override init(snapshot: FIRDataSnapshot) {
+    override init(snapshot: DataSnapshot) {
 
         let snapshotValue = snapshot.value as! [String: AnyObject]
 
@@ -46,14 +46,14 @@ class Day: DataObject {
 
         var tmpTracks: [Track] = []
         for trackSnapshot in snapshot.childSnapshot(forPath: "tracks").children {
-            let currentTrack = Track(snapshot: trackSnapshot as! FIRDataSnapshot)
+            let currentTrack = Track(snapshot: trackSnapshot as! DataSnapshot)
             tmpTracks.append(currentTrack)
         }
         tracks = tmpTracks
 
         var tmpTimeslots: [Timeslot] = []
         for timeslotSnapshot in snapshot.childSnapshot(forPath: "timeslots").children {
-            let currentTimeslot = Timeslot(snapshot: timeslotSnapshot as! FIRDataSnapshot, dayTracks: tmpTracks)
+            let currentTimeslot = Timeslot(snapshot: timeslotSnapshot as! DataSnapshot, dayTracks: tmpTracks)
             tmpTimeslots.append(currentTimeslot)
         }
         timeslots = tmpTimeslots

@@ -61,7 +61,7 @@ class DayViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
 
-        if (FIRAuth.auth()?.currentUser?.uid) != nil {
+        if (Auth.auth().currentUser?.uid) != nil {
             return true
         } else {
             return false

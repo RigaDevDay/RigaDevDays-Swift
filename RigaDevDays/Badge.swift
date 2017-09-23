@@ -15,7 +15,7 @@ class Badge: DataObject {
     let link: String?
     let name: String?
 
-    override init(snapshot: FIRDataSnapshot) {
+    override init(snapshot: DataSnapshot) {
 
         let snapshotValue = snapshot.value as! [String: AnyObject]
 

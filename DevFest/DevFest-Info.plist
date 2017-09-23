@@ -37,7 +37,7 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>rigadevdays.lv</key>
+			<key>devfest.gdg.lv</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
@@ -47,9 +47,9 @@
 		</dict>
 	</dict>
 	<key>NSCalendarsUsageDescription</key>
-	<string>RigaDevDays would like to create a calendar event.</string>
+	<string>DevFest would like to create a calendar event.</string>
 	<key>NSContactsUsageDescription</key>
-	<string>RigaDevDays would like to create a calendar event.</string>
+	<string>DevFest would like to create a calendar event.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

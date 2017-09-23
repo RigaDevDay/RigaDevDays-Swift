@@ -21,11 +21,11 @@ class SearchViewController: UIViewController {
     var selectedSession: Session?
     var selectedSpeaker: Speaker?
 
-    var searchProposals: [String] {
-        get {
-            return ["Oracle", "Kotlin", "Mobile", "Internet of Things", "UI", "Big Data", "John Doe"]
-        }
-    }
+//    var searchProposals: [String] {
+//        get {
+//            return ["Oracle", "Kotlin", "Mobile", "Internet of Things", "UI", "Big Data", "John Doe"]
+//        }
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,7 +131,7 @@ extension SearchViewController: UITableViewDataSource {
         case 2:
             return resultsAreDisplayed ? 0 : 1
         case 3:
-            return resultsAreDisplayed ? 0 : searchProposals.count
+            return resultsAreDisplayed ? 0 : Config.sharedInstance.searchProposals.count
 
         default:
             return 0
@@ -165,7 +165,7 @@ extension SearchViewController: UITableViewDataSource {
             return cell
         default:
             let cell: ActionCell = tableView.dequeueReusableCell(withIdentifier: "ActionCell_SearchSample", for: indexPath) as! ActionCell
-            cell.actionTitle.text = searchProposals[indexPath.row]
+            cell.actionTitle.text = Config.sharedInstance.searchProposals[indexPath.row]
             return cell
         }
     }
@@ -174,7 +174,7 @@ extension SearchViewController: UITableViewDataSource {
 
         switch indexPath.section {
         case 1:
-            if (FIRAuth.auth()?.currentUser?.uid) != nil {
+            if (Auth.auth().currentUser?.uid) != nil {
                 return true
             } else {
                 return false

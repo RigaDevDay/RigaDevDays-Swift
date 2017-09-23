@@ -25,7 +25,7 @@ class RootTabBarController: UITabBarController {
         NotificationCenter.default.addObserver(self, selector: #selector(shareItems), name: .ShareItem, object: nil)
     }
 
-    func shareItems(notification: Notification) {
+    @objc func shareItems(notification: Notification) {
         if let userInfo = notification.userInfo {
             let itemsToShare = userInfo["dataToShare"] as! [Any]
             let activityViewController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
