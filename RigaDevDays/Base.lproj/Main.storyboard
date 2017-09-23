@@ -410,7 +410,7 @@
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cT7-5r-DPL">
-                                <rect key="frame" x="0.0" y="68" width="375" height="34"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="34"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qJb-Fp-uqb">
                                         <rect key="frame" x="5" y="3" width="365" height="29"/>
@@ -1627,12 +1627,12 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="PartnerHeaderView" id="0sR-te-Kz8" customClass="PartnerHeaderView" customModule="DevFest" customModuleProvider="target">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PartnerHeaderView" id="0sR-te-Kz8" customClass="PartnerHeaderView" customModule="DevFest" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgc-dZ-Sox">
-                                            <rect key="frame" x="20" y="15" width="560" height="21"/>
+                                            <rect key="frame" x="20" y="15" width="335" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -1752,14 +1752,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="c5A-f9-Z88">
-                                <rect key="frame" x="0.0" y="68" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="05F-n7-RUH" id="yIL-qe-qSp"/>
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="txW-D1-0jG">
-                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SessionCell" id="24F-za-RXw" customClass="SessionCell" customModule="DevFest" customModuleProvider="target">
@@ -2009,7 +2009,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1u3-Nm-X0Y">
-                                <rect key="frame" x="5" y="71" width="365" height="29"/>
+                                <rect key="frame" x="5" y="67" width="365" height="29"/>
                                 <segments>
                                     <segment title="Team"/>
                                     <segment title="Venues"/>
@@ -2020,7 +2020,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5xj-Sn-XFx">
-                                <rect key="frame" x="0.0" y="107" width="375" height="511"/>
+                                <rect key="frame" x="0.0" y="103" width="375" height="515"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActionCell_Header" rowHeight="230" id="GE9-Ib-5ud" customClass="ActionCell" customModule="DevFest" customModuleProvider="target">
@@ -2244,13 +2244,16 @@
                             <constraint firstItem="1u3-Nm-X0Y" firstAttribute="top" secondItem="8p3-0T-Auw" secondAttribute="bottom" constant="3" id="Mt0-Mk-USv"/>
                             <constraint firstAttribute="trailing" secondItem="1u3-Nm-X0Y" secondAttribute="trailing" constant="5" id="RiY-WM-eWG"/>
                             <constraint firstItem="1u3-Nm-X0Y" firstAttribute="leading" secondItem="1Az-qg-b9D" secondAttribute="leading" constant="5" id="VK7-ms-sHv"/>
-                            <constraint firstItem="5xj-Sn-XFx" firstAttribute="top" secondItem="1u3-Nm-X0Y" secondAttribute="bottom" constant="8" symbolic="YES" id="cmH-GB-eay"/>
+                            <constraint firstItem="5xj-Sn-XFx" firstAttribute="top" secondItem="1u3-Nm-X0Y" secondAttribute="bottom" priority="999" constant="8" symbolic="YES" id="cmH-GB-eay"/>
+                            <constraint firstItem="5xj-Sn-XFx" firstAttribute="top" secondItem="8p3-0T-Auw" secondAttribute="bottom" priority="250" id="mOL-33-SgD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="More" id="n4E-BU-z1G"/>
                     <connections>
                         <outlet property="moreTableView" destination="5xj-Sn-XFx" id="5Uq-Tx-Sgg"/>
                         <outlet property="segmentedControl" destination="1u3-Nm-X0Y" id="EBZ-th-tqN"/>
+                        <outlet property="tableToSegmentConstraint" destination="cmH-GB-eay" id="CFD-cl-K9m"/>
+                        <outlet property="tableToTopConstraint" destination="mOL-33-SgD" id="mR7-5e-kFE"/>
                         <segue destination="MHx-Ol-g8l" kind="show" identifier="showVenue" id="zbH-Ka-T1Q"/>
                     </connections>
                 </viewController>
@@ -2458,7 +2461,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="68S-pM-6O1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="61U-We-qs3">
-                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.0" green="0.65098039220000004" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2492,7 +2495,7 @@
         <image name="tabbar-sponsors-selected" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dng-Ux-ofi"/>
+        <segue reference="ucB-2L-dgn"/>
         <segue reference="cho-Xb-FKy"/>
     </inferredMetricsTieBreakers>
 </document>
