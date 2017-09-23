@@ -13,8 +13,8 @@ class Config {
 
     let baseURLPrefix = "https://devfest.gdg.lv"
     
-    let themePrimaryColor = #colorLiteral(red: 0.3960784314, green: 0.1215686275, blue: 1, alpha: 1) // 651fff
-    let themesecondaryColor = #colorLiteral(red: 1, green: 0.5411764706, blue: 0.5019607843, alpha: 1) // ff8a80
+    let themePrimaryColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1) // 5130f2
+    let themesecondaryColor = #colorLiteral(red: 0.6332716942, green: 0.4842528701, blue: 1, alpha: 1) // 8f5fff
 
     let searchProposals: [String] = ["Mobile", "Kotlin", "Swift", "Firebase", "John Doe"]
 

@@ -14,12 +14,30 @@ class MoreViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var moreTableView: UITableView!
 
+    @IBOutlet weak var tableToSegmentConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableToTopConstraint: NSLayoutConstraint!
+
     var teamDisplayed = true
     var showFullDescription = true
     var selectedVenue: Venue?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.segmentedControl.removeAllSegments()
+        self.segmentedControl.insertSegment(withTitle: "Team", at: 0, animated: false)
+        if DataManager.sharedInstance.venues.count > 1 {
+            self.segmentedControl.isHidden = false
+            self.tableToSegmentConstraint.priority = .init(999.0)
+            self.tableToTopConstraint.priority = .defaultLow
+            self.segmentedControl.insertSegment(withTitle: "Venues", at: 1, animated: false)
+            self.segmentedControl.selectedSegmentIndex = 0
+        } else {
+            self.segmentedControl.isHidden = true
+            self.tableToSegmentConstraint.priority = .defaultLow
+            self.tableToTopConstraint.priority = .init(999.0)
+            self.segmentedControl.removeSegment(at: 1, animated: false)
+        }
 
         NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .PartnerUpdated, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .VenuesUpdated, object: nil)
@@ -38,6 +56,10 @@ class MoreViewController: UIViewController {
         if traitCollection.forceTouchCapability == .available {
             registerForPreviewing(with: self, sourceView: moreTableView)
         }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+
     }
 
     @objc func dataChanged() {
