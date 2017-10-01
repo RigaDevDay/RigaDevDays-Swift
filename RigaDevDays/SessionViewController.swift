@@ -138,15 +138,14 @@ extension SessionViewController: UITableViewDataSource {
         case TableSections.UserActions.rawValue:
             var actionsCount = 0
 
-//            if Auth.auth().currentUser?.uid != nil {
-                actionsCount += 1 // add to favourites
-                if (session?.speakers.count)! > 0
-                    && DataManager.sharedInstance.getFeeback(by: (session?.sessionID)!) == nil
-                    && DataManager.sharedInstance.remoteConfig["allow_leave_feedback"].boolValue
-                {
-                    actionsCount += 1 // leave feedback
-                }
-//            }
+            actionsCount += 1 // add to favourites
+            if (session?.speakers.count)! > 0
+                && DataManager.sharedInstance.getFeeback(by: (session?.sessionID)!) == nil
+                && DataManager.sharedInstance.remoteConfig["allow_leave_feedback"].boolValue
+            {
+                actionsCount += 1 // leave feedback
+            }
+
             return actionsCount
         case TableSections.Feedback.rawValue:
             return (DataManager.sharedInstance.getFeeback(by: (session?.sessionID)!) != nil) ? 1 : 0
@@ -298,6 +297,8 @@ extension SessionViewController: UITableViewDelegate {
                 SwissKnife.sharedInstance.getEventDialogFor(self.session!, on: properDay!, completion: { [weak self] (controller) in
                     if let addEventController = controller {
                         addEventController.editViewDelegate = self
+                        addEventController.navigationBar.tintColor = .white
+                        addEventController.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
                         DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
                             self?.present(addEventController, animated: true, completion: nil)
                         })
