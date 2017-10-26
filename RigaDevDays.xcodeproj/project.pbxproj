@@ -92,7 +92,6 @@
 		BCE775931F45F96500158EED /* DataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9A41E3E092400F700F7 /* DataObject.swift */; };
 		BCE775941F45F96500158EED /* SpeakerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9AB1E3E092400F700F7 /* SpeakerCell.swift */; };
 		BCE775981F45F96500158EED /* c.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC3507E81E6B09070086A6EB /* c.plist */; };
-		BCE7759A1F45F96500158EED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC6583041E59BBEE00DE8D15 /* GoogleService-Info.plist */; };
 		BCE7759C1F45F96500158EED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC70B9791E3E06A500F700F7 /* Main.storyboard */; };
 		BCE775AB1F45FE4000158EED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCE775AA1F45FE4000158EED /* GoogleService-Info.plist */; };
 		BCE775AD1F45FEAA00158EED /* DevFest.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE775AC1F45FEAA00158EED /* DevFest.xcassets */; };
@@ -642,7 +641,6 @@
 			files = (
 				BCE775B21F45FF3800158EED /* LaunchScreen.storyboard in Resources */,
 				BCE775981F45F96500158EED /* c.plist in Resources */,
-				BCE7759A1F45F96500158EED /* GoogleService-Info.plist in Resources */,
 				BCE7759C1F45F96500158EED /* Main.storyboard in Resources */,
 				BCE775AD1F45FEAA00158EED /* DevFest.xcassets in Resources */,
 				BCE775B01F45FF0800158EED /* Assets.xcassets in Resources */,

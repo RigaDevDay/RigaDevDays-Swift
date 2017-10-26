@@ -21,12 +21,6 @@ class SearchViewController: UIViewController {
     var selectedSession: Session?
     var selectedSpeaker: Speaker?
 
-//    var searchProposals: [String] {
-//        get {
-//            return ["Oracle", "Kotlin", "Mobile", "Internet of Things", "UI", "Big Data", "John Doe"]
-//        }
-//    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -70,7 +64,6 @@ class SearchViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.searchTableView.reloadData()
         })
-
     }
 }
 
@@ -273,5 +266,11 @@ extension SearchViewController: UIViewControllerPreviewingDelegate {
             print(sessionViewController.title ?? "session")
             show(viewControllerToCommit, sender: self)
         }
+    }
+}
+
+extension SearchViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        searchBar.resignFirstResponder()
     }
 }
