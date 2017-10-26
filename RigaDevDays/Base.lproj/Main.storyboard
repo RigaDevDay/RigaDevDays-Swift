@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -2170,6 +2170,7 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XHr-bK-txt">
                                                     <rect key="frame" x="20" y="20" width="120" height="80"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" secondItem="XHr-bK-txt" secondAttribute="height" multiplier="3:2" id="Wys-xS-KMR"/>
                                                         <constraint firstAttribute="width" constant="120" id="cr6-rC-VSk"/>
                                                     </constraints>
                                                 </imageView>
