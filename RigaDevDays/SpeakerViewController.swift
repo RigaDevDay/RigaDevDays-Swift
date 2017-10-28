@@ -225,6 +225,9 @@ extension SpeakerViewController: UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         guard let indexPath = speakerTableView.indexPathForRow(at: location) else { return nil }
 
+        if indexPath.section != 1 { // no preview for non-session cells
+            return nil
+        }
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SessionViewController_ID")
         guard let sessionViewController = viewController as? SessionViewController else { return nil }
 
