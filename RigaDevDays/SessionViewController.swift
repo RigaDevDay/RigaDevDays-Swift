@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 import EventKitUI
+import GoogleSignIn
 
 class SessionViewController: UIViewController {
 
@@ -52,7 +53,7 @@ class SessionViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .TagsUpdated, object: nil)
     }
 
-    func updateNavigationButtons() {
+    @objc func updateNavigationButtons() {
 
         var rightBarButtonItems: [UIBarButtonItem] = []
         let shareButton = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: #selector(shareSession))
@@ -61,7 +62,7 @@ class SessionViewController: UIViewController {
         navigationItem.rightBarButtonItems = rightBarButtonItems
     }
 
-    func shareSession() {
+    @objc func shareSession() {
         if let text = session?.title, let url = URL.init(string: (session?.sessionURL)!) {
             let dataToShare = ["dataToShare": [ text, url ] ]
             NotificationCenter.default.post(name: .ShareItem, object: nil, userInfo: dataToShare)
@@ -74,11 +75,11 @@ class SessionViewController: UIViewController {
         })
     }
 
-    func dataChanged() {
+    @objc func dataChanged() {
         sessionDetailsTableView.reloadData()
     }
 
-    func favouritesChanged(_ notification: Notification) {
+    @objc func favouritesChanged(_ notification: Notification) {
         sessionDetailsTableView.reloadData()
     }
 
@@ -100,7 +101,7 @@ class SessionViewController: UIViewController {
         }
         actions.append(shareAction)
 
-        if FIRAuth.auth()?.currentUser?.uid != nil {
+        if Auth.auth().currentUser?.uid != nil {
             if (session?.isFavourite)! {
 
                 let removeFromFavourites = UIPreviewAction(title: "Remove from Favourites", style: .default) { (action: UIPreviewAction, viewController: UIViewController) -> Void in
@@ -121,7 +122,7 @@ class SessionViewController: UIViewController {
 extension SessionViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 7 // -> amount of Section enum
+        return Config.sharedInstance.numberOfSectionsInSessionScreen // -> amount of Section enum
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -137,15 +138,14 @@ extension SessionViewController: UITableViewDataSource {
         case TableSections.UserActions.rawValue:
             var actionsCount = 0
 
-            if FIRAuth.auth()?.currentUser?.uid != nil {
-                actionsCount += 1 // add to favourites
-                if (session?.speakers.count)! > 0
-                    && DataManager.sharedInstance.getFeeback(by: (session?.sessionID)!) == nil
-                    && DataManager.sharedInstance.remoteConfig["allow_leave_feedback"].boolValue
-                {
-                    actionsCount += 1 // leave feedback
-                }
+            actionsCount += 1 // add to favourites
+            if (session?.speakers.count)! > 0
+                && DataManager.sharedInstance.getFeeback(by: (session?.sessionID)!) == nil
+                && DataManager.sharedInstance.remoteConfig["allow_leave_feedback"].boolValue
+            {
+                actionsCount += 1 // leave feedback
             }
+
             return actionsCount
         case TableSections.Feedback.rawValue:
             return (DataManager.sharedInstance.getFeeback(by: (session?.sessionID)!) != nil) ? 1 : 0
@@ -297,6 +297,8 @@ extension SessionViewController: UITableViewDelegate {
                 SwissKnife.sharedInstance.getEventDialogFor(self.session!, on: properDay!, completion: { [weak self] (controller) in
                     if let addEventController = controller {
                         addEventController.editViewDelegate = self
+                        addEventController.navigationBar.tintColor = .white
+                        addEventController.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
                         DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
                             self?.present(addEventController, animated: true, completion: nil)
                         })
@@ -311,9 +313,18 @@ extension SessionViewController: UITableViewDelegate {
         case TableSections.UserActions.rawValue:
             switch indexPath.row {
             case 0:
-                self.toggleFavourite()
+
+                if Auth.auth().currentUser?.uid != nil {
+                    self.toggleFavourite()
+                } else {
+                    GIDSignIn.sharedInstance().signIn()
+                }
             case 1:
+                if Auth.auth().currentUser?.uid != nil {
                 performSegue(withIdentifier: "leaveFeedback", sender: self)
+                } else {
+                    GIDSignIn.sharedInstance().signIn()
+                }
             default:
                 break
             }
@@ -328,7 +339,7 @@ extension SessionViewController: UITableViewDelegate {
 
         let removeFeedback = UITableViewRowAction(style: .normal, title: "Remove") { action, index in
 
-            guard let userID = FIRAuth.auth()?.currentUser?.uid,
+            guard let userID = Auth.auth().currentUser?.uid,
                 let sessionID = self.session?.sessionID?.description else {
                     return
             }

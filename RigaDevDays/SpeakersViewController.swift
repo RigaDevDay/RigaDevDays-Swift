@@ -17,7 +17,6 @@ class SpeakersViewController: UIViewController  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
 
         NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .SpeakersUpdated, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .TagsUpdated, object: nil)
@@ -27,7 +26,7 @@ class SpeakersViewController: UIViewController  {
         }
     }
 
-    func dataChanged() {
+    @objc func dataChanged() {
         speakersTableView.reloadData()
     }
 

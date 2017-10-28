@@ -1,3 +1,4 @@
+platform :ios, '9.0'
 inhibit_all_warnings!
 use_frameworks!
 
@@ -11,6 +12,10 @@ def common_pods
 end
 
 target 'RigaDevDays' do
+    common_pods
+end
+
+target 'DevFest' do
     common_pods
 end
 

@@ -61,7 +61,7 @@ class DayViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
 
-        if (FIRAuth.auth()?.currentUser?.uid) != nil {
+        if (Auth.auth().currentUser?.uid) != nil {
             return true
         } else {
             return false
@@ -87,7 +87,8 @@ class DayViewController: UITableViewController {
 
                 toggleFavourite = UITableViewRowAction(style: .normal, title: " ★ Remove") { action, index in
                     session.toggleFavourite(completionBlock: { (error, reference) in
-                        tableView.reloadRows(at: [editActionsForRowAt], with: .automatic)
+//                        tableView.reloadRows(at: [editActionsForRowAt], with: .fade)
+                        tableView.reloadData()
                     })
                 }
                 toggleFavourite.backgroundColor = .orange
@@ -95,10 +96,11 @@ class DayViewController: UITableViewController {
             } else {
                 toggleFavourite = UITableViewRowAction(style: .normal, title: " ★ Add") { action, index in
                     session.toggleFavourite(completionBlock: { (error, reference) in
-                        tableView.reloadRows(at: [editActionsForRowAt], with: .automatic)
+//                        tableView.reloadRows(at: [editActionsForRowAt], with: .fade)
+                        tableView.reloadData()
                     })
                 }
-                toggleFavourite.backgroundColor = .rddDefaultColor
+                toggleFavourite.backgroundColor = Config.sharedInstance.themePrimaryColor
             }
             
             return [toggleFavourite]

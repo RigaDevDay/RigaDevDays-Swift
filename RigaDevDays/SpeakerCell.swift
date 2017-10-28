@@ -33,7 +33,7 @@ class SpeakerCell: UITableViewCell {
             speakerTags?.attributedText = TagColorManager.sharedInstance.getTags(for: speaker!)
             speakerTagsWithDots?.attributedText = TagColorManager.sharedInstance.getTags(for: speaker!, withDots: true)
 
-            if let url = URL(string: DataManager.sharedInstance.customImageURLPrefix + (speaker?.photoURL)!) {
+            if let url = URL(string: Config.sharedInstance.baseURLPrefix + (speaker?.photoURL)!) {
                 speakerIcon?.kf.indicatorType = .activity
                 speakerIcon?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
             }

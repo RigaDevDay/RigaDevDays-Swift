@@ -66,7 +66,7 @@ class Session: DataObject {
                 let sessionIndex = sessionID else {
                     return ""
             }
-            return "https://rigadevdays.lv/schedule/day\(dayIndex+1)?sessionId=\(sessionIndex)"
+            return "\(Config.sharedInstance.baseURLPrefix)/schedule/day\(dayIndex+1)?sessionId=\(sessionIndex)"
         }
     }
 
@@ -111,7 +111,7 @@ class Session: DataObject {
         }
     }
 
-    override init(snapshot: FIRDataSnapshot) {
+    override init(snapshot: DataSnapshot) {
         let snapshotValue = snapshot.value as! [String: AnyObject]
 
         title = snapshotValue["title"] as? String
@@ -122,7 +122,7 @@ class Session: DataObject {
         videosIDs = snapshotValue["videos"] as? [Int] ?? []
 
         for tag in snapshot.childSnapshot(forPath: "tags").children {
-            if let currentTag = (tag as! FIRDataSnapshot).value as? String {
+            if let currentTag = (tag as! DataSnapshot).value as? String {
                 tags.append(currentTag)
             }
         }
@@ -133,9 +133,9 @@ class Session: DataObject {
 
 extension Session {
 
-    func toggleFavourite(completionBlock block: @escaping (Error?, FIRDatabaseReference) -> Void) {
+    func toggleFavourite(completionBlock block: @escaping (Error?, DatabaseReference) -> Void) {
 
-        guard let userID = FIRAuth.auth()?.currentUser?.uid,
+        guard let userID = Auth.auth().currentUser?.uid,
             let sessionID = self.sessionID else {
                 block(CustomError.noUser, self.ref!)
                 return

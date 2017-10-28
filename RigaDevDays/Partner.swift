@@ -16,7 +16,7 @@ class Partner: DataObject {
     var name: String?
     var url: String?
 
-    override init(snapshot: FIRDataSnapshot) {
+    override init(snapshot: DataSnapshot) {
 
         let snapshotValue = snapshot.value as! [String: AnyObject]
 

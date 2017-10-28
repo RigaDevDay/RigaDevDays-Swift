@@ -61,7 +61,7 @@ class FeedbackController: UITableViewController {
 
         sessionName.text = session.title
 
-        if let photoURL = session.speakers.first?.photoURL, let url = URL(string: DataManager.sharedInstance.customImageURLPrefix + photoURL) {
+        if let photoURL = session.speakers.first?.photoURL, let url = URL(string: Config.sharedInstance.baseURLPrefix + photoURL) {
             speakerImage?.kf.indicatorType = .activity
             speakerImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
         }
@@ -112,7 +112,7 @@ class FeedbackController: UITableViewController {
 
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
 
-        guard let userID = FIRAuth.auth()?.currentUser?.uid,
+        guard let userID = Auth.auth().currentUser?.uid,
             let sessionID = session?.sessionID?.description
             else {
                 return

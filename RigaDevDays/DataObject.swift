@@ -10,10 +10,10 @@ import Foundation
 import Firebase
 
 class DataObject {
-    let ref: FIRDatabaseReference?
+    let ref: DatabaseReference?
     let key: String
 
-    init(snapshot: FIRDataSnapshot) {
+    init(snapshot: DataSnapshot) {
         ref = snapshot.ref
         key = snapshot.key
     }
