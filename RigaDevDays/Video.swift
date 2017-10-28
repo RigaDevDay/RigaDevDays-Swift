@@ -17,7 +17,7 @@ class Video: DataObject {
     let title: String?
     let youtubeID: String?
 
-    override init(snapshot: FIRDataSnapshot) {
+    override init(snapshot: DataSnapshot) {
         let snapshotValue = snapshot.value as! [String: AnyObject]
 
         videoID = Int(snapshot.key)

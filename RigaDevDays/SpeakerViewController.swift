@@ -48,7 +48,7 @@ class SpeakerViewController: UIViewController {
         }
     }
 
-    func dataChanged() {
+    @objc func dataChanged() {
         speakerTableView.reloadData()
     }
 
@@ -62,7 +62,7 @@ class SpeakerViewController: UIViewController {
         navigationItem.rightBarButtonItems = rightBarButtonItems
     }
 
-    func shareSpeaker() {
+    @objc func shareSpeaker() {
         if let text = speaker?.name, let url = URL.init(string: (speaker?.speakerURL)!) {
             let dataToShare = ["dataToShare": [ text, url ] ]
             NotificationCenter.default.post(name: .ShareItem, object: nil, userInfo: dataToShare)
@@ -149,7 +149,7 @@ extension SpeakerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
 
         if indexPath.section == 1 {
-            if (FIRAuth.auth()?.currentUser?.uid) != nil {
+            if (Auth.auth().currentUser?.uid) != nil {
                 return true
             } else {
                 return false
@@ -213,7 +213,7 @@ extension SpeakerViewController: UITableViewDelegate {
                     tableView.reloadRows(at: [editActionsForRowAt], with: .automatic)
                 })
             }
-            toggleFavourite.backgroundColor = .rddDefaultColor
+            toggleFavourite.backgroundColor = Config.sharedInstance.themePrimaryColor
         }
 
         return [toggleFavourite]
@@ -225,6 +225,9 @@ extension SpeakerViewController: UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         guard let indexPath = speakerTableView.indexPathForRow(at: location) else { return nil }
 
+        if indexPath.section != 1 { // no preview for non-session cells
+            return nil
+        }
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SessionViewController_ID")
         guard let sessionViewController = viewController as? SessionViewController else { return nil }
 

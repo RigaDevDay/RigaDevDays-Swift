@@ -14,14 +14,14 @@ class PartnerGroup: DataObject {
     var partners: [Partner] = []
     let title: String?
 
-    override init(snapshot: FIRDataSnapshot) {
+    override init(snapshot: DataSnapshot) {
 
         let snapshotValue = snapshot.value as! [String: AnyObject]
 
         title = snapshotValue["title"] as? String
         
         for partnerSnapshot in snapshot.childSnapshot(forPath: "logos").children {
-            let currentPartner = Partner(snapshot: partnerSnapshot as! FIRDataSnapshot)
+            let currentPartner = Partner(snapshot: partnerSnapshot as! DataSnapshot)
             partners.append(currentPartner)
         }
 

@@ -17,16 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        FIRApp.configure()
-        FIRDatabase.database().persistenceEnabled = true
+        FirebaseApp.configure()
+        Database.database().isPersistenceEnabled = true
 
-        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
 
         DataManager.sharedInstance.startObservingPublicData()
         DataManager.sharedInstance.startMonitoringUser()
 
-        window?.tintColor = UIColor.rddDefaultColor
+        // global UI configuration
+        window?.tintColor = Config.sharedInstance.themePrimaryColor
+        UINavigationBar.appearance().barTintColor = Config.sharedInstance.themePrimaryColor
+        UISegmentedControl.appearance().tintColor = Config.sharedInstance.themesecondaryColor
 
         return true
     }
@@ -72,10 +75,10 @@ extension AppDelegate: GIDSignInDelegate {
         }
 
         guard let authentication = user.authentication else { return }
-        let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken,
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                           accessToken: authentication.accessToken)
 
-        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+        Auth.auth().signIn(with: credential) { (user, error) in
             if let error = error {
                 print("Login with Firebase error [\(error.localizedDescription)]")
                 return
