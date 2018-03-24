@@ -19,10 +19,12 @@ class Speaker: DataObject {
     var tags: [String] = []
 
     var speakerURL: String {
-        get {
+        return "\(Config.sharedInstance.baseURLPrefix)/speakers/\(String(describing: speakerID))"
+    }
 
-            return "\(Config.sharedInstance.baseURLPrefix)/speakers/\(String(describing: speakerID))"
-        }
+    var speakerPhotoReference: StorageReference {
+        let imageName = URL(fileURLWithPath: photoURL!).lastPathComponent
+        return DataManager.sharedInstance.storageRef.child("images/people").child(imageName)
     }
 
     override init(snapshot: DataSnapshot) {

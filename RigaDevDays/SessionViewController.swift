@@ -1,10 +1,4 @@
-//
-//  SessionViewController.swift
-//  RigaDevDays
-//
-//  Created by Dmitry Beloborodov on 29/01/2017.
 //  Copyright © 2017 RigaDevDays. All rights reserved.
-//
 
 import Foundation
 import UIKit
@@ -253,7 +247,12 @@ extension SessionViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 
-       let feedbackAvailable = (DataManager.sharedInstance.getFeeback(by: (session?.sessionID)!) != nil)
+        let feedbackAvailable: Bool
+        if let sessionID = session?.sessionID {
+            feedbackAvailable = DataManager.sharedInstance.getFeeback(by: sessionID) != nil
+        } else {
+            feedbackAvailable = false
+        }
 
         switch section {
         case TableSections.UserActions.rawValue:
