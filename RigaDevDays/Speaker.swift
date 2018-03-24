@@ -1,10 +1,4 @@
-//
-//  Speaker.swift
-//  RigaDevDays
-//
-//  Created by Dmitry Beloborodov on 26/01/2017.
-//  Copyright © 2017 RigaDevDay. All rights reserved.
-//
+//  Copyright © 2017 RigaDevDays. All rights reserved.
 
 import Foundation
 import Firebase

@@ -1,10 +1,4 @@
-//
-//  MoreViewController.swift
-//  RigaDevDays
-//
-//  Created by Dmitry Beloborodov on 05/03/2017.
 //  Copyright © 2017 RigaDevDays. All rights reserved.
-//
 
 import UIKit
 import Firebase
