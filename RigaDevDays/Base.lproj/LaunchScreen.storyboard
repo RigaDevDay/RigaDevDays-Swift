@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rdd-launch-logo" translatesAutoresizingMaskIntoConstraints="NO" id="PDq-7Z-15Y">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-logo" translatesAutoresizingMaskIntoConstraints="NO" id="PDq-7Z-15Y">
                                 <rect key="frame" x="37.5" y="184" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="PDq-7Z-15Y" secondAttribute="height" multiplier="1:1" id="fs6-T0-0UW"/>
@@ -46,6 +46,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="rdd-launch-logo" width="512" height="512"/>
+        <image name="launch-logo" width="2500" height="1100"/>
     </resources>
 </document>

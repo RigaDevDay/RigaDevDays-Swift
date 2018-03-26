@@ -20,7 +20,7 @@ class MoreViewController: UIViewController {
 
         self.segmentedControl.removeAllSegments()
         self.segmentedControl.insertSegment(withTitle: "Team", at: 0, animated: false)
-        if DataManager.sharedInstance.venues.count > 1 {
+        if DataManager.sharedInstance.venues.count > 0 {
             self.segmentedControl.isHidden = false
             self.tableToSegmentConstraint.priority = .init(999.0)
             self.tableToTopConstraint.priority = .defaultLow
