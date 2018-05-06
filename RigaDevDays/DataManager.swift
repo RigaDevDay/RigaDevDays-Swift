@@ -1,10 +1,4 @@
-//
-//  DataManager.swift
-//  RigaDevDays
-//
-//  Created by Dmitry Beloborodov on 27/01/2017.
-//  Copyright © 2017 RigaDevDay. All rights reserved.
-//
+//  Copyright © 2017 RigaDevDays. All rights reserved.
 
 import Foundation
 import Firebase
@@ -20,6 +14,8 @@ class DataManager {
     let rootRef: DatabaseReference!
     var handle: AuthStateDidChangeListenerHandle?
     let remoteConfig: RemoteConfig!
+    let storage: Storage!
+    let storageRef: StorageReference!
 
     var days: [Day] = []
     var sessions: [Session] = []
@@ -48,6 +44,8 @@ class DataManager {
         //This prevents others from using the default '()' initializer
         rootRef = Database.database().reference()
         remoteConfig = RemoteConfig.remoteConfig()
+        storage = Storage.storage()
+        storageRef = storage.reference()
 
         activeRemoteConfiguration()
     }
@@ -112,7 +110,10 @@ class DataManager {
         })
 
         rootRef.child("sessions").observe(.value, with: { snapshot in
-            self.sessions = snapshot.children.map{ Session(snapshot: $0 as! DataSnapshot) }
+            for sessionSnapshot in snapshot.children {
+                let key = Int((sessionSnapshot as! DataSnapshot).key)
+                self.sessions.append(Session(id: key!, snapshot: (sessionSnapshot as! DataSnapshot)))
+            }
             self.sessionsReceived = true
             self.notifyInitialDataReceived()
             if self.allDataReceivedNotificationSent { NotificationCenter.default.post(name: .SessionsUpdated, object: nil) }

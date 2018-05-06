@@ -1,10 +1,4 @@
-//
-//  FeedbackController.swift
-//  RigaDevDays
-//
-//  Created by Dmitry Beloborodov on 28/02/2017.
 //  Copyright © 2017 RigaDevDays. All rights reserved.
-//
 
 import Foundation
 import UIKit
@@ -61,10 +55,20 @@ class FeedbackController: UITableViewController {
 
         sessionName.text = session.title
 
-        if let photoURL = session.speakers.first?.photoURL, let url = URL(string: Config.sharedInstance.baseURLPrefix + photoURL) {
-            speakerImage?.kf.indicatorType = .activity
-            speakerImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
-        }
+//        if let photoURL = session.speakers.first?.photoURL, let url = URL(string: Config.sharedInstance.baseURLPrefix + photoURL) {
+//            speakerImage?.kf.indicatorType = .activity
+//            speakerImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
+//        }
+        session.speakers.first?.speakerPhotoReference.downloadURL(completion: { (url, error) in
+            if url != nil {
+                self.speakerImage?.kf.indicatorType = .activity
+                self.speakerImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
+            }
+
+            if error != nil {
+                print(error?.localizedDescription as Any)
+            }
+        })
 
         var allSessionSpeakers = "by "
         for speaker in session.speakers {

@@ -1,10 +1,4 @@
-//
-//  Timeslot.swift
-//  RigaDevDays
-//
-//  Created by Dmitry Beloborodov on 27/01/2017.
-//  Copyright © 2017 RigaDevDay. All rights reserved.
-//
+//  Copyright © 2017 RigaDevDays. All rights reserved.
 
 import Foundation
 import Firebase
@@ -39,10 +33,20 @@ class Timeslot: DataObject {
         endTime = snapshotValue["endTime"] as? String
         tracks = dayTracks
 
-        for timeslotSnapshot in snapshot.childSnapshot(forPath: "sessions").children {
-            let tmpsessionIDs = (timeslotSnapshot as! DataSnapshot).value as! [Int]
-            if let firstItem = tmpsessionIDs.first {
-                sessionIDs.append(firstItem)
+        switch SwissKnife.app {
+        case .rdd:
+            for timeslotSnapshot in snapshot.childSnapshot(forPath: "sessions").children {
+                for tempEnum in (timeslotSnapshot as! DataSnapshot).childSnapshot(forPath: "items").children {
+                    let firstItem = (tempEnum as! DataSnapshot).value as! Int
+                    sessionIDs.append(firstItem)
+                }
+            }
+        case .devfest:
+            for timeslotSnapshot in snapshot.childSnapshot(forPath: "sessions").children {
+                let tmpsessionIDs = (timeslotSnapshot as! DataSnapshot).value as! [Int]
+                if let firstItem = tmpsessionIDs.first {
+                    sessionIDs.append(firstItem)
+                }
             }
         }
 

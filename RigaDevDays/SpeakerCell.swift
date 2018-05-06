@@ -1,10 +1,4 @@
-//
-//  SpeakerCell.swift
-//  RigaDevDays
-//
-//  Created by Dmitry Beloborodov on 26/01/2017.
-//  Copyright © 2017 RigaDevDay. All rights reserved.
-//
+//  Copyright © 2017 RigaDevDays. All rights reserved.
 
 import UIKit
 import Kingfisher
@@ -33,10 +27,17 @@ class SpeakerCell: UITableViewCell {
             speakerTags?.attributedText = TagColorManager.sharedInstance.getTags(for: speaker!)
             speakerTagsWithDots?.attributedText = TagColorManager.sharedInstance.getTags(for: speaker!, withDots: true)
 
-            if let url = URL(string: Config.sharedInstance.baseURLPrefix + (speaker?.photoURL)!) {
-                speakerIcon?.kf.indicatorType = .activity
-                speakerIcon?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
-            }
+            speaker?.speakerPhotoReference.downloadURL(completion: { (url, error) in
+                if url != nil {
+                    self.speakerIcon?.kf.indicatorType = .activity
+                    self.speakerIcon?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
+                }
+
+                if error != nil {
+                    print(error?.localizedDescription as Any)
+                }
+            })
+
             speakerBio?.setHTMLFromString(htmlText: (speaker?.bio)!)
             speakerTitle?.text = speaker?.title
         }

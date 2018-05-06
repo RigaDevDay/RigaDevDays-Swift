@@ -1,10 +1,4 @@
-//
-//  SwissKnife.swift
-//  RigaDevDays
-//
-//  Created by Dmitry Beloborodov on 30/01/2017.
 //  Copyright © 2017 RigaDevDays. All rights reserved.
-//
 
 import Foundation
 import UIKit
@@ -183,12 +177,30 @@ class TagColorManager {
 
 class SwissKnife {
 
+    enum AppTarget: String {
+        case rdd = "RDD"
+        case devfest = "DEVFEST"
+
+        static func appTarget(for string: String?) -> AppTarget {
+            guard let rawValue = string else { return .rdd }
+            guard let result = AppTarget(rawValue: rawValue) else { return .rdd }
+            return result
+        }
+    }
+
     static let sharedInstance = SwissKnife()
 
     static let sessionShortDescriptionLinesCount = 7
 
     fileprivate init() {
         //This prevents others from using the default '()' initializer
+    }
+
+    static var app: AppTarget {
+        guard let currentValue = Bundle.main.object(forInfoDictionaryKey: "APP_TARGET") as? String else {
+            return .rdd
+        }
+        return AppTarget.appTarget(for: currentValue)
     }
 
     func update(_ event: inout EKEvent, on day: Day, with session: Session) {
