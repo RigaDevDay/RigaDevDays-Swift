@@ -62,7 +62,8 @@ class SessionCell: UITableViewCell {
                 sessionImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
             }
 
-            if session?.speakers.first?.tags.count != nil {
+            if session?.speakers.first?.tags.count != nil,
+                TagColorManager.sharedInstance.getTags(for: session!).string.isEmpty == false {
                 tagsLabel?.isHidden = false
                 sessionTags?.attributedText = TagColorManager.sharedInstance.getTags(for: session!)
             } else {

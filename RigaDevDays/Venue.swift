@@ -27,4 +27,9 @@ class Venue: DataObject {
 
         super.init(snapshot: snapshot)
     }
+
+    var venuePhotoReference: StorageReference {
+        let imageName = URL(fileURLWithPath: imageUrl!).lastPathComponent
+        return DataManager.sharedInstance.storageRef.child("images/backgrounds").child(imageName)
+    }
 }
