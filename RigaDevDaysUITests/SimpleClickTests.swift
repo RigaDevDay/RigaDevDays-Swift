@@ -1,10 +1,4 @@
-//
-//  SimpleClickTests.swift
-//  RigaDevDaysUITests
-//
-//  Created by Dmitrijs Beloborodovs on 28/08/2017.
 //  Copyright © 2017 RigaDevDays. All rights reserved.
-//
 
 import XCTest
 

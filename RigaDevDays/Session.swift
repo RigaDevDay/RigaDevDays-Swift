@@ -1,10 +1,4 @@
-//
-//  Session.swift
-//  RigaDevDays
-//
-//  Created by Dmitry Beloborodov on 27/01/2017.
-//  Copyright © 2017 RigaDevDay. All rights reserved.
-//
+//  Copyright © 2017 RigaDevDays. All rights reserved.
 
 import Foundation
 import Firebase
@@ -71,9 +65,8 @@ class Session: DataObject {
     }
 
     var isFavourite: Bool {
-        get {
-            return DataManager.sharedInstance.favourites.contains(self.sessionID!)
-        }
+        guard let sessionID = sessionID else { return false }
+        return DataManager.sharedInstance.favourites.contains(sessionID)
     }
 
     func duration(on day: Day?) -> (startDate: Date, endDate: Date) {
@@ -111,13 +104,13 @@ class Session: DataObject {
         }
     }
 
-    override init(snapshot: DataSnapshot) {
+    init(id: Int, snapshot: DataSnapshot) {
         let snapshotValue = snapshot.value as! [String: AnyObject]
 
         title = snapshotValue["title"] as? String
         description = snapshotValue["description"] as? String
         image = snapshotValue["image"] as? String
-        sessionID = snapshotValue["id"] as? Int
+        sessionID = id
         speakersIDs = snapshotValue["speakers"] as? [Int] ?? []
         videosIDs = snapshotValue["videos"] as? [Int] ?? []
 

@@ -1,10 +1,4 @@
-//
-//  DataManager+DevFest.swift
-//  RigaDevDays
-//
-//  Created by Dmitrijs Beloborodovs on 17/08/2017.
 //  Copyright © 2017 RigaDevDays. All rights reserved.
-//
 
 import Foundation
 import UIKit

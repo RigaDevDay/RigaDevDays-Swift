@@ -1,10 +1,4 @@
-//
-//  SessionViewController.swift
-//  RigaDevDays
-//
-//  Created by Dmitry Beloborodov on 29/01/2017.
 //  Copyright © 2017 RigaDevDays. All rights reserved.
-//
 
 import Foundation
 import UIKit
@@ -122,7 +116,10 @@ class SessionViewController: UIViewController {
 extension SessionViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return Config.sharedInstance.numberOfSectionsInSessionScreen // -> amount of Section enum
+        switch SwissKnife.app {
+        case .rdd: return Config.sharedInstance.numberOfSectionsInSessionScreen - 1
+        case .devfest: return Config.sharedInstance.numberOfSectionsInSessionScreen // -> amount of Section enum
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -150,7 +147,10 @@ extension SessionViewController: UITableViewDataSource {
         case TableSections.Feedback.rawValue:
             return (DataManager.sharedInstance.getFeeback(by: (session?.sessionID)!) != nil) ? 1 : 0
         case TableSections.Map.rawValue:
-            return 1
+            switch SwissKnife.app {
+            case .rdd: return 0
+            case .devfest: return 1
+            }
         default:
             return 0
         }
@@ -253,7 +253,12 @@ extension SessionViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 
-       let feedbackAvailable = (DataManager.sharedInstance.getFeeback(by: (session?.sessionID)!) != nil)
+        let feedbackAvailable: Bool
+        if let sessionID = session?.sessionID {
+            feedbackAvailable = DataManager.sharedInstance.getFeeback(by: sessionID) != nil
+        } else {
+            feedbackAvailable = false
+        }
 
         switch section {
         case TableSections.UserActions.rawValue:

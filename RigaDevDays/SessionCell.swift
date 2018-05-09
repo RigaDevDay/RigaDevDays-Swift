@@ -1,10 +1,4 @@
-//
-//  SessionCell.swift
-//  RigaDevDays
-//
-//  Created by Dmitry Beloborodov on 28/01/2017.
-//  Copyright © 2017 RigaDevDay. All rights reserved.
-//
+//  Copyright © 2017 RigaDevDays. All rights reserved.
 
 import UIKit
 import Kingfisher
@@ -51,14 +45,16 @@ class SessionCell: UITableViewCell {
             colorCodeView?.backgroundColor = session?.color
             sessionDescription?.setHTMLFromString(htmlText: (session?.description)!)
 
-            if let photoURL = session?.speakers.first?.photoURL, let url = URL(string: Config.sharedInstance.baseURLPrefix + photoURL) {
-                imageBackground?.isHidden = false
-                speakerImageHeightConstraint?.constant = speakerImage.frame.size.width
-                speakerImage?.kf.indicatorType = .activity
-                speakerImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
+            if let photoReference = session?.speakers.first?.speakerPhotoReference {
+                photoReference.downloadURL(completion: { (url, error) in
+                    self.imageBackground?.isHidden = false
+                    self.speakerImageHeightConstraint?.constant = self.speakerImage.frame.size.width
+                    self.speakerImage?.kf.indicatorType = .activity
+                    self.speakerImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
+                })
             } else {
-                speakerImageHeightConstraint?.constant = 0
-                imageBackground?.isHidden = true
+                self.speakerImageHeightConstraint?.constant = 0
+                self.imageBackground?.isHidden = true
             }
 
             if let sessionImageURL = session?.image, let url = URL(string: Config.sharedInstance.baseURLPrefix + sessionImageURL) {
@@ -66,7 +62,8 @@ class SessionCell: UITableViewCell {
                 sessionImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
             }
 
-            if session?.speakers.first?.tags.count != nil {
+            if session?.speakers.first?.tags.count != nil,
+                TagColorManager.sharedInstance.getTags(for: session!).string.isEmpty == false {
                 tagsLabel?.isHidden = false
                 sessionTags?.attributedText = TagColorManager.sharedInstance.getTags(for: session!)
             } else {

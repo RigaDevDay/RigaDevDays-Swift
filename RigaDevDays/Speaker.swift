@@ -1,10 +1,4 @@
-//
-//  Speaker.swift
-//  RigaDevDays
-//
-//  Created by Dmitry Beloborodov on 26/01/2017.
-//  Copyright © 2017 RigaDevDay. All rights reserved.
-//
+//  Copyright © 2017 RigaDevDays. All rights reserved.
 
 import Foundation
 import Firebase
@@ -25,10 +19,12 @@ class Speaker: DataObject {
     var tags: [String] = []
 
     var speakerURL: String {
-        get {
+        return "\(Config.sharedInstance.baseURLPrefix)/speakers/\(String(describing: speakerID))"
+    }
 
-            return "\(Config.sharedInstance.baseURLPrefix)/speakers/\(String(describing: speakerID))"
-        }
+    var speakerPhotoReference: StorageReference {
+        let imageName = URL(fileURLWithPath: photoURL!).lastPathComponent
+        return DataManager.sharedInstance.storageRef.child("images/people").child(imageName)
     }
 
     override init(snapshot: DataSnapshot) {

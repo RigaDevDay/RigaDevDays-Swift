@@ -1,10 +1,4 @@
-//
-//  Venue.swift
-//  RigaDevDays
-//
-//  Created by Dmitry Beloborodov on 05/03/2017.
 //  Copyright © 2017 RigaDevDays. All rights reserved.
-//
 
 import Foundation
 import Firebase
@@ -32,5 +26,10 @@ class Venue: DataObject {
         web = snapshotValue["web"] as? String
 
         super.init(snapshot: snapshot)
+    }
+
+    var venuePhotoReference: StorageReference {
+        let imageName = URL(fileURLWithPath: imageUrl!).lastPathComponent
+        return DataManager.sharedInstance.storageRef.child("images/backgrounds").child(imageName)
     }
 }

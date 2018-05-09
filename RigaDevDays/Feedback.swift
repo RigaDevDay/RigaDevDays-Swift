@@ -1,10 +1,4 @@
-//
-//  Feedback.swift
-//  RigaDevDays
-//
-//  Created by Dmitry Beloborodov on 04/03/2017.
 //  Copyright © 2017 RigaDevDays. All rights reserved.
-//
 
 import Foundation
 import Firebase

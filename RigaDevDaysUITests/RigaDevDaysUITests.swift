@@ -1,10 +1,4 @@
-//
-//  RigaDevDaysUITests.swift
-//  RigaDevDaysUITests
-//
-//  Created by Dmitry Beloborodov on 29/01/2017.
 //  Copyright © 2017 RigaDevDays. All rights reserved.
-//
 
 import XCTest
 
