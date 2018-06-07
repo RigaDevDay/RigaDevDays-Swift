@@ -23,7 +23,7 @@ class Speaker: DataObject {
     }
 
     var speakerPhotoReference: StorageReference {
-        let imageName = URL(fileURLWithPath: photoURL!).lastPathComponent
+        let imageName = URL(fileURLWithPath: photoURL ?? "").lastPathComponent
         return DataManager.sharedInstance.storageRef.child("images/people").child(imageName)
     }
 

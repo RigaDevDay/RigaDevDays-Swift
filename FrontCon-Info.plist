@@ -23,7 +23,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.765270381221-f8f2k5nmcvrehi9uc3js5e8jo9me2rq0</string>
+				<string>com.googleusercontent.apps.137499206860-04vfg577lg1t2ke51rrk7sq6i6dm7c7f</string>
 			</array>
 		</dict>
 	</array>
@@ -37,7 +37,7 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>rigadevdays.lv</key>
+			<key>devfest.gdg.lv</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
@@ -47,9 +47,9 @@
 		</dict>
 	</dict>
 	<key>NSCalendarsUsageDescription</key>
-	<string>RigaDevDays would like to create a calendar event.</string>
+	<string>FrontCon would like to create a calendar event.</string>
 	<key>NSContactsUsageDescription</key>
-	<string>RigaDevDays would like to create a calendar event.</string>
+	<string>FrontCon would like to create a calendar event.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -83,7 +83,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
-    <key>AppTarget</key>
-    <string>${APP_TARGET}</string>
+	<key>AppTarget</key>
+	<string>${APP_TARGET}</string>
 </dict>
 </plist>

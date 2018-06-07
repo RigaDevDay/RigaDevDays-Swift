@@ -128,7 +128,7 @@ class TagColorManager {
 
     func getTags(for speaker: Speaker, withDots: Bool = false) -> NSAttributedString {
 
-        let key = withDots ? "\(speaker.name!)+dot" : "\(speaker.name!)"
+        let key = withDots ? "\(speaker.name!)+dot" : "\(speaker.name ?? "")"
         if let resultValue = speakerTagsWithColor[key] {
             return resultValue
         } else {
@@ -180,6 +180,7 @@ class SwissKnife {
     enum AppTarget: String {
         case rdd = "RDD"
         case devfest = "DEVFEST"
+        case frontcon = "FRONTCON"
 
         static func appTarget(for string: String?) -> AppTarget {
             guard let rawValue = string else { return .rdd }
@@ -197,7 +198,7 @@ class SwissKnife {
     }
 
     static var app: AppTarget {
-        guard let currentValue = Bundle.main.object(forInfoDictionaryKey: "APP_TARGET") as? String else {
+        guard let currentValue = Bundle.main.object(forInfoDictionaryKey: "AppTarget") as? String else {
             return .rdd
         }
         return AppTarget.appTarget(for: currentValue)

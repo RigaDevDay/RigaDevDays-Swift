@@ -41,10 +41,10 @@ class Timeslot: DataObject {
                     sessionIDs.append(firstItem)
                 }
             }
-        case .devfest:
+        case .devfest, .frontcon:
             for timeslotSnapshot in snapshot.childSnapshot(forPath: "sessions").children {
-                let tmpsessionIDs = (timeslotSnapshot as! DataSnapshot).value as! [Int]
-                if let firstItem = tmpsessionIDs.first {
+                if let tmpsessionIDs = (timeslotSnapshot as! DataSnapshot).value as? [Int],
+                    let firstItem = tmpsessionIDs.first {
                     sessionIDs.append(firstItem)
                 }
             }

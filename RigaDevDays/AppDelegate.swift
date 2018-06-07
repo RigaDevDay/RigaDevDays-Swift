@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // global UI configuration
         window?.tintColor = Config.sharedInstance.themePrimaryColor
         UINavigationBar.appearance().barTintColor = Config.sharedInstance.themePrimaryColor
-        UISegmentedControl.appearance().tintColor = Config.sharedInstance.themesecondaryColor
+        UISegmentedControl.appearance().tintColor = Config.sharedInstance.themeSecondaryColor
 
         return true
     }
