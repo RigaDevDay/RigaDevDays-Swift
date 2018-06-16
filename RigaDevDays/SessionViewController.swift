@@ -118,7 +118,7 @@ extension SessionViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         switch SwissKnife.app {
         case .rdd: return Config.sharedInstance.numberOfSectionsInSessionScreen - 1
-        case .devfest: return Config.sharedInstance.numberOfSectionsInSessionScreen // -> amount of Section enum
+        case .devfest, .frontcon: return Config.sharedInstance.numberOfSectionsInSessionScreen // -> amount of Section enum
         }
     }
 
@@ -148,7 +148,7 @@ extension SessionViewController: UITableViewDataSource {
             return (DataManager.sharedInstance.getFeeback(by: (session?.sessionID)!) != nil) ? 1 : 0
         case TableSections.Map.rawValue:
             switch SwissKnife.app {
-            case .rdd: return 0
+            case .rdd, .frontcon: return 0
             case .devfest: return 1
             }
         default:

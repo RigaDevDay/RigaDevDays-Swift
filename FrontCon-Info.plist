@@ -25,7 +25,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.137499206860-04vfg577lg1t2ke51rrk7sq6i6dm7c7f</string>
+				<string>com.googleusercontent.apps.193812542085-4mvfn6f7le8rvh97eruj7d4q43r7kcla</string>
 			</array>
 		</dict>
 	</array>
@@ -49,9 +49,9 @@
 		</dict>
 	</dict>
 	<key>NSCalendarsUsageDescription</key>
-	<string>DevFest would like to create a calendar event.</string>
+	<string>FrontCon would like to create a calendar event.</string>
 	<key>NSContactsUsageDescription</key>
-	<string>DevFest would like to create a calendar event.</string>
+	<string>FrontCon would like to create a calendar event.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

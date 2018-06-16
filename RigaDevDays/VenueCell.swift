@@ -19,7 +19,7 @@ class VenueCell: UITableViewCell {
             venueAddress?.text = venue?.address
 
             switch SwissKnife.app {
-            case .rdd:
+            case .rdd, .frontcon:
                 venue?.venuePhotoReference.downloadURL(completion: { (url, error) in
                     if url != nil {
                         self.venueImage?.kf.indicatorType = .activity
