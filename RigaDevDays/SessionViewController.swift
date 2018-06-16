@@ -117,8 +117,8 @@ extension SessionViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         switch SwissKnife.app {
-        case .rdd, .frontcon: return Config.sharedInstance.numberOfSectionsInSessionScreen - 1
-        case .devfest: return Config.sharedInstance.numberOfSectionsInSessionScreen // -> amount of Section enum
+        case .rdd: return Config.sharedInstance.numberOfSectionsInSessionScreen - 1
+        case .devfest, .frontcon: return Config.sharedInstance.numberOfSectionsInSessionScreen // -> amount of Section enum
         }
     }
 

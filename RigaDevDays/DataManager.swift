@@ -230,7 +230,7 @@ class DataManager {
     func searchSpeakers(_ search: String) -> [Speaker] {
         return self.speakers.filter { speaker in
             var include = false
-            var searchSources: [String] = [speaker.name!]
+            var searchSources: [String] = [speaker.name ?? ""]
             searchSources.append(contentsOf: speaker.tags)
             for searchSource in searchSources {
                 if searchSource.range(of: search, options: .caseInsensitive, range: nil, locale: nil) != nil {
@@ -244,7 +244,7 @@ class DataManager {
     func searchSessions(_ search: String) -> [Session] {
         return self.sessions.filter { session in
             var include = false
-            var searchSources: [String] = [session.title!]
+            var searchSources: [String] = [session.title ?? ""]
             searchSources.append(contentsOf: session.tags)
             for searchSource in searchSources {
                 if searchSource.range(of: search, options: .caseInsensitive, range: nil, locale: nil) != nil {
