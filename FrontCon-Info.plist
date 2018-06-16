@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AppTarget</key>
+	<string>${APP_TARGET}</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -15,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.6</string>
+	<string>1.7</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -23,12 +25,12 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.765270381221-f8f2k5nmcvrehi9uc3js5e8jo9me2rq0</string>
+				<string>com.googleusercontent.apps.193812542085-4mvfn6f7le8rvh97eruj7d4q43r7kcla</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>3</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
@@ -37,7 +39,7 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>rigadevdays.lv</key>
+			<key>devfest.gdg.lv</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
@@ -47,9 +49,9 @@
 		</dict>
 	</dict>
 	<key>NSCalendarsUsageDescription</key>
-	<string>RigaDevDays would like to create a calendar event.</string>
+	<string>FrontCon would like to create a calendar event.</string>
 	<key>NSContactsUsageDescription</key>
-	<string>RigaDevDays would like to create a calendar event.</string>
+	<string>FrontCon would like to create a calendar event.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -83,7 +85,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
-    <key>AppTarget</key>
-    <string>${APP_TARGET}</string>
 </dict>
 </plist>
