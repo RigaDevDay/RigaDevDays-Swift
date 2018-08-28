@@ -55,7 +55,9 @@ class VenueViewController: UITableViewController {
             venueMap.addAnnotation(point)
         }
 
-        if let url = URL(string: Config.sharedInstance.baseURLPrefix + venue.imageUrl!) {
+        if let photoURL = venue.imageUrl, photoURL.contains("http"), let imageURL = URL(string: photoURL) {
+            venueImage?.kf.setImage(with: imageURL, options: [.transition(.fade(0.2))])
+        } else if let url = URL(string: Config.sharedInstance.baseURLPrefix + venue.imageUrl!) {
             venueImage?.kf.indicatorType = .activity
             venueImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
         }

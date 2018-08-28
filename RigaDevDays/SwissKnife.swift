@@ -181,6 +181,7 @@ class SwissKnife {
         case rdd = "RDD"
         case devfest = "DEVFEST"
         case frontcon = "FRONTCON"
+        case devopsdaysriga = "DEVOPSDAYSRIGA"
 
         static func appTarget(for string: String?) -> AppTarget {
             guard let rawValue = string else { return .rdd }

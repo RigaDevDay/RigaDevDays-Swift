@@ -35,6 +35,7 @@ class Speaker: DataObject {
             let currentBadge = Badge(snapshot: badgeSnapshot as! DataSnapshot)
             badges.append(currentBadge)
         }
+//        bio = (snapshotValue["bio"] as? String ?? "").replacingOccurrences(of: "\n", with: "\n")
         bio = snapshotValue["bio"] as? String
         company = snapshotValue["company"] as? String
         country = snapshotValue["country"] as? String

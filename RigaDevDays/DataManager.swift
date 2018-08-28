@@ -58,7 +58,7 @@ class DataManager {
         #endif
 
         let remoteConfigSettings = RemoteConfigSettings(developerModeEnabled: developerMode)
-        remoteConfig.configSettings = remoteConfigSettings!
+        remoteConfig.configSettings = remoteConfigSettings
         remoteConfig.setDefaults(fromPlist: "c")
 
         var expirationDuration = 3600 // 1 hour

@@ -45,7 +45,9 @@ class SessionCell: UITableViewCell {
             colorCodeView?.backgroundColor = session?.color
             sessionDescription?.setHTMLFromString(htmlText: (session?.description)!)
 
-            if let photoReference = session?.speakers.first?.speakerPhotoReference {
+            if let photoURL = session?.speakers.first?.photoURL, photoURL.contains("http"), let imageURL = URL(string: photoURL) {
+                self.speakerImage?.kf.setImage(with: imageURL, options: [.transition(.fade(0.2))])
+            } else if let photoReference = session?.speakers.first?.speakerPhotoReference {
                 photoReference.downloadURL(completion: { (url, error) in
                     self.imageBackground?.isHidden = false
                     self.speakerImageHeightConstraint?.constant = self.speakerImage.frame.size.width
