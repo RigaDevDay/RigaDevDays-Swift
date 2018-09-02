@@ -7,8 +7,8 @@ class Config {
 
     let baseURLPrefix = "https://www.devopsdays.org/events/2018-riga/"
 
-    let themePrimaryColor = #colorLiteral(red: 0.007843137255, green: 0.4588235294, blue: 0.8470588235, alpha: 1) // 0275d8
-    let themeSecondaryColor = #colorLiteral(red: 0, green: 0.5098039216, blue: 0.6705882353, alpha: 1) // #0082AB
+    let themePrimaryColor = #colorLiteral(red: 0.03529411765, green: 0.2862745098, blue: 0.4588235294, alpha: 1) // 094975
+    let themeSecondaryColor = #colorLiteral(red: 0.3843137255, green: 0.6117647059, blue: 0.737254902, alpha: 1) // 629CBC
 
     let searchProposals: [String] = ["TeamCity", "AWS", "GDPR", "John Doe"]
 

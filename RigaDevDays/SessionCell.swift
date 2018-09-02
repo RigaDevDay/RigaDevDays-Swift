@@ -31,15 +31,15 @@ class SessionCell: UITableViewCell {
             sessionName.text = session?.title
 
             if let properDay = (self.day != nil) ? self.day : session?.day,
-                let room = session?.track?.title,
+                let room = session?.auditorium ?? session?.track?.title,
                 let startTime = session?.timeslot?.startTime,
                 let endTime = session?.timeslot?.endTime,
                 let date = properDay.localizedDate {
                 sessionRoom?.text = "\(room) - \(startTime) - \(endTime)"
                 sessionLocationAndTime?.text = "\(room) - \(startTime) - \(endTime) / \(date)"
             } else {
-                sessionRoom?.text = session?.track?.title
-                sessionLocationAndTime?.text = session?.track?.title
+                sessionRoom?.text = session?.auditorium ?? session?.track?.title
+                sessionLocationAndTime?.text = session?.auditorium ?? session?.track?.title
             }
             sessionSpeakerName?.text = session?.speakers.first?.name
             colorCodeView?.backgroundColor = session?.color

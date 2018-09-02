@@ -216,7 +216,7 @@ extension SessionViewController: UITableViewDataSource {
 
         case TableSections.Map.rawValue:
             let cell: ActionCell = tableView.dequeueReusableCell(withIdentifier: "ActionCell_Map", for: indexPath) as! ActionCell
-            if let imageName = session?.track?.title,
+            if let imageName = session?.auditorium ?? session?.track?.title,
                 let image = UIImage.init(named: imageName) {
                 cell.actionImage.image = image
             }

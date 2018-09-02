@@ -78,7 +78,7 @@ extension SearchViewController: UISearchBarDelegate {
             return
         }
 
-        if searchText.characters.count <= 2 {
+        if searchText.count <= 2 {
             return
         }
 

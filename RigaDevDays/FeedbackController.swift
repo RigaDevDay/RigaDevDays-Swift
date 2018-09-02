@@ -79,7 +79,6 @@ class FeedbackController: UITableViewController {
         //remove ", " at the end
         let endIndex = allSessionSpeakers.index(allSessionSpeakers.endIndex, offsetBy: -2)
         speakersNames.text = allSessionSpeakers.substring(to: endIndex)
-
     }
 
     func updateQualityOfContent(_ rating:Int) {

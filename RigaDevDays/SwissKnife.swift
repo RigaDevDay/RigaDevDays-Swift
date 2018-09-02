@@ -44,7 +44,7 @@ extension UIColor {
             cString.remove(at: cString.startIndex)
         }
 
-        if ((cString.characters.count) != 6) {
+        if ((cString.count) != 6) {
             return UIColor.gray
         }
 
@@ -139,7 +139,7 @@ class TagColorManager {
                     let resultColor = UIColor.hexStringToUIColor(hex: tagColor)
                     let singleTagWithColor = withDots ? NSMutableAttributedString(string: "● \(tagTitle)") : NSMutableAttributedString(string: tagTitle)
                     let offset = withDots ? 2 : 0
-                    singleTagWithColor.setAttributes([NSAttributedStringKey.foregroundColor : resultColor], range: NSRange(location:0, length:tagTitle.characters.count + offset))
+                    singleTagWithColor.setAttributes([NSAttributedStringKey.foregroundColor : resultColor], range: NSRange(location:0, length:tagTitle.count + offset))
                     allTags.append(singleTagWithColor)
                     allTags.append(NSMutableAttributedString(string: " "))
 
@@ -163,7 +163,7 @@ class TagColorManager {
                     if let tagColor = DataManager.sharedInstance.getTag(by: tagTitle)?.colorCode {
                         let resultColor = UIColor.hexStringToUIColor(hex: tagColor)
                         let singleTagWithColor = NSMutableAttributedString(string: "● \(tagTitle)")
-                        singleTagWithColor.setAttributes([NSAttributedStringKey.foregroundColor : resultColor], range: NSRange(location:0, length:tagTitle.characters.count + 2))
+                        singleTagWithColor.setAttributes([NSAttributedStringKey.foregroundColor : resultColor], range: NSRange(location:0, length:tagTitle.count + 2))
                         allTags.append(singleTagWithColor)
                         allTags.append(NSMutableAttributedString(string: "  "))
                     }

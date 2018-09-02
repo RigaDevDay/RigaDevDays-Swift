@@ -82,6 +82,7 @@ class ScheduleViewController: UIViewController {
 
     func diplaySelectedSchedule() {
         if DataManager.sharedInstance.days.indices.contains(selectedDayIndex)  {
+            self.embeddedDayViewController?.selectedDay = nil
             self.embeddedDayViewController?.selectedDay = DataManager.sharedInstance.days[selectedDayIndex]
             self.embeddedDayViewController?.tableView.reloadData()
         }
