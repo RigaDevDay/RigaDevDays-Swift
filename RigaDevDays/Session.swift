@@ -12,6 +12,7 @@ class Session: DataObject {
     var speakersIDs: [Int] = []
     var videosIDs: [Int] = []
     var tags: [String] = []
+    var auditorium: String?
     weak var track: Track?
     weak var timeslot: Timeslot?
 
@@ -113,6 +114,7 @@ class Session: DataObject {
         sessionID = id
         speakersIDs = snapshotValue["speakers"] as? [Int] ?? []
         videosIDs = snapshotValue["videos"] as? [Int] ?? []
+        auditorium = snapshotValue["auditorium"] as? String
 
         for tag in snapshot.childSnapshot(forPath: "tags").children {
             if let currentTag = (tag as! DataSnapshot).value as? String {

@@ -58,7 +58,7 @@ class DataManager {
         #endif
 
         let remoteConfigSettings = RemoteConfigSettings(developerModeEnabled: developerMode)
-        remoteConfig.configSettings = remoteConfigSettings!
+        remoteConfig.configSettings = remoteConfigSettings
         remoteConfig.setDefaults(fromPlist: "c")
 
         var expirationDuration = 3600 // 1 hour
@@ -78,7 +78,6 @@ class DataManager {
     }
 
     func notifyInitialDataReceived() {
-        if allDataReceivedNotificationSent { return }
 
         if speakersReceived
             && sessionsReceived
@@ -95,6 +94,8 @@ class DataManager {
                 }
             }
 
+            if allDataReceivedNotificationSent { return }
+
             NotificationCenter.default.post(name: .AllDataReceived, object: nil)
             allDataReceivedNotificationSent = true
         }
@@ -103,6 +104,7 @@ class DataManager {
     func startObservingPublicData() {
 
         rootRef.child("speakers").observe(.value, with: { snapshot in
+            self.speakers = []
             self.speakers = snapshot.children.map{ Speaker(snapshot: $0 as! DataSnapshot) }
             self.speakersReceived = true
             self.notifyInitialDataReceived()
@@ -110,6 +112,7 @@ class DataManager {
         })
 
         rootRef.child("sessions").observe(.value, with: { snapshot in
+            self.sessions = []
             for sessionSnapshot in snapshot.children {
                 let key = Int((sessionSnapshot as! DataSnapshot).key)
                 self.sessions.append(Session(id: key!, snapshot: (sessionSnapshot as! DataSnapshot)))

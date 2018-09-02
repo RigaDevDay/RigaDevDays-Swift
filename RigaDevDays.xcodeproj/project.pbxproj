@@ -7,8 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0325686561858BA25F40DB3 /* Pods_DevOpsDaysRiga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF7191E48B472BE0E5D5B43 /* Pods_DevOpsDaysRiga.framework */; };
 		A76426AA54EAF531F7323051 /* Pods_DevFest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739AAD9B1AC331960BB8EF08 /* Pods_DevFest.framework */; };
 		BC134F1F1E4D043D00D69D0F /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC134F1E1E4D043D00D69D0F /* RootTabBarController.swift */; };
+		BC324AEF212ED30F002E1D0F /* FeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCE54EF1E65EDCD002CA1E3 /* FeedbackController.swift */; };
+		BC324AF0212ED30F002E1D0F /* SpeakersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9AC1E3E092400F700F7 /* SpeakersViewController.swift */; };
+		BC324AF1212ED30F002E1D0F /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5D1D881E91464D00F75607 /* Video.swift */; };
+		BC324AF2212ED30F002E1D0F /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3507E41E6AD6E20086A6EB /* Feedback.swift */; };
+		BC324AF3212ED30F002E1D0F /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC134F1E1E4D043D00D69D0F /* RootTabBarController.swift */; };
+		BC324AF4212ED30F002E1D0F /* Timeslot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9AE1E3E092400F700F7 /* Timeslot.swift */; };
+		BC324AF5212ED30F002E1D0F /* SpeakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9C11E3E63A500F700F7 /* SpeakerViewController.swift */; };
+		BC324AF6212ED30F002E1D0F /* VenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C6DF91E6C492400694E07 /* VenueViewController.swift */; };
+		BC324AF7212ED30F002E1D0F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9A31E3E092400F700F7 /* DataManager.swift */; };
+		BC324AF8212ED30F002E1D0F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3507ED1E6B22970086A6EB /* SearchViewController.swift */; };
+		BC324AF9212ED30F002E1D0F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C6DF51E6C253300694E07 /* Team.swift */; };
+		BC324AFA212ED30F002E1D0F /* PartnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD306401E5248A200C71F69 /* PartnerCell.swift */; };
+		BC324AFB212ED30F002E1D0F /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C6DF11E6C17A500694E07 /* Venue.swift */; };
+		BC324AFC212ED30F002E1D0F /* SocialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3611131E5F194B0069BD6C /* SocialCell.swift */; };
+		BC324AFD212ED30F002E1D0F /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB48BB31E59E64100D042D3 /* ActionCell.swift */; };
+		BC324AFE212ED30F002E1D0F /* FeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3507E61E6AF85A0086A6EB /* FeedbackCell.swift */; };
+		BC324AFF212ED30F002E1D0F /* Partner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD3063A1E50E58300C71F69 /* Partner.swift */; };
+		BC324B00212ED30F002E1D0F /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9A51E3E092400F700F7 /* Day.swift */; };
+		BC324B01212ED30F002E1D0F /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C6DF31E6C241B00694E07 /* MoreViewController.swift */; };
+		BC324B02212ED30F002E1D0F /* SwissKnife.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9C51E3F326800F700F7 /* SwissKnife.swift */; };
+		BC324B03212ED30F002E1D0F /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD1B1F21E4281A500E21734 /* Tag.swift */; };
+		BC324B04212ED30F002E1D0F /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCADEFA11E48BB390014202A /* FavouritesViewController.swift */; };
+		BC324B05212ED30F002E1D0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9731E3E06A500F700F7 /* AppDelegate.swift */; };
+		BC324B07212ED30F002E1D0F /* Social.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A140A1E40FF8400122283 /* Social.swift */; };
+		BC324B08212ED30F002E1D0F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9A81E3E092400F700F7 /* Session.swift */; };
+		BC324B09212ED30F002E1D0F /* SessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9A91E3E092400F700F7 /* SessionCell.swift */; };
+		BC324B0A212ED30F002E1D0F /* VenueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C6DF71E6C28ED00694E07 /* VenueCell.swift */; };
+		BC324B0B212ED30F002E1D0F /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A14081E40F9F000122283 /* Badge.swift */; };
+		BC324B0C212ED30F002E1D0F /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9C31E3E8C9100F700F7 /* SessionViewController.swift */; };
+		BC324B0D212ED30F002E1D0F /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9AA1E3E092400F700F7 /* Speaker.swift */; };
+		BC324B0E212ED30F002E1D0F /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9AF1E3E092400F700F7 /* Track.swift */; };
+		BC324B0F212ED30F002E1D0F /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9A71E3E092400F700F7 /* ScheduleViewController.swift */; };
+		BC324B10212ED30F002E1D0F /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC62E4FD1E5B2B340038FA3B /* DayViewController.swift */; };
+		BC324B11212ED30F002E1D0F /* PartnerGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD3063C1E50E5FA00C71F69 /* PartnerGroup.swift */; };
+		BC324B12212ED30F002E1D0F /* PartnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD3063E1E5246C500C71F69 /* PartnersViewController.swift */; };
+		BC324B13212ED30F002E1D0F /* DataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9A41E3E092400F700F7 /* DataObject.swift */; };
+		BC324B14212ED30F002E1D0F /* SpeakerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9AB1E3E092400F700F7 /* SpeakerCell.swift */; };
+		BC324B16212ED30F002E1D0F /* Pods_RigaDevDays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C02340EF12A256BC9E469B5 /* Pods_RigaDevDays.framework */; };
+		BC324B18212ED30F002E1D0F /* c.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC3507E81E6B09070086A6EB /* c.plist */; };
+		BC324B1C212ED30F002E1D0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC70B97C1E3E06A500F700F7 /* Assets.xcassets */; };
+		BC324B1D212ED30F002E1D0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC70B9791E3E06A500F700F7 /* Main.storyboard */; };
+		BC324B28212F2705002E1D0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC324B27212F2704002E1D0F /* GoogleService-Info.plist */; };
+		BC324B2A212F271A002E1D0F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC324B29212F271A002E1D0F /* Config.swift */; };
+		BC324B32212F2B4D002E1D0F /* DevOpsDaysRiga.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC324B31212F2B4D002E1D0F /* DevOpsDaysRiga.xcassets */; };
+		BC324B34212F2C0E002E1D0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC324B33212F2C0E002E1D0F /* LaunchScreen.storyboard */; };
 		BC3507E51E6AD6E20086A6EB /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3507E41E6AD6E20086A6EB /* Feedback.swift */; };
 		BC3507E71E6AF85A0086A6EB /* FeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3507E61E6AF85A0086A6EB /* FeedbackCell.swift */; };
 		BC3507E91E6B09070086A6EB /* c.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC3507E81E6B09070086A6EB /* c.plist */; };
@@ -145,6 +191,7 @@
 		BCEA7F8D20B8149D003C0455 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA7F8B20B8149D003C0455 /* Config.swift */; };
 		BCEA7F8F20B814AD003C0455 /* FrontCon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCEA7F8E20B814AD003C0455 /* FrontCon.xcassets */; };
 		BCEA7F9120B81616003C0455 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCEA7F9020B81616003C0455 /* GoogleService-Info.plist */; };
+		DC255461170B4381BE68014C /* Pods_FrontCon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE8B0CA54C090913C9F13A4E /* Pods_FrontCon.framework */; };
 		E0FCA8C9E471F39AD1E89665 /* Pods_RigaDevDays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C02340EF12A256BC9E469B5 /* Pods_RigaDevDays.framework */; };
 /* End PBXBuildFile section */
 
@@ -173,13 +220,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		100E1F774C0F82D6063B0243 /* Pods-FrontCon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrontCon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FrontCon/Pods-FrontCon.debug.xcconfig"; sourceTree = "<group>"; };
+		17600600E7BE3F9C8306CAE3 /* Pods-DevOpsDaysRiga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevOpsDaysRiga.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevOpsDaysRiga/Pods-DevOpsDaysRiga.release.xcconfig"; sourceTree = "<group>"; };
 		1B5BC00BE474F7CC9CF4B439 /* Pods-RigaDevDays.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RigaDevDays.release.xcconfig"; path = "Pods/Target Support Files/Pods-RigaDevDays/Pods-RigaDevDays.release.xcconfig"; sourceTree = "<group>"; };
 		2C9F1E6D6A072A5794A839E3 /* Pods-RigaDevDays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RigaDevDays.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RigaDevDays/Pods-RigaDevDays.debug.xcconfig"; sourceTree = "<group>"; };
+		2DF7191E48B472BE0E5D5B43 /* Pods_DevOpsDaysRiga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevOpsDaysRiga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50144DE13B0C74E32B416668 /* Pods-FrontCon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrontCon.release.xcconfig"; path = "Pods/Target Support Files/Pods-FrontCon/Pods-FrontCon.release.xcconfig"; sourceTree = "<group>"; };
 		5C02340EF12A256BC9E469B5 /* Pods_RigaDevDays.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RigaDevDays.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ECEFC257BF8327593E5990D /* Pods-DevFest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevFest.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevFest/Pods-DevFest.release.xcconfig"; sourceTree = "<group>"; };
 		70E6CB3826B10D052B2D0BEC /* Pods-DevFest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevFest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevFest/Pods-DevFest.debug.xcconfig"; sourceTree = "<group>"; };
 		739AAD9B1AC331960BB8EF08 /* Pods_DevFest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevFest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83C91928155E07139535C0B3 /* Pods-DevOpsDaysRiga.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevOpsDaysRiga.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevOpsDaysRiga/Pods-DevOpsDaysRiga.debug.xcconfig"; sourceTree = "<group>"; };
 		BC134F1E1E4D043D00D69D0F /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
+		BC324B24212ED30F002E1D0F /* DevOpsDays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevOpsDays.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC324B27212F2704002E1D0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BC324B29212F271A002E1D0F /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		BC324B2B212F2875002E1D0F /* DevOpsDaysRiga.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevOpsDaysRiga.entitlements; sourceTree = "<group>"; };
+		BC324B2C212F29B4002E1D0F /* DevOpsDaysRiga-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DevOpsDaysRiga-Info.plist"; sourceTree = "<group>"; };
+		BC324B31212F2B4D002E1D0F /* DevOpsDaysRiga.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DevOpsDaysRiga.xcassets; sourceTree = "<group>"; };
+		BC324B33212F2C0E002E1D0F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC3507E41E6AD6E20086A6EB /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 		BC3507E61E6AF85A0086A6EB /* FeedbackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackCell.swift; sourceTree = "<group>"; };
 		BC3507E81E6B09070086A6EB /* c.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = c.plist; sourceTree = "<group>"; };
@@ -250,9 +309,19 @@
 		BCEA7F8B20B8149D003C0455 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		BCEA7F8E20B814AD003C0455 /* FrontCon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FrontCon.xcassets; sourceTree = "<group>"; };
 		BCEA7F9020B81616003C0455 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DE8B0CA54C090913C9F13A4E /* Pods_FrontCon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FrontCon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BC324B15212ED30F002E1D0F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC324B16212ED30F002E1D0F /* Pods_RigaDevDays.framework in Frameworks */,
+				A0325686561858BA25F40DB3 /* Pods_DevOpsDaysRiga.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BC70B96D1E3E06A500F700F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCEA7F7720B8125D003C0455 /* Pods_DevFest.framework in Frameworks */,
+				DC255461170B4381BE68014C /* Pods_FrontCon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,8 +378,25 @@
 				1B5BC00BE474F7CC9CF4B439 /* Pods-RigaDevDays.release.xcconfig */,
 				70E6CB3826B10D052B2D0BEC /* Pods-DevFest.debug.xcconfig */,
 				5ECEFC257BF8327593E5990D /* Pods-DevFest.release.xcconfig */,
+				83C91928155E07139535C0B3 /* Pods-DevOpsDaysRiga.debug.xcconfig */,
+				17600600E7BE3F9C8306CAE3 /* Pods-DevOpsDaysRiga.release.xcconfig */,
+				100E1F774C0F82D6063B0243 /* Pods-FrontCon.debug.xcconfig */,
+				50144DE13B0C74E32B416668 /* Pods-FrontCon.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BC324B26212F2704002E1D0F /* DevOpsDaysRiga */ = {
+			isa = PBXGroup;
+			children = (
+				BC324B31212F2B4D002E1D0F /* DevOpsDaysRiga.xcassets */,
+				BC324B2C212F29B4002E1D0F /* DevOpsDaysRiga-Info.plist */,
+				BC324B2B212F2875002E1D0F /* DevOpsDaysRiga.entitlements */,
+				BC324B27212F2704002E1D0F /* GoogleService-Info.plist */,
+				BC324B29212F271A002E1D0F /* Config.swift */,
+				BC324B33212F2C0E002E1D0F /* LaunchScreen.storyboard */,
+			);
+			path = DevOpsDaysRiga;
 			sourceTree = "<group>";
 		};
 		BC3507EA1E6B22560086A6EB /* Search */ = {
@@ -352,6 +439,7 @@
 		BC70B9671E3E06A500F700F7 = {
 			isa = PBXGroup;
 			children = (
+				BC324B26212F2704002E1D0F /* DevOpsDaysRiga */,
 				BCEA7F8720B81263003C0455 /* FrontCon */,
 				BCE775A71F45F9AE00158EED /* DevFest */,
 				BC70B9721E3E06A500F700F7 /* RigaDevDays */,
@@ -373,6 +461,7 @@
 				BCE775A31F45F96500158EED /* DevFest.app */,
 				BCCE22F11F54734400EBF2F4 /* DevFestUITests.xctest */,
 				BCEA7F8520B8125D003C0455 /* FrontCon.app */,
+				BC324B24212ED30F002E1D0F /* DevOpsDays.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -508,6 +597,8 @@
 			children = (
 				5C02340EF12A256BC9E469B5 /* Pods_RigaDevDays.framework */,
 				739AAD9B1AC331960BB8EF08 /* Pods_DevFest.framework */,
+				2DF7191E48B472BE0E5D5B43 /* Pods_DevOpsDaysRiga.framework */,
+				DE8B0CA54C090913C9F13A4E /* Pods_FrontCon.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -515,6 +606,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BC324AEC212ED30F002E1D0F /* DevOpsDaysRiga */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC324B21212ED30F002E1D0F /* Build configuration list for PBXNativeTarget "DevOpsDaysRiga" */;
+			buildPhases = (
+				BC324AED212ED30F002E1D0F /* [CP] Check Pods Manifest.lock */,
+				BC324AEE212ED30F002E1D0F /* Sources */,
+				BC324B15212ED30F002E1D0F /* Frameworks */,
+				BC324B17212ED30F002E1D0F /* Resources */,
+				BC324B1E212ED30F002E1D0F /* [CP] Embed Pods Frameworks */,
+				BC324B1F212ED30F002E1D0F /* [CP] Copy Pods Resources */,
+				BC324B20212ED30F002E1D0F /* Set build number */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DevOpsDaysRiga;
+			productName = RigaDevDays;
+			productReference = BC324B24212ED30F002E1D0F /* DevOpsDays.app */;
+			productType = "com.apple.product-type.application";
+		};
 		BC70B96F1E3E06A500F700F7 /* RigaDevDays */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC70B99A1E3E06A600F700F7 /* Build configuration list for PBXNativeTarget "RigaDevDays" */;
@@ -642,6 +754,9 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = RigaDevDays;
 				TargetAttributes = {
+					BC324AEC212ED30F002E1D0F = {
+						DevelopmentTeam = 2TYL4297NU;
+					};
 					BC70B96F1E3E06A500F700F7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 2TYL4297NU;
@@ -699,11 +814,25 @@
 				BCE7756D1F45F96500158EED /* DevFest */,
 				BCCE22F01F54734400EBF2F4 /* DevFestUITests */,
 				BCEA7F4D20B8125D003C0455 /* FrontCon */,
+				BC324AEC212ED30F002E1D0F /* DevOpsDaysRiga */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BC324B17212ED30F002E1D0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC324B18212ED30F002E1D0F /* c.plist in Resources */,
+				BC324B1C212ED30F002E1D0F /* Assets.xcassets in Resources */,
+				BC324B1D212ED30F002E1D0F /* Main.storyboard in Resources */,
+				BC324B34212F2C0E002E1D0F /* LaunchScreen.storyboard in Resources */,
+				BC324B32212F2B4D002E1D0F /* DevOpsDaysRiga.xcassets in Resources */,
+				BC324B28212F2705002E1D0F /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BC70B96E1E3E06A500F700F7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -795,6 +924,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -805,6 +935,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -813,6 +944,89 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RigaDevDays/Pods-RigaDevDays-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC324AED212ED30F002E1D0F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DevOpsDaysRiga-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC324B1E212ED30F002E1D0F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DevOpsDaysRiga/Pods-DevOpsDaysRiga-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DevOpsDaysRiga/Pods-DevOpsDaysRiga-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC324B1F212ED30F002E1D0F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DevOpsDaysRiga/Pods-DevOpsDaysRiga-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DevOpsDaysRiga/Pods-DevOpsDaysRiga-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC324B20212ED30F002E1D0F /* Set build number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Set build number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\necho \"Set version\"\ninfo_plist=\"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_FOLDER_PATH}/Info.plist\"\nif test -n \"$BUILD_NUMBER\"; then\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${BUILD_NUMBER}\" \"${info_plist}\"\nfi";
 			showEnvVarsInLog = 0;
 		};
 		BC9944BB1E4BAE840012D756 /* Set build number */ = {
@@ -858,6 +1072,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -868,6 +1083,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -922,7 +1138,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DevFest-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FrontCon-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -935,10 +1151,11 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DevFest/Pods-DevFest-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-FrontCon/Pods-FrontCon-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -949,6 +1166,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -956,7 +1174,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DevFest/Pods-DevFest-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FrontCon/Pods-FrontCon-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BCEA7F8020B8125D003C0455 /* [CP] Copy Pods Resources */ = {
@@ -965,7 +1183,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DevFest/Pods-DevFest-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-FrontCon/Pods-FrontCon-resources.sh",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -974,7 +1192,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DevFest/Pods-DevFest-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FrontCon/Pods-FrontCon-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BCEA7F8120B8125D003C0455 /* Set build number */ = {
@@ -1013,6 +1231,51 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BC324AEE212ED30F002E1D0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC324AEF212ED30F002E1D0F /* FeedbackController.swift in Sources */,
+				BC324AF0212ED30F002E1D0F /* SpeakersViewController.swift in Sources */,
+				BC324AF1212ED30F002E1D0F /* Video.swift in Sources */,
+				BC324AF2212ED30F002E1D0F /* Feedback.swift in Sources */,
+				BC324AF3212ED30F002E1D0F /* RootTabBarController.swift in Sources */,
+				BC324AF4212ED30F002E1D0F /* Timeslot.swift in Sources */,
+				BC324AF5212ED30F002E1D0F /* SpeakerViewController.swift in Sources */,
+				BC324AF6212ED30F002E1D0F /* VenueViewController.swift in Sources */,
+				BC324AF7212ED30F002E1D0F /* DataManager.swift in Sources */,
+				BC324AF8212ED30F002E1D0F /* SearchViewController.swift in Sources */,
+				BC324AF9212ED30F002E1D0F /* Team.swift in Sources */,
+				BC324AFA212ED30F002E1D0F /* PartnerCell.swift in Sources */,
+				BC324AFB212ED30F002E1D0F /* Venue.swift in Sources */,
+				BC324AFC212ED30F002E1D0F /* SocialCell.swift in Sources */,
+				BC324AFD212ED30F002E1D0F /* ActionCell.swift in Sources */,
+				BC324AFE212ED30F002E1D0F /* FeedbackCell.swift in Sources */,
+				BC324AFF212ED30F002E1D0F /* Partner.swift in Sources */,
+				BC324B00212ED30F002E1D0F /* Day.swift in Sources */,
+				BC324B01212ED30F002E1D0F /* MoreViewController.swift in Sources */,
+				BC324B02212ED30F002E1D0F /* SwissKnife.swift in Sources */,
+				BC324B03212ED30F002E1D0F /* Tag.swift in Sources */,
+				BC324B04212ED30F002E1D0F /* FavouritesViewController.swift in Sources */,
+				BC324B05212ED30F002E1D0F /* AppDelegate.swift in Sources */,
+				BC324B07212ED30F002E1D0F /* Social.swift in Sources */,
+				BC324B08212ED30F002E1D0F /* Session.swift in Sources */,
+				BC324B09212ED30F002E1D0F /* SessionCell.swift in Sources */,
+				BC324B0A212ED30F002E1D0F /* VenueCell.swift in Sources */,
+				BC324B0B212ED30F002E1D0F /* Badge.swift in Sources */,
+				BC324B0C212ED30F002E1D0F /* SessionViewController.swift in Sources */,
+				BC324B0D212ED30F002E1D0F /* Speaker.swift in Sources */,
+				BC324B0E212ED30F002E1D0F /* Track.swift in Sources */,
+				BC324B2A212F271A002E1D0F /* Config.swift in Sources */,
+				BC324B0F212ED30F002E1D0F /* ScheduleViewController.swift in Sources */,
+				BC324B10212ED30F002E1D0F /* DayViewController.swift in Sources */,
+				BC324B11212ED30F002E1D0F /* PartnerGroup.swift in Sources */,
+				BC324B12212ED30F002E1D0F /* PartnersViewController.swift in Sources */,
+				BC324B13212ED30F002E1D0F /* DataObject.swift in Sources */,
+				BC324B14212ED30F002E1D0F /* SpeakerCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BC70B96C1E3E06A500F700F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1213,6 +1476,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BC324B22212ED30F002E1D0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83C91928155E07139535C0B3 /* Pods-DevOpsDaysRiga.debug.xcconfig */;
+			buildSettings = {
+				APP_TARGET = DEVOPSDAYSRIGA;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DevOpsDaysRiga/DevOpsDaysRiga.entitlements;
+				DEVELOPMENT_TEAM = 2TYL4297NU;
+				INFOPLIST_FILE = "$(SRCROOT)/DevOpsDaysRiga/DevOpsDaysRiga-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.dmi3j.devopsdaysriga;
+				PRODUCT_NAME = DevOpsDays;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BC324B23212ED30F002E1D0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17600600E7BE3F9C8306CAE3 /* Pods-DevOpsDaysRiga.release.xcconfig */;
+			buildSettings = {
+				APP_TARGET = DEVOPSDAYSRIGA;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DevOpsDaysRiga/DevOpsDaysRiga.entitlements;
+				DEVELOPMENT_TEAM = 2TYL4297NU;
+				INFOPLIST_FILE = "$(SRCROOT)/DevOpsDaysRiga/DevOpsDaysRiga-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.dmi3j.devopsdaysriga;
+				PRODUCT_NAME = DevOpsDays;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		BC70B9981E3E06A600F700F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1328,7 +1625,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RigaDevDays/RigaDevDays.entitlements;
 				DEVELOPMENT_TEAM = 2TYL4297NU;
-				INFOPLIST_FILE = RigaDevDays/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RigaDevDays/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.dmi3j.rdd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1345,7 +1642,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RigaDevDays/RigaDevDays.entitlements;
 				DEVELOPMENT_TEAM = 2TYL4297NU;
-				INFOPLIST_FILE = RigaDevDays/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RigaDevDays/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.dmi3j.rdd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1496,7 +1793,7 @@
 		};
 		BCEA7F8320B8125D003C0455 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70E6CB3826B10D052B2D0BEC /* Pods-DevFest.debug.xcconfig */;
+			baseConfigurationReference = 100E1F774C0F82D6063B0243 /* Pods-FrontCon.debug.xcconfig */;
 			buildSettings = {
 				APP_TARGET = FRONTCON;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1517,7 +1814,7 @@
 		};
 		BCEA7F8420B8125D003C0455 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5ECEFC257BF8327593E5990D /* Pods-DevFest.release.xcconfig */;
+			baseConfigurationReference = 50144DE13B0C74E32B416668 /* Pods-FrontCon.release.xcconfig */;
 			buildSettings = {
 				APP_TARGET = FRONTCON;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1539,6 +1836,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BC324B21212ED30F002E1D0F /* Build configuration list for PBXNativeTarget "DevOpsDaysRiga" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC324B22212ED30F002E1D0F /* Debug */,
+				BC324B23212ED30F002E1D0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BC70B96B1E3E06A500F700F7 /* Build configuration list for PBXProject "RigaDevDays" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

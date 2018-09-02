@@ -27,16 +27,20 @@ class SpeakerCell: UITableViewCell {
             speakerTags?.attributedText = TagColorManager.sharedInstance.getTags(for: speaker!)
             speakerTagsWithDots?.attributedText = TagColorManager.sharedInstance.getTags(for: speaker!, withDots: true)
 
-            speaker?.speakerPhotoReference.downloadURL(completion: { (url, error) in
-                if url != nil {
-                    self.speakerIcon?.kf.indicatorType = .activity
-                    self.speakerIcon?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
-                }
+            if let photoURL = speaker?.photoURL, photoURL.contains("http"), let imageURL = URL(string: photoURL) {
+                self.speakerIcon?.kf.setImage(with: imageURL, options: [.transition(.fade(0.2))])
+            } else {
+                speaker?.speakerPhotoReference.downloadURL(completion: { (url, error) in
+                    if url != nil {
+                        self.speakerIcon?.kf.indicatorType = .activity
+                        self.speakerIcon?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
+                    }
 
-                if error != nil {
-                    print(error?.localizedDescription as Any)
-                }
-            })
+                    if error != nil {
+                        print(error?.localizedDescription as Any)
+                    }
+                })
+            }
 
             speakerBio?.setHTMLFromString(htmlText: (speaker?.bio)!)
             speakerTitle?.text = speaker?.title
@@ -61,5 +65,10 @@ class SpeakerCell: UITableViewCell {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+         self.speakerIcon.image = nil
     }
 }

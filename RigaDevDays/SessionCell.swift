@@ -31,21 +31,23 @@ class SessionCell: UITableViewCell {
             sessionName.text = session?.title
 
             if let properDay = (self.day != nil) ? self.day : session?.day,
-                let room = session?.track?.title,
+                let room = session?.auditorium ?? session?.track?.title,
                 let startTime = session?.timeslot?.startTime,
                 let endTime = session?.timeslot?.endTime,
                 let date = properDay.localizedDate {
                 sessionRoom?.text = "\(room) - \(startTime) - \(endTime)"
                 sessionLocationAndTime?.text = "\(room) - \(startTime) - \(endTime) / \(date)"
             } else {
-                sessionRoom?.text = session?.track?.title
-                sessionLocationAndTime?.text = session?.track?.title
+                sessionRoom?.text = session?.auditorium ?? session?.track?.title
+                sessionLocationAndTime?.text = session?.auditorium ?? session?.track?.title
             }
             sessionSpeakerName?.text = session?.speakers.first?.name
             colorCodeView?.backgroundColor = session?.color
             sessionDescription?.setHTMLFromString(htmlText: (session?.description)!)
 
-            if let photoReference = session?.speakers.first?.speakerPhotoReference {
+            if let photoURL = session?.speakers.first?.photoURL, photoURL.contains("http"), let imageURL = URL(string: photoURL) {
+                self.speakerImage?.kf.setImage(with: imageURL, options: [.transition(.fade(0.2))])
+            } else if let photoReference = session?.speakers.first?.speakerPhotoReference {
                 photoReference.downloadURL(completion: { (url, error) in
                     self.imageBackground?.isHidden = false
                     self.speakerImageHeightConstraint?.constant = self.speakerImage.frame.size.width
