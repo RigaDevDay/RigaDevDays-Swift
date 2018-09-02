@@ -809,12 +809,12 @@
 			projectRoot = "";
 			targets = (
 				BC70B96F1E3E06A500F700F7 /* RigaDevDays */,
-				BC70B9851E3E06A600F700F7 /* RigaDevDaysTests */,
-				BC70B9901E3E06A600F700F7 /* RigaDevDaysUITests */,
 				BCE7756D1F45F96500158EED /* DevFest */,
-				BCCE22F01F54734400EBF2F4 /* DevFestUITests */,
 				BCEA7F4D20B8125D003C0455 /* FrontCon */,
 				BC324AEC212ED30F002E1D0F /* DevOpsDaysRiga */,
+				BC70B9851E3E06A600F700F7 /* RigaDevDaysTests */,
+				BC70B9901E3E06A600F700F7 /* RigaDevDaysUITests */,
+				BCCE22F01F54734400EBF2F4 /* DevFestUITests */,
 			);
 		};
 /* End PBXProject section */
