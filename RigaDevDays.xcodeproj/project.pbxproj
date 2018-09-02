@@ -302,7 +302,7 @@
 		BCE775B31F46004800158EED /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		BCE775B51F4605F700158EED /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		BCEA7F8520B8125D003C0455 /* FrontCon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrontCon.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCEA7F8620B8125D003C0455 /* FrontCon-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FrontCon-Info.plist"; path = "/Users/dmi3j/Developer/RigaDevDays-Swift/FrontCon-Info.plist"; sourceTree = "<absolute>"; };
+		BCEA7F8620B8125D003C0455 /* FrontCon-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FrontCon-Info.plist"; sourceTree = "<group>"; };
 		BCEA7F8820B81407003C0455 /* DevFest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevFest.entitlements; sourceTree = "<group>"; };
 		BCEA7F8920B8140E003C0455 /* FrontCon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FrontCon.entitlements; sourceTree = "<group>"; };
 		BCEA7F8A20B8149D003C0455 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -1801,7 +1801,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2TYL4297NU;
-				INFOPLIST_FILE = "$(SRCROOT)/FrontCon-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FrontCon/FrontCon-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.dmi3j.frontcon.lv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1822,7 +1822,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2TYL4297NU;
-				INFOPLIST_FILE = "$(SRCROOT)/FrontCon-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FrontCon/FrontCon-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.dmi3j.frontcon.lv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
