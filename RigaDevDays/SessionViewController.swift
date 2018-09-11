@@ -117,7 +117,7 @@ extension SessionViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         switch SwissKnife.app {
-        case .rdd: return Config.sharedInstance.numberOfSectionsInSessionScreen - 1
+        case .rdd, .devopsdaysriga: return Config.sharedInstance.numberOfSectionsInSessionScreen - 1
         case .devfest, .frontcon: return Config.sharedInstance.numberOfSectionsInSessionScreen // -> amount of Section enum
         }
     }
@@ -148,7 +148,7 @@ extension SessionViewController: UITableViewDataSource {
             return (DataManager.sharedInstance.getFeeback(by: (session?.sessionID)!) != nil) ? 1 : 0
         case TableSections.Map.rawValue:
             switch SwissKnife.app {
-            case .rdd, .frontcon: return 0
+            case .rdd, .frontcon, .devopsdaysriga: return 0
             case .devfest: return 1
             }
         default:
@@ -216,7 +216,7 @@ extension SessionViewController: UITableViewDataSource {
 
         case TableSections.Map.rawValue:
             let cell: ActionCell = tableView.dequeueReusableCell(withIdentifier: "ActionCell_Map", for: indexPath) as! ActionCell
-            if let imageName = session?.track?.title,
+            if let imageName = session?.auditorium ?? session?.track?.title,
                 let image = UIImage.init(named: imageName) {
                 cell.actionImage.image = image
             }

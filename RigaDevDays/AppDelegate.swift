@@ -72,7 +72,7 @@ extension AppDelegate: GIDSignInDelegate {
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                           accessToken: authentication.accessToken)
 
-        Auth.auth().signIn(with: credential) { (user, error) in
+        Auth.auth().signInAndRetrieveData(with: credential) { (user, error) in
             if let error = error {
                 print("Login with Firebase error [\(error.localizedDescription)]")
                 return

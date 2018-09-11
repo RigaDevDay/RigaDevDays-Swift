@@ -26,7 +26,7 @@ class DayViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSession" {
             if let sessionViewController = segue.destination as? SessionViewController {
-                sessionViewController.day = self.selectedDay
+                sessionViewController.day = selectedDay
                 sessionViewController.session = selectedSession
             }
         }
@@ -48,7 +48,7 @@ class DayViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: SessionCell = tableView.dequeueReusableCell(withIdentifier: "SessionCell", for: indexPath) as! SessionCell
-        cell.day = self.selectedDay
+        cell.day = selectedDay
         cell.session = selectedDay?.timeslots[indexPath.section].sessions[indexPath.row]
         return cell
     }

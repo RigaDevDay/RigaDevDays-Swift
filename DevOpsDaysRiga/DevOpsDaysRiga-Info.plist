@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.7</string>
+	<string>1.8</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -25,12 +25,12 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.193812542085-4mvfn6f7le8rvh97eruj7d4q43r7kcla</string>
+				<string>com.googleusercontent.apps.1002110996380-dqr2dqd6pbjf9ok77oi742jv3hggdn19</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
@@ -39,7 +39,7 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>devfest.gdg.lv</key>
+			<key>rigadevdays.lv</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
@@ -49,9 +49,9 @@
 		</dict>
 	</dict>
 	<key>NSCalendarsUsageDescription</key>
-	<string>FrontCon would like to create a calendar event.</string>
+	<string>RigaDevDays would like to create a calendar event.</string>
 	<key>NSContactsUsageDescription</key>
-	<string>FrontCon would like to create a calendar event.</string>
+	<string>RigaDevDays would like to create a calendar event.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

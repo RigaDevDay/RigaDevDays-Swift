@@ -23,8 +23,13 @@ class Speaker: DataObject {
     }
 
     var speakerPhotoReference: StorageReference {
-        let imageName = URL(fileURLWithPath: photoURL ?? "").lastPathComponent
-        return DataManager.sharedInstance.storageRef.child("images/people").child(imageName)
+        switch SwissKnife.app {
+        case .devopsdaysriga:
+            return DataManager.sharedInstance.storageRef.child(photoURL ?? "")
+        case .devfest, .frontcon, .rdd:
+            let imageName = URL(fileURLWithPath: photoURL ?? "").lastPathComponent
+            return DataManager.sharedInstance.storageRef.child("people").child(imageName)
+        }
     }
 
     override init(snapshot: DataSnapshot) {
