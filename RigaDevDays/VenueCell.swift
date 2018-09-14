@@ -19,6 +19,7 @@ class VenueCell: UITableViewCell {
             venueAddress?.text = venue?.address
 
             if let photoURL = venue?.imageUrl, photoURL.contains("http"), let imageURL = URL(string: photoURL) {
+                self.venueImage?.kf.indicatorType = .activity
                 self.venueImage?.kf.setImage(with: imageURL, options: [.transition(.fade(0.2))])
             } else {
                 switch SwissKnife.app {
