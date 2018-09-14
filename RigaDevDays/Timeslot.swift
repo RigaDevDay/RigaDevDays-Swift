@@ -16,7 +16,8 @@ class Timeslot: DataObject {
             for index in 0..<self.sessionIDs.count {
                 let sID = self.sessionIDs[index]
                 if let s = DataManager.sharedInstance.getSession(by: sID) {
-                    s.track = self.tracks[index]
+                    self.tracks.indices.contains(index)
+                    s.track = self.tracks.indices.contains(index) ? self.tracks[index] : self.tracks.first
                     s.timeslot = self
                     temp.append(s)
                 }
