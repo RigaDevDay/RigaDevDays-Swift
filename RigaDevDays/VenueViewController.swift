@@ -56,6 +56,7 @@ class VenueViewController: UITableViewController {
         }
 
         if let photoURL = venue.imageUrl, photoURL.contains("http"), let imageURL = URL(string: photoURL) {
+            venueImage?.kf.indicatorType = .activity
             venueImage?.kf.setImage(with: imageURL, options: [.transition(.fade(0.2))])
         } else if let url = URL(string: Config.sharedInstance.baseURLPrefix + venue.imageUrl!) {
             venueImage?.kf.indicatorType = .activity

@@ -28,6 +28,7 @@ class SpeakerCell: UITableViewCell {
             speakerTagsWithDots?.attributedText = TagColorManager.sharedInstance.getTags(for: speaker!, withDots: true)
 
             if let photoURL = speaker?.photoURL, photoURL.contains("http"), let imageURL = URL(string: photoURL) {
+                self.speakerIcon?.kf.indicatorType = .activity
                 self.speakerIcon?.kf.setImage(with: imageURL, options: [.transition(.fade(0.2))])
             } else {
                 speaker?.speakerPhotoReference.downloadURL(completion: { (url, error) in

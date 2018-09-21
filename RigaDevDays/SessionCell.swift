@@ -46,6 +46,7 @@ class SessionCell: UITableViewCell {
             sessionDescription?.setHTMLFromString(htmlText: (session?.description)!)
 
             if let photoURL = session?.speakers.first?.photoURL, photoURL.contains("http"), let imageURL = URL(string: photoURL) {
+                self.speakerImage?.kf.indicatorType = .activity
                 self.speakerImage?.kf.setImage(with: imageURL, options: [.transition(.fade(0.2))])
             } else if let photoReference = session?.speakers.first?.speakerPhotoReference {
                 photoReference.downloadURL(completion: { (url, error) in

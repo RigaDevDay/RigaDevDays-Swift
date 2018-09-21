@@ -52,23 +52,17 @@ class FeedbackController: UITableViewController {
     //MARK: -
 
     func updateSession(_ session: Session) {
-
         sessionName.text = session.title
-
-//        if let photoURL = session.speakers.first?.photoURL, let url = URL(string: Config.sharedInstance.baseURLPrefix + photoURL) {
-//            speakerImage?.kf.indicatorType = .activity
-//            speakerImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
-//        }
-        session.speakers.first?.speakerPhotoReference.downloadURL(completion: { (url, error) in
-            if url != nil {
+        if let photoURL = session.speakers.first?.photoURL, photoURL.contains("http"), let imageURL = URL(string: photoURL) {
+            self.speakerImage?.kf.indicatorType = .activity
+            self.speakerImage?.kf.setImage(with: imageURL, options: [.transition(.fade(0.2))])
+        } else if let photoReference = session.speakers.first?.speakerPhotoReference {
+            photoReference.downloadURL(completion: { (url, error) in
+                self.imageBackground?.isHidden = false
                 self.speakerImage?.kf.indicatorType = .activity
                 self.speakerImage?.kf.setImage(with: url, options: [.transition(.fade(0.2))])
-            }
-
-            if error != nil {
-                print(error?.localizedDescription as Any)
-            }
-        })
+            })
+        }
 
         var allSessionSpeakers = "by "
         for speaker in session.speakers {
