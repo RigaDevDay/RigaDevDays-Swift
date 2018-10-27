@@ -1,7 +1,7 @@
 //  Copyright © 2017 RigaDevDays. All rights reserved.
 
 import Foundation
-
+import GoogleSignIn
 import Firebase
 
 class PartnersViewController: UIViewController  {
@@ -12,10 +12,60 @@ class PartnersViewController: UIViewController  {
         super.viewDidLoad()
 
         NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .PartnerUpdated, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(updateNavigationButtons), name: .UserDidSignIn, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateNavigationButtons), name: .UserDidSignOut, object: nil)
+
+        updateNavigationButtons()
     }
 
-    @objc func dataChanged() {
+    @objc
+    func dataChanged() {
         partnersCollectionView.reloadData()
+    }
+
+    @objc
+    func updateNavigationButtons() {
+        navigationItem.rightBarButtonItem = nil
+        navigationItem.leftBarButtonItem = nil
+        guard let userID = Auth.auth().currentUser?.uid else {
+            let participantButton = UIBarButtonItem(title: "Lottery",
+                                                    style: .plain,
+                                                    target: self,
+                                                    action: #selector(signIn))
+            navigationItem.leftBarButtonItem = participantButton
+            return
+        }
+        if DataManager.sharedInstance.lotteryPartners.filter({ $0.identifier == userID }).count > 0 {
+            let partnerButton = UIBarButtonItem(title: "Lottery",
+                                                style: .plain,
+                                                target: self,
+                                                action: #selector(showLotteryForPartner))
+            navigationItem.rightBarButtonItem = partnerButton
+
+        } else {
+            let participantButton = UIBarButtonItem(title: "Lottery",
+                                                    style: .plain,
+                                                    target: self,
+                                                    action: #selector(showLoteryForParticipant))
+            navigationItem.leftBarButtonItem = participantButton
+        }
+
+    }
+
+    @objc
+    func showLoteryForParticipant() {
+        performSegue(withIdentifier: "showLotteryForParticipant", sender: self)
+    }
+
+    @objc
+    func showLotteryForPartner() {
+        performSegue(withIdentifier: "showLotteryForPartner", sender: self)
+    }
+
+    @objc
+    func signIn() {
+        GIDSignIn.sharedInstance().signIn()
     }
 }
 
@@ -58,6 +108,7 @@ extension PartnersViewController: UICollectionViewDelegate {
 }
 
 extension PartnersViewController: UICollectionViewDelegateFlowLayout {
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var cellHeight = 100.0
         cellHeight = Double(collectionView.frame.size.width - 30.0) / 2.0

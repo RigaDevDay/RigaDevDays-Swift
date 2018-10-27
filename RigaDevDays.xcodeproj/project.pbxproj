@@ -10,6 +10,26 @@
 		A0325686561858BA25F40DB3 /* Pods_DevOpsDaysRiga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF7191E48B472BE0E5D5B43 /* Pods_DevOpsDaysRiga.framework */; };
 		A76426AA54EAF531F7323051 /* Pods_DevFest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739AAD9B1AC331960BB8EF08 /* Pods_DevFest.framework */; };
 		BC134F1F1E4D043D00D69D0F /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC134F1E1E4D043D00D69D0F /* RootTabBarController.swift */; };
+		BC1B48A421845B0800092286 /* QRProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48A321845B0800092286 /* QRProfileCell.swift */; };
+		BC1B48A521845B0800092286 /* QRProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48A321845B0800092286 /* QRProfileCell.swift */; };
+		BC1B48A621845B0800092286 /* QRProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48A321845B0800092286 /* QRProfileCell.swift */; };
+		BC1B48A721845B0800092286 /* QRProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48A321845B0800092286 /* QRProfileCell.swift */; };
+		BC1B48A921845B2E00092286 /* LotteryPartnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48A821845B2E00092286 /* LotteryPartnerCell.swift */; };
+		BC1B48AA21845B2E00092286 /* LotteryPartnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48A821845B2E00092286 /* LotteryPartnerCell.swift */; };
+		BC1B48AB21845B2E00092286 /* LotteryPartnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48A821845B2E00092286 /* LotteryPartnerCell.swift */; };
+		BC1B48AC21845B2E00092286 /* LotteryPartnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48A821845B2E00092286 /* LotteryPartnerCell.swift */; };
+		BC1B48AE21845F2C00092286 /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48AD21845F2C00092286 /* QRScannerController.swift */; };
+		BC1B48AF21845F2C00092286 /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48AD21845F2C00092286 /* QRScannerController.swift */; };
+		BC1B48B021845F2C00092286 /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48AD21845F2C00092286 /* QRScannerController.swift */; };
+		BC1B48B121845F2C00092286 /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48AD21845F2C00092286 /* QRScannerController.swift */; };
+		BC1B48B32184A82900092286 /* LotteryParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48B22184A82900092286 /* LotteryParticipant.swift */; };
+		BC1B48B42184A82900092286 /* LotteryParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48B22184A82900092286 /* LotteryParticipant.swift */; };
+		BC1B48B52184A82900092286 /* LotteryParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48B22184A82900092286 /* LotteryParticipant.swift */; };
+		BC1B48B62184A82900092286 /* LotteryParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48B22184A82900092286 /* LotteryParticipant.swift */; };
+		BC1B48B82184C23700092286 /* LotteryParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48B72184C23700092286 /* LotteryParticipantCell.swift */; };
+		BC1B48B92184C23700092286 /* LotteryParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48B72184C23700092286 /* LotteryParticipantCell.swift */; };
+		BC1B48BA2184C23700092286 /* LotteryParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48B72184C23700092286 /* LotteryParticipantCell.swift */; };
+		BC1B48BB2184C23700092286 /* LotteryParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B48B72184C23700092286 /* LotteryParticipantCell.swift */; };
 		BC324AEF212ED30F002E1D0F /* FeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCE54EF1E65EDCD002CA1E3 /* FeedbackController.swift */; };
 		BC324AF0212ED30F002E1D0F /* SpeakersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC70B9AC1E3E092400F700F7 /* SpeakersViewController.swift */; };
 		BC324AF1212ED30F002E1D0F /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5D1D881E91464D00F75607 /* Video.swift */; };
@@ -90,6 +110,14 @@
 		BC7C6DFA1E6C492400694E07 /* VenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C6DF91E6C492400694E07 /* VenueViewController.swift */; };
 		BC8A14091E40F9F000122283 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A14081E40F9F000122283 /* Badge.swift */; };
 		BC8A140B1E40FF8400122283 /* Social.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A140A1E40FF8400122283 /* Social.swift */; };
+		BC922EEC217C9A4400DD218A /* LotteryProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC922EEB217C9A4400DD218A /* LotteryProfileController.swift */; };
+		BC922EED217C9A4400DD218A /* LotteryProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC922EEB217C9A4400DD218A /* LotteryProfileController.swift */; };
+		BC922EEE217C9A4400DD218A /* LotteryProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC922EEB217C9A4400DD218A /* LotteryProfileController.swift */; };
+		BC922EEF217C9A4400DD218A /* LotteryProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC922EEB217C9A4400DD218A /* LotteryProfileController.swift */; };
+		BC922EF1217C9A5800DD218A /* LotteryParticipantsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC922EF0217C9A5800DD218A /* LotteryParticipantsController.swift */; };
+		BC922EF2217C9A5800DD218A /* LotteryParticipantsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC922EF0217C9A5800DD218A /* LotteryParticipantsController.swift */; };
+		BC922EF3217C9A5800DD218A /* LotteryParticipantsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC922EF0217C9A5800DD218A /* LotteryParticipantsController.swift */; };
+		BC922EF4217C9A5800DD218A /* LotteryParticipantsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC922EF0217C9A5800DD218A /* LotteryParticipantsController.swift */; };
 		BCADEFA21E48BB390014202A /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCADEFA11E48BB390014202A /* FavouritesViewController.swift */; };
 		BCB48BB41E59E64100D042D3 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB48BB31E59E64100D042D3 /* ActionCell.swift */; };
 		BCCE22EC1F54604B00EBF2F4 /* SimpleClickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCE22EB1F54604B00EBF2F4 /* SimpleClickTests.swift */; };
@@ -232,6 +260,11 @@
 		739AAD9B1AC331960BB8EF08 /* Pods_DevFest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevFest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83C91928155E07139535C0B3 /* Pods-DevOpsDaysRiga.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevOpsDaysRiga.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevOpsDaysRiga/Pods-DevOpsDaysRiga.debug.xcconfig"; sourceTree = "<group>"; };
 		BC134F1E1E4D043D00D69D0F /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
+		BC1B48A321845B0800092286 /* QRProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRProfileCell.swift; sourceTree = "<group>"; };
+		BC1B48A821845B2E00092286 /* LotteryPartnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryPartnerCell.swift; sourceTree = "<group>"; };
+		BC1B48AD21845F2C00092286 /* QRScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
+		BC1B48B22184A82900092286 /* LotteryParticipant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryParticipant.swift; sourceTree = "<group>"; };
+		BC1B48B72184C23700092286 /* LotteryParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryParticipantCell.swift; sourceTree = "<group>"; };
 		BC324B24212ED30F002E1D0F /* DevOpsDays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevOpsDays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC324B27212F2704002E1D0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BC324B29212F271A002E1D0F /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -280,6 +313,8 @@
 		BC7C6DF91E6C492400694E07 /* VenueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueViewController.swift; sourceTree = "<group>"; };
 		BC8A14081E40F9F000122283 /* Badge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		BC8A140A1E40FF8400122283 /* Social.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Social.swift; sourceTree = "<group>"; };
+		BC922EEB217C9A4400DD218A /* LotteryProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryProfileController.swift; sourceTree = "<group>"; };
+		BC922EF0217C9A5800DD218A /* LotteryParticipantsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryParticipantsController.swift; sourceTree = "<group>"; };
 		BC9944BC1E4BB42B0012D756 /* RigaDevDays.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RigaDevDays.entitlements; sourceTree = "<group>"; };
 		BCADEFA11E48BB390014202A /* FavouritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		BCB48BB31E59E64100D042D3 /* ActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
@@ -475,6 +510,7 @@
 				BCD306391E50E57100C71F69 /* Partners */,
 				BC3507EA1E6B22560086A6EB /* Search */,
 				BC7C6DF01E6C179700694E07 /* More */,
+				BC922EEA217C9A2C00DD218A /* Lottery */,
 				BC6583061E59BE8000DE8D15 /* Resources */,
 			);
 			path = RigaDevDays;
@@ -544,6 +580,20 @@
 				BC7C6DF91E6C492400694E07 /* VenueViewController.swift */,
 			);
 			name = More;
+			sourceTree = "<group>";
+		};
+		BC922EEA217C9A2C00DD218A /* Lottery */ = {
+			isa = PBXGroup;
+			children = (
+				BC1B48B22184A82900092286 /* LotteryParticipant.swift */,
+				BC922EEB217C9A4400DD218A /* LotteryProfileController.swift */,
+				BC1B48A821845B2E00092286 /* LotteryPartnerCell.swift */,
+				BC1B48A321845B0800092286 /* QRProfileCell.swift */,
+				BC922EF0217C9A5800DD218A /* LotteryParticipantsController.swift */,
+				BC1B48B72184C23700092286 /* LotteryParticipantCell.swift */,
+				BC1B48AD21845F2C00092286 /* QRScannerController.swift */,
+			);
+			name = Lottery;
 			sourceTree = "<group>";
 		};
 		BCCE22F21F54734400EBF2F4 /* DevFestUITests */ = {
@@ -1239,11 +1289,14 @@
 				BC324AF0212ED30F002E1D0F /* SpeakersViewController.swift in Sources */,
 				BC324AF1212ED30F002E1D0F /* Video.swift in Sources */,
 				BC324AF2212ED30F002E1D0F /* Feedback.swift in Sources */,
+				BC922EEF217C9A4400DD218A /* LotteryProfileController.swift in Sources */,
 				BC324AF3212ED30F002E1D0F /* RootTabBarController.swift in Sources */,
+				BC1B48A721845B0800092286 /* QRProfileCell.swift in Sources */,
 				BC324AF4212ED30F002E1D0F /* Timeslot.swift in Sources */,
 				BC324AF5212ED30F002E1D0F /* SpeakerViewController.swift in Sources */,
 				BC324AF6212ED30F002E1D0F /* VenueViewController.swift in Sources */,
 				BC324AF7212ED30F002E1D0F /* DataManager.swift in Sources */,
+				BC1B48B121845F2C00092286 /* QRScannerController.swift in Sources */,
 				BC324AF8212ED30F002E1D0F /* SearchViewController.swift in Sources */,
 				BC324AF9212ED30F002E1D0F /* Team.swift in Sources */,
 				BC324AFA212ED30F002E1D0F /* PartnerCell.swift in Sources */,
@@ -1252,19 +1305,23 @@
 				BC324AFD212ED30F002E1D0F /* ActionCell.swift in Sources */,
 				BC324AFE212ED30F002E1D0F /* FeedbackCell.swift in Sources */,
 				BC324AFF212ED30F002E1D0F /* Partner.swift in Sources */,
+				BC1B48BB2184C23700092286 /* LotteryParticipantCell.swift in Sources */,
 				BC324B00212ED30F002E1D0F /* Day.swift in Sources */,
+				BC1B48B62184A82900092286 /* LotteryParticipant.swift in Sources */,
 				BC324B01212ED30F002E1D0F /* MoreViewController.swift in Sources */,
 				BC324B02212ED30F002E1D0F /* SwissKnife.swift in Sources */,
 				BC324B03212ED30F002E1D0F /* Tag.swift in Sources */,
 				BC324B04212ED30F002E1D0F /* FavouritesViewController.swift in Sources */,
 				BC324B05212ED30F002E1D0F /* AppDelegate.swift in Sources */,
 				BC324B07212ED30F002E1D0F /* Social.swift in Sources */,
+				BC1B48AC21845B2E00092286 /* LotteryPartnerCell.swift in Sources */,
 				BC324B08212ED30F002E1D0F /* Session.swift in Sources */,
 				BC324B09212ED30F002E1D0F /* SessionCell.swift in Sources */,
 				BC324B0A212ED30F002E1D0F /* VenueCell.swift in Sources */,
 				BC324B0B212ED30F002E1D0F /* Badge.swift in Sources */,
 				BC324B0C212ED30F002E1D0F /* SessionViewController.swift in Sources */,
 				BC324B0D212ED30F002E1D0F /* Speaker.swift in Sources */,
+				BC922EF4217C9A5800DD218A /* LotteryParticipantsController.swift in Sources */,
 				BC324B0E212ED30F002E1D0F /* Track.swift in Sources */,
 				BC324B2A212F271A002E1D0F /* Config.swift in Sources */,
 				BC324B0F212ED30F002E1D0F /* ScheduleViewController.swift in Sources */,
@@ -1284,11 +1341,14 @@
 				BC70B9BA1E3E092400F700F7 /* SpeakersViewController.swift in Sources */,
 				BC5D1D891E91464D00F75607 /* Video.swift in Sources */,
 				BC3507E51E6AD6E20086A6EB /* Feedback.swift in Sources */,
+				BC922EEC217C9A4400DD218A /* LotteryProfileController.swift in Sources */,
 				BC134F1F1E4D043D00D69D0F /* RootTabBarController.swift in Sources */,
+				BC1B48A421845B0800092286 /* QRProfileCell.swift in Sources */,
 				BC70B9BC1E3E092400F700F7 /* Timeslot.swift in Sources */,
 				BC70B9C21E3E63A500F700F7 /* SpeakerViewController.swift in Sources */,
 				BC7C6DFA1E6C492400694E07 /* VenueViewController.swift in Sources */,
 				BC70B9B11E3E092400F700F7 /* DataManager.swift in Sources */,
+				BC1B48AE21845F2C00092286 /* QRScannerController.swift in Sources */,
 				BC3507EE1E6B22970086A6EB /* SearchViewController.swift in Sources */,
 				BC7C6DF61E6C253300694E07 /* Team.swift in Sources */,
 				BCD306411E5248A200C71F69 /* PartnerCell.swift in Sources */,
@@ -1297,19 +1357,23 @@
 				BCB48BB41E59E64100D042D3 /* ActionCell.swift in Sources */,
 				BC3507E71E6AF85A0086A6EB /* FeedbackCell.swift in Sources */,
 				BCD3063B1E50E58300C71F69 /* Partner.swift in Sources */,
+				BC1B48B82184C23700092286 /* LotteryParticipantCell.swift in Sources */,
 				BC70B9B31E3E092400F700F7 /* Day.swift in Sources */,
+				BC1B48B32184A82900092286 /* LotteryParticipant.swift in Sources */,
 				BC7C6DF41E6C241B00694E07 /* MoreViewController.swift in Sources */,
 				BC70B9C61E3F326800F700F7 /* SwissKnife.swift in Sources */,
 				BCD1B1F31E4281A500E21734 /* Tag.swift in Sources */,
 				BCADEFA21E48BB390014202A /* FavouritesViewController.swift in Sources */,
 				BC70B9741E3E06A500F700F7 /* AppDelegate.swift in Sources */,
 				BCE775B61F4605F700158EED /* Config.swift in Sources */,
+				BC1B48A921845B2E00092286 /* LotteryPartnerCell.swift in Sources */,
 				BC8A140B1E40FF8400122283 /* Social.swift in Sources */,
 				BC70B9B61E3E092400F700F7 /* Session.swift in Sources */,
 				BC70B9B71E3E092400F700F7 /* SessionCell.swift in Sources */,
 				BC7C6DF81E6C28ED00694E07 /* VenueCell.swift in Sources */,
 				BC8A14091E40F9F000122283 /* Badge.swift in Sources */,
 				BC70B9C41E3E8C9100F700F7 /* SessionViewController.swift in Sources */,
+				BC922EF1217C9A5800DD218A /* LotteryParticipantsController.swift in Sources */,
 				BC70B9B81E3E092400F700F7 /* Speaker.swift in Sources */,
 				BC70B9BD1E3E092400F700F7 /* Track.swift in Sources */,
 				BC70B9B51E3E092400F700F7 /* ScheduleViewController.swift in Sources */,
@@ -1354,11 +1418,14 @@
 				BCE775711F45F96500158EED /* SpeakersViewController.swift in Sources */,
 				BCE775721F45F96500158EED /* Video.swift in Sources */,
 				BCE775731F45F96500158EED /* Feedback.swift in Sources */,
+				BC922EED217C9A4400DD218A /* LotteryProfileController.swift in Sources */,
 				BCE775741F45F96500158EED /* RootTabBarController.swift in Sources */,
+				BC1B48A521845B0800092286 /* QRProfileCell.swift in Sources */,
 				BCE775751F45F96500158EED /* Timeslot.swift in Sources */,
 				BCE775761F45F96500158EED /* SpeakerViewController.swift in Sources */,
 				BCE775771F45F96500158EED /* VenueViewController.swift in Sources */,
 				BCE775781F45F96500158EED /* DataManager.swift in Sources */,
+				BC1B48AF21845F2C00092286 /* QRScannerController.swift in Sources */,
 				BCE775791F45F96500158EED /* SearchViewController.swift in Sources */,
 				BCE7757A1F45F96500158EED /* Team.swift in Sources */,
 				BCE7757B1F45F96500158EED /* PartnerCell.swift in Sources */,
@@ -1367,19 +1434,23 @@
 				BCE7757E1F45F96500158EED /* ActionCell.swift in Sources */,
 				BCE7757F1F45F96500158EED /* FeedbackCell.swift in Sources */,
 				BCE775801F45F96500158EED /* Partner.swift in Sources */,
+				BC1B48B92184C23700092286 /* LotteryParticipantCell.swift in Sources */,
 				BCE775B41F46004800158EED /* Config.swift in Sources */,
+				BC1B48B42184A82900092286 /* LotteryParticipant.swift in Sources */,
 				BCE775811F45F96500158EED /* Day.swift in Sources */,
 				BCE775821F45F96500158EED /* MoreViewController.swift in Sources */,
 				BCE775831F45F96500158EED /* SwissKnife.swift in Sources */,
 				BCE775841F45F96500158EED /* Tag.swift in Sources */,
 				BCE775851F45F96500158EED /* FavouritesViewController.swift in Sources */,
 				BCE775861F45F96500158EED /* AppDelegate.swift in Sources */,
+				BC1B48AA21845B2E00092286 /* LotteryPartnerCell.swift in Sources */,
 				BCE775871F45F96500158EED /* Social.swift in Sources */,
 				BCE775881F45F96500158EED /* Session.swift in Sources */,
 				BCE775891F45F96500158EED /* SessionCell.swift in Sources */,
 				BCE7758A1F45F96500158EED /* VenueCell.swift in Sources */,
 				BCE7758B1F45F96500158EED /* Badge.swift in Sources */,
 				BCE7758C1F45F96500158EED /* SessionViewController.swift in Sources */,
+				BC922EF2217C9A5800DD218A /* LotteryParticipantsController.swift in Sources */,
 				BCE7758D1F45F96500158EED /* Speaker.swift in Sources */,
 				BCE7758E1F45F96500158EED /* Track.swift in Sources */,
 				BCE7758F1F45F96500158EED /* ScheduleViewController.swift in Sources */,
@@ -1399,11 +1470,14 @@
 				BCEA7F5120B8125D003C0455 /* SpeakersViewController.swift in Sources */,
 				BCEA7F5220B8125D003C0455 /* Video.swift in Sources */,
 				BCEA7F5320B8125D003C0455 /* Feedback.swift in Sources */,
+				BC922EEE217C9A4400DD218A /* LotteryProfileController.swift in Sources */,
 				BCEA7F5420B8125D003C0455 /* RootTabBarController.swift in Sources */,
+				BC1B48A621845B0800092286 /* QRProfileCell.swift in Sources */,
 				BCEA7F5520B8125D003C0455 /* Timeslot.swift in Sources */,
 				BCEA7F5620B8125D003C0455 /* SpeakerViewController.swift in Sources */,
 				BCEA7F5720B8125D003C0455 /* VenueViewController.swift in Sources */,
 				BCEA7F5820B8125D003C0455 /* DataManager.swift in Sources */,
+				BC1B48B021845F2C00092286 /* QRScannerController.swift in Sources */,
 				BCEA7F5920B8125D003C0455 /* SearchViewController.swift in Sources */,
 				BCEA7F5A20B8125D003C0455 /* Team.swift in Sources */,
 				BCEA7F5B20B8125D003C0455 /* PartnerCell.swift in Sources */,
@@ -1412,19 +1486,23 @@
 				BCEA7F5E20B8125D003C0455 /* ActionCell.swift in Sources */,
 				BCEA7F5F20B8125D003C0455 /* FeedbackCell.swift in Sources */,
 				BCEA7F6020B8125D003C0455 /* Partner.swift in Sources */,
+				BC1B48BA2184C23700092286 /* LotteryParticipantCell.swift in Sources */,
 				BCEA7F6220B8125D003C0455 /* Day.swift in Sources */,
+				BC1B48B52184A82900092286 /* LotteryParticipant.swift in Sources */,
 				BCEA7F6320B8125D003C0455 /* MoreViewController.swift in Sources */,
 				BCEA7F6420B8125D003C0455 /* SwissKnife.swift in Sources */,
 				BCEA7F6520B8125D003C0455 /* Tag.swift in Sources */,
 				BCEA7F6620B8125D003C0455 /* FavouritesViewController.swift in Sources */,
 				BCEA7F6720B8125D003C0455 /* AppDelegate.swift in Sources */,
 				BCEA7F6820B8125D003C0455 /* Social.swift in Sources */,
+				BC1B48AB21845B2E00092286 /* LotteryPartnerCell.swift in Sources */,
 				BCEA7F6920B8125D003C0455 /* Session.swift in Sources */,
 				BCEA7F6A20B8125D003C0455 /* SessionCell.swift in Sources */,
 				BCEA7F6B20B8125D003C0455 /* VenueCell.swift in Sources */,
 				BCEA7F6C20B8125D003C0455 /* Badge.swift in Sources */,
 				BCEA7F6D20B8125D003C0455 /* SessionViewController.swift in Sources */,
 				BCEA7F6E20B8125D003C0455 /* Speaker.swift in Sources */,
+				BC922EF3217C9A5800DD218A /* LotteryParticipantsController.swift in Sources */,
 				BCEA7F6F20B8125D003C0455 /* Track.swift in Sources */,
 				BCEA7F8D20B8149D003C0455 /* Config.swift in Sources */,
 				BCEA7F7020B8125D003C0455 /* ScheduleViewController.swift in Sources */,
