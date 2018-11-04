@@ -80,6 +80,8 @@
 		BC3507E91E6B09070086A6EB /* c.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC3507E81E6B09070086A6EB /* c.plist */; };
 		BC3507EE1E6B22970086A6EB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3507ED1E6B22970086A6EB /* SearchViewController.swift */; };
 		BC3611141E5F194B0069BD6C /* SocialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3611131E5F194B0069BD6C /* SocialCell.swift */; };
+		BC4711FF218F4CF700832FEA /* FrontCon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4711FE218F4CF700832FEA /* FrontCon.xcassets */; };
+		BC471201218F4D1800832FEA /* DevFest.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC471200218F4D1800832FEA /* DevFest.xcassets */; };
 		BC5D1D891E91464D00F75607 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5D1D881E91464D00F75607 /* Video.swift */; };
 		BC62E4FE1E5B2B340038FA3B /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC62E4FD1E5B2B340038FA3B /* DayViewController.swift */; };
 		BC6583051E59BBEE00DE8D15 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC6583041E59BBEE00DE8D15 /* GoogleService-Info.plist */; };
@@ -168,7 +170,6 @@
 		BCE775981F45F96500158EED /* c.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC3507E81E6B09070086A6EB /* c.plist */; };
 		BCE7759C1F45F96500158EED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC70B9791E3E06A500F700F7 /* Main.storyboard */; };
 		BCE775AB1F45FE4000158EED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCE775AA1F45FE4000158EED /* GoogleService-Info.plist */; };
-		BCE775AD1F45FEAA00158EED /* DevFest.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE775AC1F45FEAA00158EED /* DevFest.xcassets */; };
 		BCE775AF1F45FEE800158EED /* RigaDevDays.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE775AE1F45FEE800158EED /* RigaDevDays.xcassets */; };
 		BCE775B01F45FF0800158EED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC70B97C1E3E06A500F700F7 /* Assets.xcassets */; };
 		BCE775B21F45FF3800158EED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCE775B11F45FF3800158EED /* LaunchScreen.storyboard */; };
@@ -217,7 +218,6 @@
 		BCEA7F7D20B8125D003C0455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC70B97C1E3E06A500F700F7 /* Assets.xcassets */; };
 		BCEA7F8C20B8149D003C0455 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCEA7F8A20B8149D003C0455 /* LaunchScreen.storyboard */; };
 		BCEA7F8D20B8149D003C0455 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA7F8B20B8149D003C0455 /* Config.swift */; };
-		BCEA7F8F20B814AD003C0455 /* FrontCon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCEA7F8E20B814AD003C0455 /* FrontCon.xcassets */; };
 		BCEA7F9120B81616003C0455 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCEA7F9020B81616003C0455 /* GoogleService-Info.plist */; };
 		DC255461170B4381BE68014C /* Pods_FrontCon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE8B0CA54C090913C9F13A4E /* Pods_FrontCon.framework */; };
 		E0FCA8C9E471F39AD1E89665 /* Pods_RigaDevDays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C02340EF12A256BC9E469B5 /* Pods_RigaDevDays.framework */; };
@@ -277,6 +277,8 @@
 		BC3507E81E6B09070086A6EB /* c.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = c.plist; sourceTree = "<group>"; };
 		BC3507ED1E6B22970086A6EB /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BC3611131E5F194B0069BD6C /* SocialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialCell.swift; sourceTree = "<group>"; };
+		BC4711FE218F4CF700832FEA /* FrontCon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FrontCon.xcassets; sourceTree = "<group>"; };
+		BC471200218F4D1800832FEA /* DevFest.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DevFest.xcassets; sourceTree = "<group>"; };
 		BC5D1D881E91464D00F75607 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		BC62E4FD1E5B2B340038FA3B /* DayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		BC6583041E59BBEE00DE8D15 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -331,7 +333,6 @@
 		BCE775A31F45F96500158EED /* DevFest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevFest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE775A81F45F9AE00158EED /* DevFest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DevFest-Info.plist"; sourceTree = "<group>"; };
 		BCE775AA1F45FE4000158EED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BCE775AC1F45FEAA00158EED /* DevFest.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DevFest.xcassets; sourceTree = "<group>"; };
 		BCE775AE1F45FEE800158EED /* RigaDevDays.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = RigaDevDays.xcassets; sourceTree = "<group>"; };
 		BCE775B11F45FF3800158EED /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCE775B31F46004800158EED /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -342,7 +343,6 @@
 		BCEA7F8920B8140E003C0455 /* FrontCon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FrontCon.entitlements; sourceTree = "<group>"; };
 		BCEA7F8A20B8149D003C0455 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCEA7F8B20B8149D003C0455 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		BCEA7F8E20B814AD003C0455 /* FrontCon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FrontCon.xcassets; sourceTree = "<group>"; };
 		BCEA7F9020B81616003C0455 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE8B0CA54C090913C9F13A4E /* Pods_FrontCon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FrontCon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -622,9 +622,9 @@
 				BCEA7F8820B81407003C0455 /* DevFest.entitlements */,
 				BCE775AA1F45FE4000158EED /* GoogleService-Info.plist */,
 				BCE775A81F45F9AE00158EED /* DevFest-Info.plist */,
-				BCE775AC1F45FEAA00158EED /* DevFest.xcassets */,
 				BCE775B11F45FF3800158EED /* LaunchScreen.storyboard */,
 				BCE775B31F46004800158EED /* Config.swift */,
+				BC471200218F4D1800832FEA /* DevFest.xcassets */,
 			);
 			path = DevFest;
 			sourceTree = "<group>";
@@ -637,7 +637,7 @@
 				BCEA7F8A20B8149D003C0455 /* LaunchScreen.storyboard */,
 				BCEA7F8920B8140E003C0455 /* FrontCon.entitlements */,
 				BCEA7F8620B8125D003C0455 /* FrontCon-Info.plist */,
-				BCEA7F8E20B814AD003C0455 /* FrontCon.xcassets */,
+				BC4711FE218F4CF700832FEA /* FrontCon.xcassets */,
 			);
 			path = FrontCon;
 			sourceTree = "<group>";
@@ -924,7 +924,7 @@
 				BCE775B21F45FF3800158EED /* LaunchScreen.storyboard in Resources */,
 				BCE775981F45F96500158EED /* c.plist in Resources */,
 				BCE7759C1F45F96500158EED /* Main.storyboard in Resources */,
-				BCE775AD1F45FEAA00158EED /* DevFest.xcassets in Resources */,
+				BC471201218F4D1800832FEA /* DevFest.xcassets in Resources */,
 				BCE775B01F45FF0800158EED /* Assets.xcassets in Resources */,
 				BCE775AB1F45FE4000158EED /* GoogleService-Info.plist in Resources */,
 			);
@@ -936,9 +936,9 @@
 			files = (
 				BCEA7F7A20B8125D003C0455 /* c.plist in Resources */,
 				BCEA7F7B20B8125D003C0455 /* Main.storyboard in Resources */,
+				BC4711FF218F4CF700832FEA /* FrontCon.xcassets in Resources */,
 				BCEA7F8C20B8149D003C0455 /* LaunchScreen.storyboard in Resources */,
 				BCEA7F7D20B8125D003C0455 /* Assets.xcassets in Resources */,
-				BCEA7F8F20B814AD003C0455 /* FrontCon.xcassets in Resources */,
 				BCEA7F9120B81616003C0455 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

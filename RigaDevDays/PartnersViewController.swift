@@ -19,6 +19,12 @@ class PartnersViewController: UIViewController  {
         updateNavigationButtons()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        updateNavigationButtons()
+    }
+
     @objc
     func dataChanged() {
         partnersCollectionView.reloadData()
@@ -28,6 +34,9 @@ class PartnersViewController: UIViewController  {
     func updateNavigationButtons() {
         navigationItem.rightBarButtonItem = nil
         navigationItem.leftBarButtonItem = nil
+
+        guard DataManager.sharedInstance.remoteConfig["enable_lottery"].boolValue else { return }
+
         guard let userID = Auth.auth().currentUser?.uid else {
             let participantButton = UIBarButtonItem(title: "Lottery",
                                                     style: .plain,
