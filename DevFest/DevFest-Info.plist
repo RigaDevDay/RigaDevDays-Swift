@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.10</string>
+	<string>1.11</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -25,12 +25,12 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.137499206860-04vfg577lg1t2ke51rrk7sq6i6dm7c7f</string>
+				<string>com.googleusercontent.apps.1091643181347-kasldc7qjht167nncc0897qm60r1dfta</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>4</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
@@ -50,6 +50,8 @@
 	</dict>
 	<key>NSCalendarsUsageDescription</key>
 	<string>DevFest would like to create a calendar event.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>DevFest would like to scan QR code.</string>
 	<key>NSContactsUsageDescription</key>
 	<string>DevFest would like to create a calendar event.</string>
 	<key>UILaunchStoryboardName</key>
@@ -85,7 +87,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
-	<key>NSCameraUsageDescription</key>
-	<string></string>
 </dict>
 </plist>

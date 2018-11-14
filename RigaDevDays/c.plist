@@ -4,6 +4,8 @@
 <dict>
 	<key>allow_leave_feedback</key>
 	<false/>
+	<key>enable_lottery</key>
+	<false/>
 	<key>allow_delete_feedback</key>
 	<false/>
 </dict>
