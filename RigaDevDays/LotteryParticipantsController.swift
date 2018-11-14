@@ -55,7 +55,7 @@ extension LotteryParticipantsController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        return false // temporary disable deleting
     }
 }
 

@@ -96,6 +96,7 @@ class QRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDeleg
         let data = code.components(separatedBy: newLineChars).filter{!$0.isEmpty}
         guard let participantID = data.first else { return }
         guard let participantEmail = data.last else { return }
+        guard participantEmail.isValidEmailAddress() else { return }
         guard let userID = Auth.auth().currentUser?.uid else { return }
         guard DataManager.sharedInstance.lotteryParticipantsRecords[userID]?[participantID] == nil else { return }
         DataManager.sharedInstance.rootRef.child(Endpoint.lottery.rawValue)

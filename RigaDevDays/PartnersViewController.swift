@@ -7,6 +7,8 @@ import Firebase
 class PartnersViewController: UIViewController  {
 
     @IBOutlet weak var partnersCollectionView: UICollectionView!
+    @IBOutlet weak var partnerQuestButton: UIButton!
+    @IBOutlet weak var topCollectionViewOffsetConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +17,9 @@ class PartnersViewController: UIViewController  {
 
         NotificationCenter.default.addObserver(self, selector: #selector(updateNavigationButtons), name: .UserDidSignIn, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateNavigationButtons), name: .UserDidSignOut, object: nil)
+
+        partnerQuestButton.backgroundColor = Config.sharedInstance.themeSecondaryColor
+        partnerQuestButton.setTitleColor(UIColor.white, for: .normal)
 
         updateNavigationButtons()
     }
@@ -25,6 +30,18 @@ class PartnersViewController: UIViewController  {
         updateNavigationButtons()
     }
 
+    @IBAction func openPartnerQuest(_ sender: UIButton) {
+        guard let userID = Auth.auth().currentUser?.uid else {
+            GIDSignIn.sharedInstance().signIn()
+            return
+        }
+        if DataManager.sharedInstance.lotteryPartners.filter({ $0.identifier == userID }).count > 0 {
+            performSegue(withIdentifier: "showLotteryForPartner", sender: self)
+        } else {
+            performSegue(withIdentifier: "showLotteryForParticipant", sender: self)
+        }
+    }
+
     @objc
     func dataChanged() {
         partnersCollectionView.reloadData()
@@ -32,49 +49,15 @@ class PartnersViewController: UIViewController  {
 
     @objc
     func updateNavigationButtons() {
-        navigationItem.rightBarButtonItem = nil
-        navigationItem.leftBarButtonItem = nil
 
-        guard DataManager.sharedInstance.remoteConfig["enable_lottery"].boolValue else { return }
-
-        guard let userID = Auth.auth().currentUser?.uid else {
-            let participantButton = UIBarButtonItem(title: "Lottery",
-                                                    style: .plain,
-                                                    target: self,
-                                                    action: #selector(signIn))
-            navigationItem.leftBarButtonItem = participantButton
+        guard DataManager.sharedInstance.remoteConfig["enable_lottery"].boolValue else {
+            partnerQuestButton.isHidden = true
+            self.topCollectionViewOffsetConstraint.constant = 0
             return
         }
-        if DataManager.sharedInstance.lotteryPartners.filter({ $0.identifier == userID }).count > 0 {
-            let partnerButton = UIBarButtonItem(title: "Lottery",
-                                                style: .plain,
-                                                target: self,
-                                                action: #selector(showLotteryForPartner))
-            navigationItem.rightBarButtonItem = partnerButton
 
-        } else {
-            let participantButton = UIBarButtonItem(title: "Lottery",
-                                                    style: .plain,
-                                                    target: self,
-                                                    action: #selector(showLoteryForParticipant))
-            navigationItem.leftBarButtonItem = participantButton
-        }
-
-    }
-
-    @objc
-    func showLoteryForParticipant() {
-        performSegue(withIdentifier: "showLotteryForParticipant", sender: self)
-    }
-
-    @objc
-    func showLotteryForPartner() {
-        performSegue(withIdentifier: "showLotteryForPartner", sender: self)
-    }
-
-    @objc
-    func signIn() {
-        GIDSignIn.sharedInstance().signIn()
+        self.topCollectionViewOffsetConstraint.constant = 150
+        partnerQuestButton.isHidden = false
     }
 }
 

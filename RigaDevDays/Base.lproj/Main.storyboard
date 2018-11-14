@@ -1651,28 +1651,41 @@
                                     <outlet property="delegate" destination="4qm-Uo-qXe" id="3ia-5C-Bf4"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIw-as-9X6">
+                                <rect key="frame" x="20" y="72" width="335" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="jXe-wE-jRQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Partner Quest"/>
+                                <connections>
+                                    <action selector="openPartnerQuest:" destination="4qm-Uo-qXe" eventType="touchUpInside" id="0eR-aY-hO3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xIw-as-9X6" firstAttribute="top" secondItem="wZA-Sh-zhf" secondAttribute="bottom" constant="8" symbolic="YES" id="7Yn-Vp-Q1F"/>
                             <constraint firstAttribute="bottom" secondItem="KQi-md-BeT" secondAttribute="bottom" id="AzF-3g-Gij"/>
                             <constraint firstItem="KQi-md-BeT" firstAttribute="leading" secondItem="42y-wh-4vj" secondAttribute="leading" id="G5d-lH-hcF"/>
+                            <constraint firstAttribute="trailing" secondItem="xIw-as-9X6" secondAttribute="trailing" constant="20" symbolic="YES" id="Miv-NG-mjt"/>
                             <constraint firstAttribute="trailing" secondItem="KQi-md-BeT" secondAttribute="trailing" id="azb-Ye-35r"/>
                             <constraint firstItem="KQi-md-BeT" firstAttribute="top" secondItem="42y-wh-4vj" secondAttribute="top" id="hnv-2Z-PfU"/>
+                            <constraint firstItem="xIw-as-9X6" firstAttribute="leading" secondItem="42y-wh-4vj" secondAttribute="leading" constant="20" symbolic="YES" id="tBc-UI-50y"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Sponsors" id="Pgk-RG-Qhr">
-                        <barButtonItem key="leftBarButtonItem" title="Lottery" id="vpI-GQ-56y"/>
-                        <barButtonItem key="rightBarButtonItem" title="Lottery" id="1jI-CJ-PSV"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Sponsors" id="Pgk-RG-Qhr"/>
                     <connections>
+                        <outlet property="partnerQuestButton" destination="xIw-as-9X6" id="KtK-te-AOd"/>
                         <outlet property="partnersCollectionView" destination="KQi-md-BeT" id="3Xl-fS-vsV"/>
-                        <segue destination="0ih-PZ-pgi" kind="presentation" identifier="showLotteryForParticipant" id="0Oe-U8-nmh"/>
-                        <segue destination="6Mj-3Q-OP9" kind="presentation" identifier="showLotteryForPartner" id="DR1-ir-oYu"/>
+                        <outlet property="topCollectionViewOffsetConstraint" destination="hnv-2Z-PfU" id="VDd-Il-abR"/>
+                        <segue destination="0ih-PZ-pgi" kind="presentation" identifier="showLotteryForParticipant" id="Ftn-at-Lhg"/>
+                        <segue destination="6Mj-3Q-OP9" kind="presentation" identifier="showLotteryForPartner" id="1GV-Y0-2gT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVM-kV-VVY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3054" y="1087"/>
+            <point key="canvasLocation" x="3053.5999999999999" y="1086.2068965517242"/>
         </scene>
         <!--Speakers-->
         <scene sceneID="4h0-tS-8rd">
