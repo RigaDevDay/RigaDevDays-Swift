@@ -6,6 +6,8 @@ import Firebase
 enum Endpoint: String {
     case favourites = "userSessions"
     case feedbacks = "userFeedbacks"
+    case lotteryPartners = "lotteryPartners"
+    case lottery = "lottery"
 }
 
 class DataManager {
@@ -28,6 +30,8 @@ class DataManager {
     var venues: [Venue] = []
     var resources: [String: String] = [:]
     var videos: [Video] = []
+    var lotteryPartners: [Partner] = []
+    var lotteryParticipantsRecords: [String : [String: String]] = [:]
 
     var speakersReceived = false
     var sessionsReceived = false
@@ -38,6 +42,7 @@ class DataManager {
     var venuesReceived = false
     var resourcesReceived = false
     var videosReceived = false
+    var lotteryPartnersReceived = false
     var allDataReceivedNotificationSent = false
 
     fileprivate init() {
@@ -174,6 +179,13 @@ class DataManager {
             self.notifyInitialDataReceived()
             if self.allDataReceivedNotificationSent { NotificationCenter.default.post(name: .VideosUpdated, object: nil) }
         })
+
+        rootRef.child(Endpoint.lotteryPartners.rawValue).observe(.value, with: { snapshot in
+            self.lotteryPartners = snapshot.children.map{ Partner(snapshot: $0 as! DataSnapshot) }
+            self.lotteryPartnersReceived = true
+            self.notifyInitialDataReceived()
+            if self.allDataReceivedNotificationSent { NotificationCenter.default.post(name: .LotteryPartnersUpdated, object: nil) }
+        })
     }
 
     func startMonitoringUser() {
@@ -192,13 +204,14 @@ class DataManager {
 
     func startObservingUserData() {
 
-        let userID = Auth.auth().currentUser?.uid
-        rootRef.child(Endpoint.favourites.rawValue).child(userID!).observe(.value, with: { snapshot in
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+
+        rootRef.child(Endpoint.favourites.rawValue).child(userID).observe(.value, with: { snapshot in
             self.favourites = snapshot.children.map{ Int(($0 as! DataSnapshot).key)! }
             NotificationCenter.default.post(name: .FavouritesUpdated, object: nil)
         })
 
-        rootRef.child(Endpoint.feedbacks.rawValue).child(userID!).observe(.value, with: { snapshot in
+        rootRef.child(Endpoint.feedbacks.rawValue).child(userID).observe(.value, with: { snapshot in
             var newItems: [Feedback] = []
             for feedbackSnapshot in snapshot.children {
                 let currentFeedback = Feedback(snapshot: feedbackSnapshot as! DataSnapshot)
@@ -208,6 +221,25 @@ class DataManager {
             self.feedbacks = newItems
             NotificationCenter.default.post(name: .FeedbacksUpdated, object: nil)
         })
+
+        rootRef.child(Endpoint.lottery.rawValue).observe(.value, with: { snapshot in
+            var newItems: [String : [String: String]] = [:]
+
+            for lotteryParticipantsRecord in snapshot.children {
+                let lotteryPartnerRecordDataSnapshot = lotteryParticipantsRecord as! DataSnapshot
+
+                var participants = [String: String]()
+                for participantsRecord in lotteryPartnerRecordDataSnapshot.children {
+                    guard let snapshot = participantsRecord as? DataSnapshot else { return }
+                    guard let participantEmail = snapshot.value as? String else { return }
+                    participants[snapshot.key] = participantEmail
+                }
+                newItems[lotteryPartnerRecordDataSnapshot.key] = participants
+            }
+            self.lotteryParticipantsRecords = newItems
+            NotificationCenter.default.post(name: .LotteryParticipantsUpdated, object: nil)
+        })
+
     }
 
     func getSpeaker(by speakerID: Int) -> Speaker? {
@@ -260,6 +292,15 @@ class DataManager {
 
     func getVideo(by videoID: Int) -> Video? {
         return self.videos.filter{ $0.videoID == videoID }.first ?? nil
+    }
+
+    func isCheckedAtPartner(withID identifier: String) -> Bool {
+        guard let userID = Auth.auth().currentUser?.uid else { return false }
+        if lotteryParticipantsRecords[identifier]?[userID] != nil {
+            return true
+        } else {
+            return false
+        }
     }
 
 }

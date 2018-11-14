@@ -23,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // global UI configuration
         window?.tintColor = Config.sharedInstance.themePrimaryColor
         UINavigationBar.appearance().barTintColor = Config.sharedInstance.themePrimaryColor
+        let navigationBarItemsColor = UIColor.white
+        UINavigationBar.appearance().tintColor = navigationBarItemsColor
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: navigationBarItemsColor]
         UISegmentedControl.appearance().tintColor = Config.sharedInstance.themeSecondaryColor
 
         return true

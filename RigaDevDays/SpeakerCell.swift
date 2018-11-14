@@ -43,7 +43,7 @@ class SpeakerCell: UITableViewCell {
                 })
             }
 
-            speakerBio?.setHTMLFromString(htmlText: (speaker?.bio)!)
+            if let bio = speaker?.bio { speakerBio?.setHTMLFromString(htmlText: bio) }
             speakerTitle?.text = speaker?.title
         }
     }
