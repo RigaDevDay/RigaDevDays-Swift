@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BCEA7F4D20B8125D003C0455"
-               BuildableName = "FrontCon.app"
+               BuildableName = "FrontCon 2019.app"
                BlueprintName = "FrontCon"
                ReferencedContainer = "container:RigaDevDays.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BCEA7F4D20B8125D003C0455"
-            BuildableName = "FrontCon.app"
+            BuildableName = "FrontCon 2019.app"
             BlueprintName = "FrontCon"
             ReferencedContainer = "container:RigaDevDays.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BCEA7F4D20B8125D003C0455"
-            BuildableName = "FrontCon.app"
+            BuildableName = "FrontCon 2019.app"
             BlueprintName = "FrontCon"
             ReferencedContainer = "container:RigaDevDays.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BCEA7F4D20B8125D003C0455"
-            BuildableName = "FrontCon.app"
+            BuildableName = "FrontCon 2019.app"
             BlueprintName = "FrontCon"
             ReferencedContainer = "container:RigaDevDays.xcodeproj">
          </BuildableReference>
