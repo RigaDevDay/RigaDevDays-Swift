@@ -337,7 +337,7 @@
 		BCE775B11F45FF3800158EED /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCE775B31F46004800158EED /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		BCE775B51F4605F700158EED /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		BCEA7F8520B8125D003C0455 /* FrontCon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrontCon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCEA7F8520B8125D003C0455 /* FrontCon 2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FrontCon 2019.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCEA7F8620B8125D003C0455 /* FrontCon-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FrontCon-Info.plist"; sourceTree = "<group>"; };
 		BCEA7F8820B81407003C0455 /* DevFest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevFest.entitlements; sourceTree = "<group>"; };
 		BCEA7F8920B8140E003C0455 /* FrontCon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FrontCon.entitlements; sourceTree = "<group>"; };
@@ -495,7 +495,7 @@
 				BC70B9911E3E06A600F700F7 /* RigaDevDaysUITests.xctest */,
 				BCE775A31F45F96500158EED /* DevFest.app */,
 				BCCE22F11F54734400EBF2F4 /* DevFestUITests.xctest */,
-				BCEA7F8520B8125D003C0455 /* FrontCon.app */,
+				BCEA7F8520B8125D003C0455 /* FrontCon 2019.app */,
 				BC324B24212ED30F002E1D0F /* DevOpsDays.app */,
 			);
 			name = Products;
@@ -791,7 +791,7 @@
 			);
 			name = FrontCon;
 			productName = RigaDevDays;
-			productReference = BCEA7F8520B8125D003C0455 /* FrontCon.app */;
+			productReference = BCEA7F8520B8125D003C0455 /* FrontCon 2019.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1882,7 +1882,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/FrontCon/FrontCon-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.dmi3j.frontcon.lv;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "FrontCon 2019";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -1903,7 +1903,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/FrontCon/FrontCon-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.dmi3j.frontcon.lv;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "FrontCon 2019";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

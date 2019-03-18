@@ -15,11 +15,17 @@ class Speaker: DataObject {
     let country: String?
     let photoURL: String?
     let shortBio: String?
+    let profileURL: String?
     var socials: [Social] = []
     var tags: [String] = []
 
     var speakerURL: String {
-        return "\(Config.sharedInstance.baseURLPrefix)/speakers/\(String(describing: speakerID))"
+        switch SwissKnife.app {
+        case .frontcon:
+            return profileURL ?? ""
+        default:
+            return "\(Config.sharedInstance.baseURLPrefix)/speakers/\(speakerID ?? 0)"
+        }
     }
 
     var speakerPhotoReference: StorageReference {
@@ -47,6 +53,7 @@ class Speaker: DataObject {
         speakerID = snapshotValue["id"] as? Int
         name = snapshotValue["name"] as? String
         photoURL = snapshotValue["photoUrl"] as? String
+        profileURL = snapshotValue["profileUrl"] as? String
         shortBio = snapshotValue["shortBio"] as? String
 
         for socialSnapshot in snapshot.childSnapshot(forPath: "socials").children {

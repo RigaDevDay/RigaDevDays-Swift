@@ -43,7 +43,7 @@ class SessionCell: UITableViewCell {
             }
             sessionSpeakerName?.text = session?.speakers.first?.name
             colorCodeView?.backgroundColor = session?.color
-            sessionDescription?.setHTMLFromString(htmlText: (session?.description)!)
+            sessionDescription?.setHTMLFromString(htmlText: session?.description ?? "")
 
             if let photoURL = session?.speakers.first?.photoURL, photoURL.contains("http"), let imageURL = URL(string: photoURL) {
                 self.speakerImage?.kf.indicatorType = .activity
