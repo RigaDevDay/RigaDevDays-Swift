@@ -242,12 +242,15 @@ class SwissKnife {
             notes.append(speakerName)
         }
 
-        let attrStr = try! NSAttributedString(
-            data: (session.description?.data(using: .unicode, allowLossyConversion: true)!)!,
-            options: [.documentType: NSAttributedString.DocumentType.html,
-                      .characterEncoding: String.Encoding.utf8.rawValue],
-            documentAttributes: nil)
-        notes.append("\n\n" + attrStr.string)
+        if let description = session.description {
+            let attrStr = try! NSAttributedString(
+                data: description.data(using: .unicode, allowLossyConversion: true)!,
+                options: [.documentType: NSAttributedString.DocumentType.html,
+                          .characterEncoding: String.Encoding.utf8.rawValue],
+                documentAttributes: nil)
+            notes.append("\n\n" + attrStr.string)
+        }
+
         notes.append("\n\n" + session.sessionURL)
         event.notes = notes
         event.location = session.track?.title
