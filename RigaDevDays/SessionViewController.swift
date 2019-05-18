@@ -47,17 +47,22 @@ class SessionViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(dataChanged), name: .TagsUpdated, object: nil)
     }
 
-    @objc func updateNavigationButtons() {
+    @objc
+    func updateNavigationButtons() {
 
         var rightBarButtonItems: [UIBarButtonItem] = []
-        let shareButton = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: #selector(shareSession))
-        rightBarButtonItems.append(shareButton)
+
+        if session?.sessionShareURL.isEmpty == false {
+            let shareButton = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: #selector(shareSession))
+            rightBarButtonItems.append(shareButton)
+        }
 
         navigationItem.rightBarButtonItems = rightBarButtonItems
     }
 
-    @objc func shareSession() {
-        if let text = session?.title, let url = URL.init(string: (session?.sessionURL)!) {
+    @objc
+    func shareSession() {
+        if let text = session?.title, let url = URL.init(string: (session?.sessionShareURL)!) {
             let dataToShare = ["dataToShare": [ text, url ] ]
             NotificationCenter.default.post(name: .ShareItem, object: nil, userInfo: dataToShare)
         }

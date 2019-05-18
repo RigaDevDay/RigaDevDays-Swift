@@ -5,10 +5,10 @@ import UIKit
 
 class Config {
 
-    let baseURLPrefix = "https://rigadevdays.lv"
+    let baseURLPrefix = "https://2019.rigadevdays.lv"
 
-    let themePrimaryColor = #colorLiteral(red: 0, green: 0.6196078431, blue: 0.8588235294, alpha: 1) // 009edb
-    let themeSecondaryColor = #colorLiteral(red: 0.1098039216, green: 0.06274509804, blue: 0.3058823529, alpha: 1) // 1c104e
+    let themePrimaryColor = #colorLiteral(red: 0, green: 0.4823529412, blue: 1, alpha: 1) // 007bff
+    let themeSecondaryColor = #colorLiteral(red: 0.1294117647, green: 0.1294117647, blue: 0.1294117647, alpha: 1) // 212121
 
     let searchProposals: [String] = ["Java", ".NET", "DevOps", "Cloud", "Software architecture", "John Doe"]
 

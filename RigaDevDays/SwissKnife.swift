@@ -251,7 +251,7 @@ class SwissKnife {
             notes.append("\n\n" + attrStr.string)
         }
 
-        notes.append("\n\n" + session.sessionURL)
+        notes.append("\n\n" + session.sessionShareURL)
         event.notes = notes
         event.location = session.track?.title
     }

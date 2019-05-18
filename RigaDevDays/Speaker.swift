@@ -19,7 +19,7 @@ class Speaker: DataObject {
     var socials: [Social] = []
     var tags: [String] = []
 
-    var speakerURL: String {
+    var speakerShareURL: String {
         switch SwissKnife.app {
         case .frontcon:
             return profileURL ?? ""

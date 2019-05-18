@@ -22,7 +22,7 @@ class SpeakerCell: UITableViewCell {
     var speaker: Speaker? {
         didSet {
             speakerName?.text = speaker?.name
-            speakerCompany?.text = speaker?.company
+            speakerCompany?.text = speaker?.title ?? speaker?.company
             speakerBio?.numberOfLines = speakerDescriptionLinesCount
             speakerTags?.attributedText = TagColorManager.sharedInstance.getTags(for: speaker!)
             speakerTagsWithDots?.attributedText = TagColorManager.sharedInstance.getTags(for: speaker!, withDots: true)

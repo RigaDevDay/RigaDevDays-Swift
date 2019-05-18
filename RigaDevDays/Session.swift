@@ -13,6 +13,7 @@ class Session: DataObject {
     var videosIDs: [Int] = []
     var tags: [String] = []
     var auditorium: String?
+    var sessionURL: String?
     weak var track: Track?
     weak var timeslot: Timeslot?
 
@@ -55,13 +56,14 @@ class Session: DataObject {
         }
     }
 
-    var sessionURL: String {
+    var sessionShareURL: String {
         get {
-            guard let dayIndex = DataManager.sharedInstance.days.index(where: { $0.date == day?.date }),
-                let sessionIndex = sessionID else {
-                    return ""
-            }
-            return "\(Config.sharedInstance.baseURLPrefix)/schedule/day\(dayIndex+1)?sessionId=\(sessionIndex)"
+            return sessionURL ?? ""
+//            guard let dayIndex = DataManager.sharedInstance.days.index(where: { $0.date == day?.date }),
+//                let sessionIndex = sessionID else {
+//                    return ""
+//            }
+//            return "\(Config.sharedInstance.baseURLPrefix)/schedule/day\(dayIndex+1)?sessionId=\(sessionIndex)"
         }
     }
 
@@ -115,6 +117,7 @@ class Session: DataObject {
         speakersIDs = snapshotValue["speakers"] as? [Int] ?? []
         videosIDs = snapshotValue["videos"] as? [Int] ?? []
         auditorium = snapshotValue["auditorium"] as? String
+        sessionURL = snapshotValue["sessionUrl"] as? String
 
         for tag in snapshot.childSnapshot(forPath: "tags").children {
             if let currentTag = (tag as! DataSnapshot).value as? String {

@@ -57,7 +57,7 @@ class SpeakerViewController: UIViewController {
     }
 
     @objc func shareSpeaker() {
-        if let text = speaker?.name, let url = URL.init(string: (speaker?.speakerURL)!) {
+        if let text = speaker?.name, let url = URL.init(string: (speaker?.speakerShareURL)!) {
             let dataToShare = ["dataToShare": [ text, url ] ]
             NotificationCenter.default.post(name: .ShareItem, object: nil, userInfo: dataToShare)
         }

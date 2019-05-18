@@ -35,14 +35,15 @@ class Timeslot: DataObject {
         tracks = dayTracks
 
         switch SwissKnife.app {
-        case .rdd:
-            for timeslotSnapshot in snapshot.childSnapshot(forPath: "sessions").children {
-                for tempEnum in (timeslotSnapshot as! DataSnapshot).childSnapshot(forPath: "items").children {
-                    let firstItem = (tempEnum as! DataSnapshot).value as! Int
-                    sessionIDs.append(firstItem)
-                }
-            }
-        case .devfest, .frontcon, .devopsdaysriga:
+            // old way for RDD
+//        case .rdd:
+//            for timeslotSnapshot in snapshot.childSnapshot(forPath: "sessions").children {
+//                for tempEnum in (timeslotSnapshot as! DataSnapshot).childSnapshot(forPath: "items").children {
+//                    let firstItem = (tempEnum as! DataSnapshot).value as! Int
+//                    sessionIDs.append(firstItem)
+//                }
+//            }
+        case .devfest, .frontcon, .devopsdaysriga, .rdd:
             for timeslotSnapshot in snapshot.childSnapshot(forPath: "sessions").children {
                 if let tmpsessionIDs = (timeslotSnapshot as! DataSnapshot).value as? [Int],
                     let firstItem = tmpsessionIDs.first {
