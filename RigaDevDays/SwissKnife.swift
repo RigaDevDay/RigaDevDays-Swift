@@ -117,8 +117,7 @@ extension UIViewController {
         }
     }
 }
-
-extension String {
+public extension String {
 
     /// Checks if the `String` is a valid email address.
     /// ````

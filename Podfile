@@ -14,6 +14,10 @@ end
 
 target 'RigaDevDays' do
     common_pods
+
+    target 'RigaDevDaysTests' do
+        inherit! :search_paths
+    end
 end
 
 target 'DevFest' do
