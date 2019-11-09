@@ -9,7 +9,7 @@ class RootTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance()?.presentingViewController = self
 
         let defaults = UserDefaults.standard
         if defaults.bool(forKey: UserDefaultsKeys.loggedInOnce.rawValue) {
@@ -27,8 +27,4 @@ class RootTabBarController: UITabBarController {
             self.present(activityViewController, animated: true, completion: nil)
         }
     }
-}
-
-extension RootTabBarController: GIDSignInUIDelegate {
-    // do nothing here
 }

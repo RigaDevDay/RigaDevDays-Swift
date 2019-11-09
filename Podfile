@@ -3,13 +3,13 @@ inhibit_all_warnings!
 use_frameworks!
 
 def common_pods
-    pod 'Firebase/Auth'
-    pod 'Firebase/Core'
-    pod 'Firebase/Database'
-    pod 'Firebase/RemoteConfig'
-    pod 'Firebase/Storage'
-    pod 'GoogleSignIn'
-    pod 'Kingfisher'
+    pod 'Firebase/Auth', '6.12.0'
+    pod 'Firebase/Core', '6.12.0'
+    pod 'Firebase/Database', '6.12.0'
+    pod 'Firebase/RemoteConfig', '6.12.0'
+    pod 'Firebase/Storage', '6.12.0'
+    pod 'GoogleSignIn', '5.0.1'
+    pod 'Kingfisher', '4.10.1'
 end
 
 target 'RigaDevDays' do
